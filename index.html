@@ -64,6 +64,27 @@
 
         }
 
+        /* Floating navbar styling */
+        .navbar-wrapper {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 50;
+            transition: all 0.3s ease;
+            pointer-events: none;
+        }
+
+        .navbar-wrapper.active {
+            pointer-events: auto;
+        }
+
+        .navbar-content {
+            display: flex;
+            justify-content: center;
+            pointer-events: auto;
+        }
+
         /* Hero animations */
         @keyframes fadeInUp {
             from {
@@ -374,6 +395,10 @@
             .metric-value {
                 font-size: 0.95rem;
             }
+
+            .navbar-wrapper {
+                top: 16px;
+            }
         }
     </style>
 
@@ -385,40 +410,19 @@
     <!-- Navigation            -->
     <!-- ===================== -->
 
-    <header class="fixed top-0 left-0 right-0 z-50 flex justify-center pt-5 pointer-events-none">
-
-        <div class="pointer-events-auto">
-
+    <nav class="navbar-wrapper active" id="navbar">
+        <div class="navbar-content">
             <div class="glass rounded-full px-8 py-4 flex justify-between items-center gap-16 min-w-max">
-
-                <h1 class="text-white text-2xl font-extrabold">
-
-                    Vernia
-
-                </h1>
-
-                <nav class="hidden md:flex gap-10 text-white">
-
+                <h1 class="text-white text-2xl font-extrabold">Vernia</h1>
+                <div class="hidden md:flex gap-10 text-white">
                     <a href="#">Features</a>
-
                     <a href="#">How it Works</a>
-
                     <a href="#">About</a>
-
-                    <a href="#contact"
-                        class="bg-white text-primary px-5 py-2 rounded-full font-semibold">
-
-                        Join Waitlist
-
-                    </a>
-
-                </nav>
-
+                    <a href="#contact" class="bg-white text-primary px-5 py-2 rounded-full font-semibold">Join Waitlist</a>
+                </div>
             </div>
-
         </div>
-
-    </header>
+    </nav>
 
 
 
@@ -426,7 +430,7 @@
     <!-- HERO                  -->
     <!-- ===================== -->
 
-    <section class="min-h-screen bg-gradient-to-b from-white to-sage/20 flex items-center pt-32 pb-20">
+    <section class="min-h-screen bg-gradient-to-b from-white to-sage/20 flex items-center pt-40 pb-20">
 
         <div class="max-w-7xl mx-auto px-8 w-full">
 
@@ -444,12 +448,12 @@
                     <h2 class="text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight text-dark mb-8">
                         Understand your body.
                         <br>
-                        <span class="text-primary">Grow stronger through every season</span> of your health.
+                        <span class="text-primary">Take control of your health.</span>
                     </h2>
 
                     <!-- Paragraph -->
                     <p class="text-lg text-gray-600 leading-relaxed mb-4 max-w-lg">
-                        Vernia brings together your health data, daily habits, symptoms and medical recommendations into one intelligent place—helping you understand your body, identify meaningful patterns and build lasting healthy habits.
+                        Vernia brings together your health data, symptoms, daily habits and medical recommendations into one intelligent place—helping you understand your body, uncover meaningful patterns and build healthier habits with confidence.
                     </p>
 
                     <!-- Tagline -->
@@ -532,6 +536,40 @@
         </div>
 
     </section>
+
+    <script>
+        // Smooth floating navbar with scroll behavior
+        let lastScrollY = 0;
+        let ticking = false;
+
+        const navbar = document.getElementById('navbar');
+
+        function updateNavbarPosition() {
+            lastScrollY = window.scrollY;
+            
+            // Calculate the navbar position with smooth scroll offset
+            const offset = Math.min(lastScrollY * 0.5, 20);
+            navbar.style.top = (20 + offset) + 'px';
+            
+            ticking = false;
+        }
+
+        window.addEventListener('scroll', () => {
+            if (!ticking) {
+                window.requestAnimationFrame(updateNavbarPosition);
+                ticking = true;
+            }
+        });
+
+        // Ensure navbar is always visible and interactive
+        navbar.addEventListener('mouseenter', () => {
+            navbar.classList.add('active');
+        });
+
+        navbar.addEventListener('mouseleave', () => {
+            navbar.classList.add('active');
+        });
+    </script>
 
 </body>
 
