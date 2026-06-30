@@ -64,18 +64,56 @@
 
         }
 
-        /* Floating navbar styling */
+        /* Minimal top button */
+        .minimal-cta {
+            position: fixed;
+            top: 24px;
+            right: 32px;
+            z-index: 40;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            pointer-events: auto;
+        }
+
+        .minimal-cta.hide {
+            opacity: 0;
+            pointer-events: none;
+            transform: translateY(-10px);
+        }
+
+        .minimal-button {
+            background: #4D6653;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        .minimal-button:hover {
+            background: #3d5242;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(77, 102, 83, 0.25);
+        }
+
+        /* Floating navbar */
         .navbar-wrapper {
             position: fixed;
             top: 20px;
             left: 50%;
             transform: translateX(-50%);
-            z-index: 50;
+            z-index: 45;
             transition: all 0.3s ease;
             pointer-events: none;
+            opacity: 0;
         }
 
-        .navbar-wrapper.active {
+        .navbar-wrapper.visible {
+            opacity: 1;
             pointer-events: auto;
         }
 
@@ -83,6 +121,67 @@
             display: flex;
             justify-content: center;
             pointer-events: auto;
+        }
+
+        .navbar-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .navbar-logo {
+            color: white;
+            font-size: 1.25rem;
+            font-weight: 800;
+            white-space: nowrap;
+        }
+
+        .navbar-links {
+            display: flex;
+            gap: 32px;
+            align-items: center;
+        }
+
+        .navbar-link {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .navbar-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: rgba(255, 255, 255, 0.6);
+            transition: width 0.3s ease;
+        }
+
+        .navbar-link:hover::after {
+            width: 100%;
+        }
+
+        .navbar-button {
+            background: white;
+            color: #4D6653;
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .navbar-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
         }
 
         /* Hero animations */
@@ -222,7 +321,7 @@
             font-size: 1.2rem;
         }
 
-        /* Image container - increased height */
+        /* Image container */
         .hero-image-container {
             position: relative;
             width: 100%;
@@ -365,9 +464,27 @@
             .recovery-value {
                 font-size: 2rem;
             }
+
+            .navbar-links {
+                gap: 24px;
+            }
+
+            .navbar-bar {
+                gap: 32px;
+            }
         }
 
         @media (max-width: 768px) {
+            .minimal-cta {
+                top: 20px;
+                right: 24px;
+            }
+
+            .minimal-button {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+
             .hero-image-container {
                 margin-top: 40px;
             }
@@ -396,8 +513,12 @@
                 font-size: 0.95rem;
             }
 
-            .navbar-wrapper {
-                top: 16px;
+            .navbar-links {
+                display: none;
+            }
+
+            .navbar-bar {
+                gap: 16px;
             }
         }
     </style>
@@ -407,18 +528,30 @@
 <body>
 
     <!-- ===================== -->
-    <!-- Navigation            -->
+    <!-- Minimal CTA Button    -->
     <!-- ===================== -->
 
-    <nav class="navbar-wrapper active" id="navbar">
+    <div class="minimal-cta" id="minimalCta">
+        <a href="#contact" class="minimal-button">Join the Waitlist</a>
+    </div>
+
+
+
+    <!-- ===================== -->
+    <!-- Floating Navigation   -->
+    <!-- ===================== -->
+
+    <nav class="navbar-wrapper" id="navbar">
         <div class="navbar-content">
-            <div class="glass rounded-full px-8 py-4 flex justify-between items-center gap-16 min-w-max">
-                <h1 class="text-white text-2xl font-extrabold">Vernia</h1>
-                <div class="hidden md:flex gap-10 text-white">
-                    <a href="#">Features</a>
-                    <a href="#">How it Works</a>
-                    <a href="#">About</a>
-                    <a href="#contact" class="bg-white text-primary px-5 py-2 rounded-full font-semibold">Join Waitlist</a>
+            <div class="glass rounded-full px-8 py-4">
+                <div class="navbar-bar">
+                    <div class="navbar-logo">Vernia</div>
+                    <div class="navbar-links">
+                        <a href="#" class="navbar-link">Features</a>
+                        <a href="#" class="navbar-link">How it Works</a>
+                        <a href="#" class="navbar-link">About</a>
+                        <a href="#contact" class="navbar-button">Join Waitlist</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -430,7 +563,7 @@
     <!-- HERO                  -->
     <!-- ===================== -->
 
-    <section class="min-h-screen bg-gradient-to-b from-white to-sage/20 flex items-center pt-40 pb-20">
+    <section class="min-h-screen bg-gradient-to-b from-white to-sage/20 flex items-center pt-20 pb-20">
 
         <div class="max-w-7xl mx-auto px-8 w-full">
 
@@ -538,36 +671,46 @@
     </section>
 
     <script>
-        // Smooth floating navbar with scroll behavior
+        // Premium scroll behavior for navigation
+        const navbar = document.getElementById('navbar');
+        const minimalCta = document.getElementById('minimalCta');
         let lastScrollY = 0;
         let ticking = false;
 
-        const navbar = document.getElementById('navbar');
+        const SCROLL_THRESHOLD = 100; // Show navbar after 100px scroll
 
-        function updateNavbarPosition() {
-            lastScrollY = window.scrollY;
-            
-            // Calculate the navbar position with smooth scroll offset
-            const offset = Math.min(lastScrollY * 0.5, 20);
-            navbar.style.top = (20 + offset) + 'px';
-            
+        function updateNavbar() {
+            const scrollY = window.scrollY;
+
+            // Show floating navbar after scrolling 100px
+            if (scrollY > SCROLL_THRESHOLD) {
+                navbar.classList.add('visible');
+                minimalCta.classList.add('hide');
+            } else {
+                navbar.classList.remove('visible');
+                minimalCta.classList.remove('hide');
+            }
+
             ticking = false;
         }
 
         window.addEventListener('scroll', () => {
+            lastScrollY = window.scrollY;
             if (!ticking) {
-                window.requestAnimationFrame(updateNavbarPosition);
+                window.requestAnimationFrame(updateNavbar);
                 ticking = true;
             }
         });
 
-        // Ensure navbar is always visible and interactive
-        navbar.addEventListener('mouseenter', () => {
-            navbar.classList.add('active');
-        });
-
-        navbar.addEventListener('mouseleave', () => {
-            navbar.classList.add('active');
+        // Smooth link navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#' && document.querySelector(href)) {
+                    e.preventDefault();
+                    document.querySelector(href).scrollIntoView({ behavior: 'smooth' });
+                }
+            });
         });
     </script>
 
