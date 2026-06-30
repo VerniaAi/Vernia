@@ -119,9 +119,9 @@
             border: 1px solid rgba(76, 102, 83, 0.3);
             backdrop-filter: blur(10px);
             color: #4D6653;
-            padding: 8px 16px;
+            padding: 10px 18px;
             border-radius: 20px;
-            font-size: 0.875rem;
+            font-size: 0.9rem;
             font-weight: 600;
             display: inline-flex;
             align-items: center;
@@ -151,7 +151,7 @@
         }
 
         .btn-secondary {
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(77, 102, 83, 0.08);
             color: #4D6653;
             padding: 16px 32px;
             border-radius: 12px;
@@ -165,16 +165,25 @@
         }
 
         .btn-secondary:hover {
-            background: rgba(77, 102, 83, 0.1);
+            background: rgba(77, 102, 83, 0.15);
             transform: translateY(-2px);
+        }
+
+        /* Tagline below paragraph */
+        .hero-tagline {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #4D6653;
+            margin-bottom: 20px;
+            opacity: 0.9;
         }
 
         /* Feature list */
         .feature-list {
             display: flex;
             flex-direction: column;
-            gap: 12px;
-            margin-top: 24px;
+            gap: 14px;
+            margin-top: 28px;
         }
 
         .feature-item {
@@ -192,11 +201,11 @@
             font-size: 1.2rem;
         }
 
-        /* Image container */
+        /* Image container - increased height */
         .hero-image-container {
             position: relative;
             width: 100%;
-            aspect-ratio: 4/5;
+            aspect-ratio: 9/12;
             border-radius: 32px;
             overflow: hidden;
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15), 0 0 1px rgba(0, 0, 0, 0.1);
@@ -206,6 +215,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+            object-position: center top;
         }
 
         /* Fallback for missing image */
@@ -222,82 +232,117 @@
             padding: 24px;
         }
 
-        /* Glass card - floating at bottom left corner */
+        /* Premium mobile app dashboard card */
         .ai-insight-card {
             position: absolute;
-            bottom: -20px;
+            bottom: -30px;
             left: 24px;
-            width: 320px;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.8);
-            border-radius: 16px;
-            padding: 24px;
-            box-shadow: 0 16px 48px rgba(0, 0, 0, 0.15);
+            width: 340px;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(25px);
+            border: 1px solid rgba(255, 255, 255, 0.9);
+            border-radius: 24px;
+            padding: 28px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.18);
         }
 
-        .ai-insight-label {
+        .card-header {
             font-size: 0.75rem;
-            font-weight: 700;
-            letter-spacing: 0.05em;
+            font-weight: 800;
+            letter-spacing: 0.08em;
             color: #9CAF88;
             text-transform: uppercase;
-            margin-bottom: 16px;
+            margin-bottom: 20px;
         }
 
-        .insight-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 12px 0;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-            font-size: 0.95rem;
-            color: #2E2E2E;
+        .recovery-score-section {
+            background: linear-gradient(135deg, #9CAF88 0%, #8a9d78 100%);
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 24px;
+            color: white;
         }
 
-        .insight-row:last-of-type {
-            border-bottom: none;
+        .recovery-label {
+            font-size: 0.8rem;
+            font-weight: 600;
+            opacity: 0.9;
+            margin-bottom: 8px;
         }
 
-        .insight-label {
-            font-weight: 500;
-            color: #666;
+        .recovery-value {
+            font-size: 2.5rem;
+            font-weight: 800;
+            line-height: 1;
         }
 
-        .insight-value {
+        .metrics-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .metric {
+            background: #f5f5f3;
+            border-radius: 12px;
+            padding: 14px;
+        }
+
+        .metric-label {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #999;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+            margin-bottom: 6px;
+        }
+
+        .metric-value {
+            font-size: 1.1rem;
             font-weight: 700;
             color: #4D6653;
         }
 
-        .insight-status {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            font-weight: 700;
+        .insight-section {
+            padding-top: 20px;
+            border-top: 1px solid rgba(0, 0, 0, 0.06);
         }
 
-        .status-badge {
-            background: #9CAF88;
-            color: white;
-            padding: 2px 6px;
-            border-radius: 4px;
-            font-size: 0.8rem;
+        .insight-title {
+            font-size: 0.75rem;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            color: #9CAF88;
+            text-transform: uppercase;
+            margin-bottom: 12px;
         }
 
-        .insight-message {
-            margin-top: 16px;
-            padding-top: 16px;
-            border-top: 1px solid rgba(0, 0, 0, 0.05);
-            font-size: 0.85rem;
-            line-height: 1.5;
+        .insight-text {
+            font-size: 0.9rem;
+            line-height: 1.6;
             color: #555;
+            margin-bottom: 12px;
+        }
+
+        .insight-tagline {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #4D6653;
+            opacity: 0.85;
         }
 
         /* Responsive */
         @media (max-width: 1024px) {
             .ai-insight-card {
-                width: 280px;
-                padding: 20px;
+                width: 300px;
+                padding: 24px;
+                bottom: -25px;
+                left: 20px;
+            }
+
+            .recovery-value {
+                font-size: 2rem;
             }
         }
 
@@ -307,9 +352,27 @@
             }
 
             .ai-insight-card {
-                bottom: -30px;
+                bottom: -35px;
                 left: 16px;
                 width: 280px;
+                padding: 20px;
+            }
+
+            .recovery-value {
+                font-size: 1.8rem;
+            }
+
+            .metrics-row {
+                gap: 12px;
+                margin-bottom: 20px;
+            }
+
+            .metric {
+                padding: 12px;
+            }
+
+            .metric-value {
+                font-size: 0.95rem;
             }
         }
     </style>
@@ -367,15 +430,14 @@
 
         <div class="max-w-7xl mx-auto px-8 w-full">
 
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-32 items-center">
 
                 <!-- Left Column -->
                 <div class="hero-content">
 
                     <!-- Badge -->
                     <div class="hero-badge badge">
-                        <span>✓</span>
-                        AI-powered Health Companion
+                        🌿 AI health companion for life's biggest health transitions
                     </div>
 
                     <!-- Headline -->
@@ -386,25 +448,31 @@
                     </h2>
 
                     <!-- Paragraph -->
-                    <p class="text-lg text-gray-600 leading-relaxed mb-12 max-w-lg">
-                        Vernia helps women organise health information, understand patterns, build healthy habits and feel supported through life's biggest health transitions.
+                    <p class="text-lg text-gray-600 leading-relaxed mb-4 max-w-lg">
+                        Vernia brings together your health data, daily habits, symptoms and medical recommendations into one intelligent place—helping you understand your body, identify meaningful patterns and build lasting healthy habits.
+                    </p>
+
+                    <!-- Tagline -->
+                    <p class="hero-tagline">
+                        Understand more. Worry less.
                     </p>
 
                     <!-- Buttons -->
                     <div class="flex flex-col sm:flex-row gap-4 mb-12">
                         <a href="#contact" class="btn-primary">
-                            Join the Waitlist
+                            Join the Waitlist →
                         </a>
                         <a href="#" class="btn-secondary">
-                            See how it works
+                            Explore Vernia
                         </a>
                     </div>
 
                     <!-- Feature List -->
                     <div class="feature-list">
-                        <div class="feature-item">AI insights</div>
-                        <div class="feature-item">Health tracking</div>
-                        <div class="feature-item">Private community</div>
+                        <div class="feature-item">Cancer Recovery</div>
+                        <div class="feature-item">Menopause</div>
+                        <div class="feature-item">Postpartum</div>
+                        <div class="feature-item">Gut Health</div>
                     </div>
 
                 </div>
@@ -423,34 +491,37 @@
                         </div>
                     </div>
 
-                    <!-- Floating AI Insight Card -->
+                    <!-- Premium Mobile App Dashboard Card -->
                     <div class="ai-card ai-insight-card">
-                        <div class="ai-insight-label">Today's AI Insight</div>
+                        <div class="card-header">Today</div>
 
-                        <div class="insight-row">
-                            <span class="insight-label">Strength</span>
-                            <span class="insight-status">
-                                <span class="status-badge">✓</span>
-                            </span>
+                        <!-- Recovery Score Section -->
+                        <div class="recovery-score-section">
+                            <div class="recovery-label">Recovery Score</div>
+                            <div class="recovery-value">91%</div>
                         </div>
 
-                        <div class="insight-row">
-                            <span class="insight-label">Protein</span>
-                            <span class="insight-value">96g</span>
+                        <!-- Metrics Row -->
+                        <div class="metrics-row">
+                            <div class="metric">
+                                <div class="metric-label">Protein</div>
+                                <div class="metric-value">96 g</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-label">Sleep</div>
+                                <div class="metric-value">7h 48m</div>
+                            </div>
                         </div>
 
-                        <div class="insight-row">
-                            <span class="insight-label">Sleep</span>
-                            <span class="insight-value">7h 48m</span>
-                        </div>
-
-                        <div class="insight-row">
-                            <span class="insight-label">Recovery</span>
-                            <span class="insight-value" style="color: #9CAF88;">Excellent</span>
-                        </div>
-
-                        <div class="insight-message">
-                            Your energy is consistently higher after strength training combined with protein-rich breakfasts.
+                        <!-- Insight Section -->
+                        <div class="insight-section">
+                            <div class="insight-title">Today's Insight</div>
+                            <p class="insight-text">
+                                Your energy has been consistently higher after strength training combined with protein-rich breakfasts.
+                            </p>
+                            <p class="insight-tagline">
+                                Understand more. Worry less.
+                            </p>
                         </div>
                     </div>
 
