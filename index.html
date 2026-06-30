@@ -64,7 +64,33 @@
 
         }
 
-        /* Minimal top logo */
+        /* Logo styling */
+        .logo-lockup {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            pointer-events: auto;
+        }
+
+        .logo-icon {
+            width: 28px;
+            height: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            opacity: 0.95;
+        }
+
+        .logo-text {
+            font-size: 1.1rem;
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            color: #4D6653;
+            text-transform: uppercase;
+        }
+
+        /* Top logo */
         .top-logo {
             position: fixed;
             top: 24px;
@@ -77,13 +103,6 @@
         .top-logo.hide {
             opacity: 0;
             pointer-events: none;
-        }
-
-        .logo-text {
-            color: #2E2E2E;
-            font-size: 1.5rem;
-            font-weight: 800;
-            letter-spacing: -0.02em;
         }
 
         /* Floating navbar */
@@ -121,10 +140,17 @@
 
         .navbar-logo {
             color: white;
-            font-size: 1.25rem;
-            font-weight: 800;
+            font-size: 1.1rem;
+            font-weight: 600;
+            letter-spacing: 0.04em;
             white-space: nowrap;
-            letter-spacing: -0.02em;
+            text-transform: uppercase;
+        }
+
+        .navbar-logo-icon {
+            display: inline-block;
+            margin-right: 8px;
+            font-size: 16px;
         }
 
         .navbar-links {
@@ -348,18 +374,19 @@
             padding: 24px;
         }
 
-        /* Premium mobile app dashboard card */
+        /* Premium glassmorphism AI insight card */
         .ai-insight-card {
             position: absolute;
             bottom: -30px;
             left: 24px;
             width: 340px;
-            background: rgba(255, 255, 255, 0.98);
-            backdrop-filter: blur(25px);
-            border: 1px solid rgba(255, 255, 255, 0.9);
-            border-radius: 24px;
+            background: rgba(255, 255, 255, 0.84);
+            -webkit-backdrop-filter: blur(20px);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            border-radius: 30px;
             padding: 28px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.18);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
         }
 
         .card-header {
@@ -372,24 +399,27 @@
         }
 
         .recovery-score-section {
-            background: linear-gradient(135deg, #9CAF88 0%, #8a9d78 100%);
-            border-radius: 16px;
+            background: linear-gradient(135deg, rgba(156, 175, 136, 0.3) 0%, rgba(138, 157, 120, 0.25) 100%);
+            border-radius: 20px;
             padding: 20px;
             margin-bottom: 24px;
-            color: white;
+            color: #4D6653;
+            border: 1px solid rgba(156, 175, 136, 0.2);
         }
 
         .recovery-label {
             font-size: 0.8rem;
             font-weight: 600;
-            opacity: 0.9;
+            opacity: 0.85;
             margin-bottom: 8px;
+            color: #4D6653;
         }
 
         .recovery-value {
             font-size: 2.5rem;
             font-weight: 800;
             line-height: 1;
+            color: #4D6653;
         }
 
         .metrics-row {
@@ -400,9 +430,10 @@
         }
 
         .metric {
-            background: #f5f5f3;
-            border-radius: 12px;
+            background: rgba(248, 248, 248, 0.6);
+            border-radius: 14px;
             padding: 14px;
+            border: 1px solid rgba(0, 0, 0, 0.03);
         }
 
         .metric-label {
@@ -422,7 +453,7 @@
 
         .insight-section {
             padding-top: 20px;
-            border-top: 1px solid rgba(0, 0, 0, 0.06);
+            border-top: 1px solid rgba(0, 0, 0, 0.05);
         }
 
         .insight-title {
@@ -437,7 +468,7 @@
         .insight-text {
             font-size: 0.9rem;
             line-height: 1.6;
-            color: #555;
+            color: #333;
             margin-bottom: 12px;
         }
 
@@ -477,7 +508,13 @@
             }
 
             .logo-text {
-                font-size: 1.25rem;
+                font-size: 0.95rem;
+            }
+
+            .logo-icon {
+                width: 24px;
+                height: 24px;
+                font-size: 16px;
             }
 
             .hero-image-container {
@@ -517,7 +554,7 @@
             }
 
             .navbar-logo {
-                font-size: 1rem;
+                font-size: 0.95rem;
             }
         }
     </style>
@@ -531,7 +568,10 @@
     <!-- ===================== -->
 
     <div class="top-logo" id="topLogo">
-        <div class="logo-text">Vernia</div>
+        <div class="logo-lockup">
+            <div class="logo-icon">🌱</div>
+            <div class="logo-text">Vernia</div>
+        </div>
     </div>
 
 
@@ -544,7 +584,9 @@
         <div class="navbar-content">
             <div class="glass rounded-full px-8 py-4">
                 <div class="navbar-bar">
-                    <div class="navbar-logo">Vernia</div>
+                    <div class="navbar-logo">
+                        <span class="navbar-logo-icon">🌱</span>VERNIA
+                    </div>
                     <div class="navbar-links">
                         <a href="#" class="navbar-link">Features</a>
                         <a href="#" class="navbar-link">How it Works</a>
@@ -585,7 +627,7 @@
 
                     <!-- Paragraph -->
                     <p class="text-lg text-gray-600 leading-relaxed mb-4 max-w-lg">
-                        Vernia brings together your health data, symptoms, daily habits and medical recommendations into one intelligent place—helping you understand your body, uncover meaningful patterns and build healthier habits with confidence.
+                        Vernia is an AI health companion that brings together your health data, symptoms, daily habits and medical recommendations into one intelligent place—helping you understand your body, uncover meaningful patterns and build healthier habits with confidence.
                     </p>
 
                     <!-- Tagline -->
