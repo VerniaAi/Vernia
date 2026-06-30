@@ -64,40 +64,26 @@
 
         }
 
-        /* Minimal top button */
-        .minimal-cta {
+        /* Minimal top logo */
+        .top-logo {
             position: fixed;
             top: 24px;
-            right: 32px;
+            left: 32px;
             z-index: 40;
-            transition: opacity 0.3s ease, transform 0.3s ease;
-            pointer-events: auto;
+            transition: opacity 0.4s ease;
+            pointer-events: none;
         }
 
-        .minimal-cta.hide {
+        .top-logo.hide {
             opacity: 0;
             pointer-events: none;
-            transform: translateY(-10px);
         }
 
-        .minimal-button {
-            background: #4D6653;
-            color: white;
-            padding: 12px 24px;
-            border-radius: 8px;
-            font-weight: 600;
-            font-size: 0.95rem;
-            border: none;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            display: inline-block;
-            text-decoration: none;
-        }
-
-        .minimal-button:hover {
-            background: #3d5242;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(77, 102, 83, 0.25);
+        .logo-text {
+            color: #2E2E2E;
+            font-size: 1.5rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
         }
 
         /* Floating navbar */
@@ -107,14 +93,16 @@
             left: 50%;
             transform: translateX(-50%);
             z-index: 45;
-            transition: all 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.23, 1, 0.320, 1);
             pointer-events: none;
             opacity: 0;
+            transform: translateX(-50%) translateY(-20px);
         }
 
         .navbar-wrapper.visible {
             opacity: 1;
             pointer-events: auto;
+            transform: translateX(-50%) translateY(0);
         }
 
         .navbar-content {
@@ -128,6 +116,7 @@
             justify-content: space-between;
             align-items: center;
             gap: 40px;
+            padding: 0 32px;
         }
 
         .navbar-logo {
@@ -135,6 +124,7 @@
             font-size: 1.25rem;
             font-weight: 800;
             white-space: nowrap;
+            letter-spacing: -0.02em;
         }
 
         .navbar-links {
@@ -150,6 +140,7 @@
             font-size: 0.95rem;
             transition: all 0.3s ease;
             position: relative;
+            opacity: 0.8;
         }
 
         .navbar-link::after {
@@ -161,6 +152,10 @@
             height: 2px;
             background: rgba(255, 255, 255, 0.6);
             transition: width 0.3s ease;
+        }
+
+        .navbar-link:hover {
+            opacity: 1;
         }
 
         .navbar-link:hover::after {
@@ -177,6 +172,7 @@
             border: none;
             cursor: pointer;
             transition: all 0.3s ease;
+            white-space: nowrap;
         }
 
         .navbar-button:hover {
@@ -475,14 +471,13 @@
         }
 
         @media (max-width: 768px) {
-            .minimal-cta {
+            .top-logo {
                 top: 20px;
-                right: 24px;
+                left: 24px;
             }
 
-            .minimal-button {
-                padding: 10px 20px;
-                font-size: 0.9rem;
+            .logo-text {
+                font-size: 1.25rem;
             }
 
             .hero-image-container {
@@ -520,6 +515,10 @@
             .navbar-bar {
                 gap: 16px;
             }
+
+            .navbar-logo {
+                font-size: 1rem;
+            }
         }
     </style>
 
@@ -528,11 +527,11 @@
 <body>
 
     <!-- ===================== -->
-    <!-- Minimal CTA Button    -->
+    <!-- Top Logo             -->
     <!-- ===================== -->
 
-    <div class="minimal-cta" id="minimalCta">
-        <a href="#contact" class="minimal-button">Join the Waitlist</a>
+    <div class="top-logo" id="topLogo">
+        <div class="logo-text">Vernia</div>
     </div>
 
 
@@ -673,7 +672,7 @@
     <script>
         // Premium scroll behavior for navigation
         const navbar = document.getElementById('navbar');
-        const minimalCta = document.getElementById('minimalCta');
+        const topLogo = document.getElementById('topLogo');
         let lastScrollY = 0;
         let ticking = false;
 
@@ -685,10 +684,10 @@
             // Show floating navbar after scrolling 100px
             if (scrollY > SCROLL_THRESHOLD) {
                 navbar.classList.add('visible');
-                minimalCta.classList.add('hide');
+                topLogo.classList.add('hide');
             } else {
                 navbar.classList.remove('visible');
-                minimalCta.classList.remove('hide');
+                topLogo.classList.remove('hide');
             }
 
             ticking = false;
