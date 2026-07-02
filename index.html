@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Vernia | Grow stronger through every season of your health</title>
+    <title>Vernia | Understand your body. Take control of your health.</title>
 
     <link rel="icon" href="images/icon.png" type="image/png">
 
@@ -21,21 +21,13 @@
         tailwind.config = {
             theme: {
                 extend: {
-
                     colors: {
-
                         primary: "#4D6653",
-
                         sage: "#DCE8DE",
-
                         beige: "#E6DDD2",
-
                         background: "#FAFAF8",
-
                         dark: "#2E2E2E"
-
                     }
-
                 }
             }
         }
@@ -47,187 +39,88 @@
         }
 
         body {
-
             font-family: 'Manrope', sans-serif;
-
             background: #FAFAF8;
-
             color: #2E2E2E;
-
         }
 
         .glass {
-
             backdrop-filter: blur(18px);
-
             background: rgba(255, 255, 255, .92);
-
             border: 1px solid rgba(255, 255, 255, .25);
-
         }
 
-        /* Logo styling */
-        .logo-lockup {
-            display: flex;
-            align-items: center;
-            pointer-events: auto;
-        }
-
-        .hero-logo-img {
-            height: 44px;
-            width: auto;
-            display: block;
-            transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-            cursor: pointer;
-        }
-
-        .hero-logo-img:hover {
-            transform: scale(1.02);
-        }
-
-        @media (max-width: 768px) {
-            .hero-logo-img {
-                height: 34px;
-            }
-        }
-
-        /* Top logo */
-        .top-logo {
+        /* Top Navigation */
+        .top-nav {
             position: fixed;
-            top: 24px;
-            left: 32px;
-            z-index: 40;
-            transition: opacity 0.4s ease;
-            pointer-events: none;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: white;
+            padding: 20px 32px;
+            z-index: 50;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
         }
 
-        .top-logo.hide {
-            opacity: 0;
-            pointer-events: none;
-        }
-
-        /* Floating navbar */
-        .navbar-wrapper {
-            position: fixed;
-            top: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 45;
-            transition: all 0.4s cubic-bezier(0.23, 1, 0.320, 1);
-            pointer-events: none;
-            opacity: 0;
-            transform: translateX(-50%) translateY(-20px);
-        }
-
-        .navbar-wrapper.visible {
-            opacity: 1;
-            pointer-events: auto;
-            transform: translateX(-50%) translateY(0);
-        }
-
-        .navbar-content {
-            display: flex;
-            justify-content: center;
-            pointer-events: auto;
-        }
-
-        .navbar-bar {
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            gap: 40px;
-            padding: 0 32px;
+            gap: 60px;
         }
 
-        .navbar-logo {
-            display: flex;
-            align-items: center;
-            white-space: nowrap;
-        }
-
-        .navbar-logo-img {
-            height: 28px;
+        .nav-logo {
+            height: 32px;
             width: auto;
-            display: block;
-            transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-            cursor: pointer;
+            flex-shrink: 0;
         }
 
-        .navbar-logo-img:hover {
-            transform: scale(1.02);
-        }
-
-        .navbar-links {
+        .nav-links {
             display: flex;
-            gap: 32px;
+            gap: 40px;
             align-items: center;
+            flex: 1;
         }
 
-        .navbar-link {
+        .nav-link {
             color: #2E2E2E;
             text-decoration: none;
             font-weight: 500;
-            font-size: 0.95rem;
-            transition: all 0.3s ease;
-            position: relative;
-            opacity: 0.85;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
         }
 
-        .navbar-link.active {
-            opacity: 1;
+        .nav-link:hover {
             color: #4D6653;
-            font-weight: 600;
         }
 
-        .navbar-link::after {
-            content: '';
-            position: absolute;
-            bottom: -4px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: #4D6653;
-            transition: width 0.3s ease;
-        }
-
-        .navbar-link:hover {
-            opacity: 1;
-        }
-
-        .navbar-link:hover::after {
-            width: 100%;
-        }
-
-        .navbar-link.active::after {
-            width: 100%;
-        }
-
-        .navbar-button {
+        .nav-button {
             background: #4D6653;
             color: white;
-            padding: 10px 20px;
-            border-radius: 6px;
+            padding: 10px 24px;
+            border-radius: 8px;
+            border: none;
             font-weight: 600;
             font-size: 0.9rem;
-            border: none;
             cursor: pointer;
             transition: all 0.3s ease;
             white-space: nowrap;
         }
 
-        .navbar-button:hover {
+        .nav-button:hover {
+            background: #3d5242;
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(77, 102, 83, 0.25);
         }
 
-        /* Mobile hamburger menu */
+        /* Mobile menu toggle */
         .mobile-menu-toggle {
             display: none;
             background: none;
             border: none;
             cursor: pointer;
             padding: 8px;
-            z-index: 50;
         }
 
         .mobile-menu-toggle span {
@@ -257,14 +150,14 @@
                 display: block;
             }
 
-            .navbar-links {
+            .nav-links {
                 display: none;
             }
 
             .mobile-nav-menu {
                 display: none;
                 position: fixed;
-                top: 80px;
+                top: 70px;
                 left: 0;
                 right: 0;
                 background: white;
@@ -272,7 +165,7 @@
                 gap: 0;
                 padding: 20px 32px;
                 box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-                z-index: 44;
+                z-index: 49;
             }
 
             .mobile-nav-menu.active {
@@ -287,330 +180,261 @@
                 font-weight: 500;
             }
 
-            .mobile-nav-menu button {
+            .mobile-nav-menu .nav-button {
                 margin-top: 12px;
                 width: 100%;
             }
         }
 
-        /* Hero animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(40px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        /* Hero Section */
+        .hero-section {
+            background: white;
+            padding-top: 100px;
+            padding-bottom: 60px;
+            margin-top: 70px;
         }
 
-        @keyframes fadeInRight {
-            from {
-                opacity: 0;
-                transform: translateX(40px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        @keyframes floatCard {
-            0%, 100% {
-                transform: translateY(0px);
-            }
-            50% {
-                transform: translateY(-12px);
-            }
-        }
-
-        @keyframes fadeInScaleUp {
-            from {
-                opacity: 0;
-                transform: translateY(40px) scale(0.95);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0) scale(1);
-            }
-        }
-
-        .hero-content {
-            animation: fadeInUp 0.8s ease-out 0.2s both;
-        }
-
-        .hero-image {
-            animation: fadeInRight 0.8s ease-out 0.4s both;
-        }
-
-        .hero-badge {
-            animation: fadeInUp 0.8s ease-out 0s both;
-        }
-
-        .ai-card {
-            animation: floatCard 6s ease-in-out infinite;
-            animation-delay: 0.6s;
-        }
-
-        /* Badge styling */
-        .badge {
-            background: rgba(76, 102, 83, 0.15);
-            border: 1px solid rgba(76, 102, 83, 0.3);
-            backdrop-filter: blur(10px);
-            color: #4D6653;
-            padding: 10px 18px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            display: inline-flex;
+        .hero-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 32px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
             align-items: center;
-            gap: 8px;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: #2E2E2E;
+            margin-bottom: 24px;
+            line-height: 1.2;
+        }
+
+        .hero-content h1 .highlight {
+            color: #4D6653;
+        }
+
+        .hero-content p {
+            font-size: 1rem;
+            color: #666;
+            line-height: 1.8;
             margin-bottom: 32px;
         }
 
-        /* Button styles */
+        .hero-tagline {
+            font-size: 0.9rem;
+            color: #4D6653;
+            font-weight: 600;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 32px;
+        }
+
         .btn-primary {
             background: #4D6653;
             color: white;
-            padding: 16px 32px;
-            border-radius: 12px;
-            font-weight: 700;
-            font-size: 1rem;
-            transition: all 0.3s ease;
+            padding: 14px 28px;
+            border-radius: 10px;
             border: none;
+            font-weight: 700;
+            font-size: 0.95rem;
             cursor: pointer;
-            display: inline-block;
-            text-decoration: none;
+            transition: all 0.3s ease;
         }
 
         .btn-primary:hover {
             background: #3d5242;
-            transform: scale(1.02);
-            box-shadow: 0 8px 24px rgba(77, 102, 83, 0.3);
+            transform: translateY(-2px);
         }
 
         .btn-secondary {
-            background: rgba(77, 102, 83, 0.08);
-            color: #4D6653;
-            padding: 16px 32px;
-            border-radius: 12px;
+            background: transparent;
+            color: #2E2E2E;
+            padding: 14px 28px;
+            border-radius: 10px;
+            border: 2px solid #2E2E2E;
             font-weight: 700;
-            font-size: 1rem;
-            border: 2px solid #4D6653;
+            font-size: 0.95rem;
             cursor: pointer;
-            display: inline-block;
-            text-decoration: none;
             transition: all 0.3s ease;
         }
 
         .btn-secondary:hover {
-            background: rgba(77, 102, 83, 0.15);
-            transform: scale(1.02);
+            background: rgba(0, 0, 0, 0.05);
         }
 
-        /* Tagline below paragraph */
-        .hero-tagline {
-            font-size: 0.95rem;
-            font-weight: 600;
-            color: #4D6653;
-            margin-bottom: 20px;
-            opacity: 0.9;
-        }
-
-        /* Feature list */
-        .feature-list {
-            display: flex;
-            flex-direction: column;
-            gap: 14px;
-            margin-top: 28px;
+        .hero-features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            font-size: 0.9rem;
+            color: #2E2E2E;
         }
 
         .feature-item {
-            color: #4D6653;
-            font-weight: 600;
-            font-size: 0.95rem;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
         }
 
         .feature-item::before {
             content: "✓";
+            color: #4D6653;
             font-weight: 800;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
         }
 
-        /* Image container */
-        .hero-image-container {
+        .hero-image {
             position: relative;
-            width: 100%;
-            aspect-ratio: 9/12;
             border-radius: 32px;
             overflow: hidden;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15), 0 0 1px rgba(0, 0, 0, 0.1);
+            aspect-ratio: 3/4;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
         }
 
-        .hero-image-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center top;
-        }
-
-        /* Fallback for missing image */
         .hero-image-placeholder {
             width: 100%;
             height: 100%;
             background: linear-gradient(135deg, #DCE8DE 0%, #E6DDD2 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #4D6653;
-            font-size: 0.95rem;
-            text-align: center;
-            padding: 24px;
         }
 
-        /* Reduced glassmorphism AI insight card */
-        .ai-insight-card {
+        /* Floating card on hero image */
+        .today-card {
             position: absolute;
-            bottom: -20px;
-            left: 20px;
-            width: 260px;
-            background: rgba(255, 255, 255, 0.78);
-            -webkit-backdrop-filter: blur(25px);
-            backdrop-filter: blur(25px);
-            border: 1px solid rgba(255, 255, 255, 0.65);
-            border-radius: 24px;
-            padding: 20px;
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.06);
+            bottom: 30px;
+            right: 20px;
+            width: 220px;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            border-radius: 20px;
+            padding: 18px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+            animation: floatCard 6s ease-in-out infinite;
         }
 
-        .card-header {
-            font-size: 0.7rem;
+        @keyframes floatCard {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-12px); }
+        }
+
+        .today-label {
+            font-size: 0.65rem;
             font-weight: 800;
-            letter-spacing: 0.08em;
             color: #9CAF88;
             text-transform: uppercase;
+            letter-spacing: 0.08em;
             margin-bottom: 12px;
         }
 
-        .recovery-score-section {
-            background: linear-gradient(135deg, rgba(156, 175, 136, 0.25) 0%, rgba(138, 157, 120, 0.2) 100%);
-            border-radius: 16px;
-            padding: 14px;
-            margin-bottom: 14px;
-            color: #4D6653;
-            border: 1px solid rgba(156, 175, 136, 0.2);
+        .score-section {
+            background: linear-gradient(135deg, rgba(156, 175, 136, 0.2) 0%, rgba(138, 157, 120, 0.15) 100%);
+            border-radius: 14px;
+            padding: 12px;
+            margin-bottom: 12px;
+            border: 1px solid rgba(156, 175, 136, 0.15);
         }
 
-        .recovery-label {
-            font-size: 0.7rem;
+        .score-label {
+            font-size: 0.65rem;
+            color: #4D6653;
             font-weight: 600;
-            opacity: 0.85;
             margin-bottom: 4px;
-            color: #4D6653;
         }
 
-        .recovery-value {
+        .score-value {
             font-size: 1.8rem;
-            font-weight: 800;
-            line-height: 1;
             color: #4D6653;
+            font-weight: 800;
         }
 
-        .metrics-row {
+        .metrics-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 10px;
-            margin-bottom: 14px;
+            gap: 8px;
+            margin-bottom: 12px;
         }
 
         .metric {
-            background: rgba(248, 248, 248, 0.9);
-            border-radius: 12px;
-            padding: 10px;
+            background: rgba(248, 248, 248, 0.95);
+            border-radius: 10px;
+            padding: 8px;
             border: 1px solid rgba(0, 0, 0, 0.04);
-            backdrop-filter: blur(10px);
         }
 
         .metric-label {
-            font-size: 0.65rem;
-            font-weight: 600;
+            font-size: 0.6rem;
             color: #999;
+            font-weight: 600;
             text-transform: uppercase;
-            letter-spacing: 0.03em;
-            margin-bottom: 3px;
+            margin-bottom: 2px;
         }
 
         .metric-value {
-            font-size: 0.9rem;
-            font-weight: 700;
+            font-size: 0.85rem;
             color: #4D6653;
+            font-weight: 700;
         }
 
-        .insight-section {
-            padding-top: 12px;
-            border-top: 1px solid rgba(0, 0, 0, 0.05);
+        .insight {
+            padding-top: 10px;
+            border-top: 1px solid rgba(0, 0, 0, 0.04);
         }
 
         .insight-title {
-            font-size: 0.65rem;
+            font-size: 0.6rem;
             font-weight: 800;
-            letter-spacing: 0.08em;
             color: #9CAF88;
             text-transform: uppercase;
+            letter-spacing: 0.08em;
             margin-bottom: 6px;
         }
 
         .insight-text {
-            font-size: 0.75rem;
-            line-height: 1.4;
+            font-size: 0.7rem;
             color: #333;
+            line-height: 1.4;
             margin-bottom: 6px;
         }
 
-        .insight-tagline {
+        .insight-note {
             font-size: 0.65rem;
-            font-weight: 600;
             color: #4D6653;
-            opacity: 0.85;
             font-style: italic;
+            font-weight: 600;
         }
 
         /* Product Section */
         .product-section {
             background: white;
             padding: 80px 0;
-            position: relative;
-            overflow: hidden;
         }
 
         .section-header {
             text-align: center;
-            max-width: 700px;
-            margin: 0 auto 60px;
+            margin-bottom: 60px;
         }
 
         .section-header h2 {
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             font-weight: 800;
             color: #2E2E2E;
-            margin-bottom: 16px;
-            line-height: 1.2;
-        }
-
-        @media (max-width: 768px) {
-            .section-header h2 {
-                font-size: 1.8rem;
-            }
+            margin-bottom: 12px;
         }
 
         .section-header p {
-            font-size: 1rem;
+            font-size: 0.95rem;
             color: #666;
-            line-height: 1.7;
+            line-height: 1.6;
         }
 
         .product-grid {
@@ -625,296 +449,201 @@
         @media (max-width: 1200px) {
             .product-grid {
                 grid-template-columns: repeat(2, 1fr);
-                gap: 24px;
             }
         }
 
         @media (max-width: 768px) {
             .product-grid {
                 grid-template-columns: 1fr;
-                gap: 20px;
             }
         }
 
         .product-card {
             background: white;
-            border-radius: 24px;
+            border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
-            border: 1px solid rgba(77, 102, 83, 0.08);
-            transition: all 0.4s cubic-bezier(0.23, 1, 0.320, 1);
-            animation: fadeInScaleUp 0.8s ease-out both;
+            border: 1px solid rgba(0, 0, 0, 0.06);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
             display: flex;
             flex-direction: column;
-        }
-
-        .product-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
         }
 
         .product-card-header {
-            padding: 24px 20px 16px;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+            padding: 20px 16px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            background: #FAFAF8;
         }
 
         .product-card-title {
-            font-size: 1rem;
-            font-weight: 800;
+            font-size: 0.95rem;
+            font-weight: 700;
             color: #2E2E2E;
             margin: 0;
-            line-height: 1.4;
+            text-align: center;
         }
 
         .product-card-content {
-            padding: 20px;
-            background: #FAFAF8;
+            padding: 16px;
             flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 280px;
         }
 
-        /* Product mockup styles - Mobile app screen */
-        .mockup-screen {
+        .mockup-phone {
+            width: 100%;
             background: white;
-            border-radius: 20px;
-            padding: 20px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
-            border: 1px solid rgba(0, 0, 0, 0.05);
-            font-size: 0.8rem;
-            color: #2E2E2E;
-            min-height: 300px;
+            border-radius: 16px;
+            padding: 12px;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(0, 0, 0, 0.04);
             display: flex;
             flex-direction: column;
+            font-size: 0.75rem;
         }
 
         .mockup-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 16px;
-            padding-bottom: 12px;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
         }
 
         .mockup-label {
-            font-size: 0.65rem;
+            font-size: 0.6rem;
             font-weight: 800;
-            letter-spacing: 0.08em;
             color: #9CAF88;
             text-transform: uppercase;
+            letter-spacing: 0.08em;
         }
 
-        .mockup-metrics {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 12px;
-            margin-bottom: 14px;
+        .mockup-content {
+            flex: 1;
+            margin-bottom: 10px;
         }
 
-        .mockup-metric {
+        .mockup-nav {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding-top: 8px;
+            border-top: 1px solid rgba(0, 0, 0, 0.05);
+            color: #999;
+            font-size: 1.2rem;
+        }
+
+        .metric-item {
             background: rgba(76, 102, 83, 0.06);
-            padding: 12px;
-            border-radius: 12px;
+            padding: 10px;
+            border-radius: 10px;
+            margin-bottom: 8px;
+            text-align: center;
             border: 1px solid rgba(76, 102, 83, 0.1);
         }
 
-        .mockup-metric-label {
-            font-size: 0.65rem;
-            font-weight: 600;
+        .metric-item-label {
+            font-size: 0.6rem;
             color: #999;
             text-transform: uppercase;
-            letter-spacing: 0.03em;
-            margin-bottom: 4px;
+            margin-bottom: 2px;
         }
 
-        .mockup-metric-value {
-            font-size: 1rem;
+        .metric-item-value {
+            font-size: 0.9rem;
+            color: #4D6653;
             font-weight: 700;
-            color: #4D6653;
         }
 
-        .mockup-insight {
-            background: linear-gradient(135deg, rgba(156, 175, 136, 0.15) 0%, rgba(138, 157, 120, 0.1) 100%);
-            padding: 14px;
-            border-radius: 14px;
-            border: 1px solid rgba(156, 175, 136, 0.2);
-            margin-top: 12px;
-        }
-
-        .mockup-insight-title {
-            font-size: 0.65rem;
-            font-weight: 800;
-            letter-spacing: 0.08em;
-            color: #9CAF88;
-            text-transform: uppercase;
-            margin-bottom: 6px;
-        }
-
-        .mockup-insight-text {
-            font-size: 0.75rem;
-            line-height: 1.5;
-            color: #333;
-        }
-
-        .mockup-footer {
-            margin-top: 12px;
-            padding-top: 12px;
-            border-top: 1px solid rgba(0, 0, 0, 0.06);
-            font-size: 0.7rem;
-            color: #999;
-            font-style: italic;
-        }
-
-        .mockup-trends {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-
-        .trend-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 0;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.04);
-        }
-
-        .trend-item:last-child {
-            border-bottom: none;
-        }
-
-        .trend-label {
-            font-size: 0.8rem;
-            font-weight: 600;
-            color: #2E2E2E;
-        }
-
-        .trend-indicator {
-            font-size: 0.75rem;
-            color: #4D6653;
-            font-weight: 600;
-        }
-
-        /* How it works section */
+        /* How It Works Section */
         .how-it-works-section {
-            background: #FAFAF8;
+            background: white;
             padding: 80px 0;
         }
 
-        .how-it-works-grid {
+        .how-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 24px;
-            max-width: 1200px;
+            gap: 40px;
+            max-width: 1400px;
             margin: 0 auto;
             padding: 0 32px;
-            position: relative;
         }
 
         @media (max-width: 1024px) {
-            .how-it-works-grid {
+            .how-grid {
                 grid-template-columns: repeat(2, 1fr);
-                gap: 32px;
+                gap: 60px;
             }
         }
 
         @media (max-width: 768px) {
-            .how-it-works-grid {
+            .how-grid {
                 grid-template-columns: 1fr;
-                gap: 24px;
+                gap: 40px;
             }
         }
 
-        .how-it-works-grid::before {
-            content: '';
-            position: absolute;
-            top: 60px;
-            left: 0;
-            right: 0;
-            height: 2px;
-            background: linear-gradient(to right, transparent, rgba(77, 102, 83, 0.3), transparent);
-            display: none;
-        }
-
-        @media (min-width: 1024px) {
-            .how-it-works-grid::before {
-                display: block;
-            }
-        }
-
-        .how-it-works-card {
-            background: white;
-            padding: 32px;
-            border-radius: 20px;
+        .how-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             text-align: center;
-            position: relative;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
-            border: 1px solid rgba(77, 102, 83, 0.08);
-            transition: all 0.3s ease;
-            animation: fadeInScaleUp 0.8s ease-out both;
         }
 
-        .how-it-works-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
-        }
-
-        .how-it-works-step {
-            font-size: 2rem;
+        .how-step-circle {
+            width: 60px;
+            height: 60px;
+            background: #4D6653;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
             font-weight: 800;
-            color: #4D6653;
-            margin-bottom: 16px;
-            opacity: 0.3;
+            margin-bottom: 24px;
         }
 
-        .how-it-works-title {
-            font-size: 1rem;
+        .how-icon {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+        }
+
+        .how-title {
+            font-size: 1.05rem;
             font-weight: 700;
             color: #2E2E2E;
-            line-height: 1.5;
+            margin-bottom: 12px;
+            line-height: 1.4;
         }
 
-        .how-it-works-card::after {
-            content: '→';
-            position: absolute;
-            right: -28px;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 1.5rem;
-            color: rgba(77, 102, 83, 0.3);
-            font-weight: 800;
-            display: none;
+        .how-text {
+            font-size: 0.9rem;
+            color: #666;
+            line-height: 1.6;
         }
 
-        @media (min-width: 1024px) {
-            .how-it-works-card::after {
-                display: block;
-            }
-        }
-
-        .how-it-works-card:last-child::after {
-            display: none;
-        }
-
-        /* Mission section */
+        /* Mission Section */
         .mission-section {
             background: white;
             padding: 80px 0;
-            position: relative;
-            overflow: hidden;
         }
 
-        .mission-content {
-            max-width: 1200px;
+        .mission-container {
+            max-width: 1400px;
             margin: 0 auto;
             padding: 0 32px;
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 60px;
+            gap: 80px;
             align-items: center;
         }
 
         @media (max-width: 768px) {
-            .mission-content {
+            .mission-container {
                 grid-template-columns: 1fr;
                 gap: 40px;
             }
@@ -929,19 +658,7 @@
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
         }
 
-        .mission-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .mission-text-content {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .mission-title {
+        .mission-content h2 {
             font-size: 2.5rem;
             font-weight: 800;
             color: #2E2E2E;
@@ -949,14 +666,8 @@
             line-height: 1.2;
         }
 
-        @media (max-width: 768px) {
-            .mission-title {
-                font-size: 2rem;
-            }
-        }
-
-        .mission-text {
-            font-size: 1.05rem;
+        .mission-content p {
+            font-size: 1rem;
             color: #333;
             line-height: 1.8;
             margin-bottom: 16px;
@@ -964,47 +675,43 @@
 
         /* Waitlist Section */
         .waitlist-section {
-            background: linear-gradient(to bottom, white 0%, rgba(220, 232, 222, 0.1) 100%);
+            background: linear-gradient(to bottom, white 0%, rgba(220, 232, 222, 0.05) 100%);
             padding: 80px 0;
-            position: relative;
-            overflow: hidden;
         }
 
         .waitlist-container {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
             padding: 0 32px;
         }
 
         .waitlist-header {
             text-align: center;
-            margin-bottom: 48px;
+            margin-bottom: 50px;
         }
 
         .waitlist-header h2 {
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             font-weight: 800;
             color: #2E2E2E;
-            margin-bottom: 16px;
-            line-height: 1.2;
-        }
-
-        @media (max-width: 768px) {
-            .waitlist-header h2 {
-                font-size: 1.8rem;
-            }
+            margin-bottom: 12px;
         }
 
         .waitlist-header p {
-            font-size: 1rem;
+            font-size: 0.95rem;
             color: #666;
-            line-height: 1.7;
         }
 
         .waitlist-form {
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+
+        @media (max-width: 768px) {
+            .waitlist-form {
+                grid-template-columns: 1fr;
+            }
         }
 
         .form-group {
@@ -1019,218 +726,125 @@
             margin-bottom: 8px;
         }
 
-        .form-group input {
-            padding: 14px 16px;
-            border: 1px solid rgba(77, 102, 83, 0.2);
-            border-radius: 12px;
-            font-size: 0.95rem;
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            padding: 12px 14px;
+            border: 1px solid rgba(0, 0, 0, 0.12);
+            border-radius: 10px;
+            font-size: 0.9rem;
             font-family: 'Manrope', sans-serif;
             transition: all 0.3s ease;
-            background: rgba(255, 255, 255, 0.95);
+            background: white;
         }
 
-        .form-group input:focus {
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
             outline: none;
             border-color: #4D6653;
             box-shadow: 0 0 0 3px rgba(77, 102, 83, 0.1);
         }
 
-        .waitlist-button {
+        .checkbox-group {
+            grid-column: 1 / -1;
+        }
+
+        .checkbox-group label {
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .checkboxes {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .checkbox-item input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+            accent-color: #4D6653;
+        }
+
+        .checkbox-item label {
+            margin: 0;
+            font-weight: 400;
+            font-size: 0.9rem;
+            cursor: pointer;
+        }
+
+        .textarea-group {
+            grid-column: 1 / -1;
+        }
+
+        .textarea-group textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        .submit-button {
+            grid-column: 1 / -1;
             background: #4D6653;
             color: white;
-            padding: 16px 32px;
+            padding: 14px 32px;
             border: none;
-            border-radius: 12px;
+            border-radius: 10px;
             font-weight: 700;
             font-size: 1rem;
             cursor: pointer;
             transition: all 0.3s ease;
-            margin-top: 8px;
+            margin-top: 12px;
         }
 
-        .waitlist-button:hover {
+        .submit-button:hover {
             background: #3d5242;
-            transform: scale(1.02);
-            box-shadow: 0 8px 24px rgba(77, 102, 83, 0.3);
+            transform: translateY(-2px);
         }
 
-        .timeline {
-            display: flex;
-            flex-direction: column;
-            gap: 0;
-        }
-
-        .timeline-item {
-            display: flex;
-            gap: 16px;
-            padding: 20px;
-            border-left: 2px solid rgba(77, 102, 83, 0.2);
-            position: relative;
-        }
-
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -9px;
-            top: 20px;
-            width: 14px;
-            height: 14px;
-            border-radius: 50%;
-            background: #4D6653;
-            border: 3px solid white;
-            box-shadow: 0 0 0 2px rgba(77, 102, 83, 0.1);
-        }
-
-        .timeline-item.current::before {
-            background: #4D6653;
-            box-shadow: 0 0 0 8px rgba(77, 102, 83, 0.15);
-        }
-
-        .timeline-item:last-child {
-            border-left-color: rgba(77, 102, 83, 0.1);
-        }
-
-        .timeline-label {
-            font-size: 0.85rem;
-            font-weight: 700;
-            color: #4D6653;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-
-        .timeline-goals {
-            margin-top: 20px;
-            padding: 20px;
-            background: rgba(76, 102, 83, 0.06);
-            border-radius: 14px;
-            border: 1px solid rgba(76, 102, 83, 0.1);
-        }
-
-        .timeline-goals-label {
-            font-size: 0.8rem;
-            font-weight: 800;
-            letter-spacing: 0.08em;
-            color: #9CAF88;
-            text-transform: uppercase;
-            margin-bottom: 12px;
-        }
-
-        .timeline-goal {
-            font-size: 0.9rem;
-            color: #2E2E2E;
-            margin-bottom: 8px;
-        }
-
-        .timeline-goal:before {
-            content: "→ ";
-            color: #4D6653;
-            font-weight: 700;
-            margin-right: 4px;
-        }
-
-        .community-feed {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        .community-post {
-            border-bottom: 1px solid rgba(0, 0, 0, 0.06);
-            padding-bottom: 20px;
-        }
-
-        .community-post:last-child {
-            border-bottom: none;
-            padding-bottom: 0;
-        }
-
-        .post-header {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 12px;
-        }
-
-        .post-badge {
-            font-size: 0.75rem;
-            font-weight: 700;
-            letter-spacing: 0.05em;
-            color: white;
-            background: #4D6653;
-            padding: 4px 12px;
-            border-radius: 12px;
-            text-transform: uppercase;
-        }
-
-        .post-author {
-            font-size: 0.95rem;
-            font-weight: 700;
-            color: #2E2E2E;
-        }
-
-        .post-content {
-            font-size: 0.95rem;
-            color: #333;
-            line-height: 1.6;
-            margin-bottom: 12px;
-        }
-
-        .post-likes {
-            font-size: 0.85rem;
-            color: #999;
-        }
-
-        .post-likes::before {
-            content: "❤ ";
-            color: #E74C3C;
-            margin-right: 4px;
-        }
-
-        .product-card-footer {
-            padding: 20px;
-            border-top: 1px solid rgba(0, 0, 0, 0.04);
+        .privacy-text {
             text-align: center;
+            font-size: 0.8rem;
+            color: #999;
+            margin-top: 20px;
         }
 
-        .product-card-button {
-            background: #4D6653;
+        /* Footer */
+        .footer {
+            background: #2E2E2E;
             color: white;
-            padding: 12px 24px;
-            border-radius: 10px;
-            font-weight: 700;
+            padding: 40px 32px;
+            text-align: center;
             font-size: 0.9rem;
-            border: none;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            display: inline-block;
-            text-decoration: none;
-        }
-
-        .product-card-button:hover {
-            background: #3d5242;
-            transform: scale(1.02);
-            box-shadow: 0 8px 24px rgba(77, 102, 83, 0.3);
         }
 
         @media (max-width: 768px) {
-            .product-card-header {
-                padding: 20px 16px 14px;
+            .hero-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
             }
 
-            .product-card-content {
-                padding: 16px;
+            .hero-content h1 {
+                font-size: 2.5rem;
             }
 
-            .how-it-works-card {
-                padding: 24px;
+            .hero-features {
+                grid-template-columns: 1fr;
             }
 
-            .how-it-works-step {
-                margin-bottom: 12px;
+            .mission-container {
+                gap: 40px;
             }
 
-            .section-header {
-                margin-bottom: 40px;
+            .how-grid {
+                gap: 30px;
             }
         }
     </style>
@@ -1239,370 +853,473 @@
 
 <body>
 
-    <!-- Top Logo -->
-    <div class="top-logo">
-        <div class="logo-lockup">
-            <img src="images/logo.png" alt="Vernia Logo" class="hero-logo-img">
-        </div>
-    </div>
-
-    <!-- Mobile Menu Toggle -->
-    <div style="position: fixed; top: 24px; right: 32px; z-index: 50;">
-        <button class="mobile-menu-toggle" id="menuToggle">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-    </div>
-
-    <!-- Mobile Navigation Menu -->
-    <div class="mobile-nav-menu" id="mobileMenu">
-        <a href="#product">Product</a>
-        <a href="#how-it-works">How It Works</a>
-        <a href="#mission">Our Mission</a>
-        <a href="#waitlist">Join Waitlist</a>
-        <button class="navbar-button" onclick="document.getElementById('waitlist').scrollIntoView()">Get Started</button>
-    </div>
-
-    <!-- Floating Navbar -->
-    <div class="navbar-wrapper" id="navbar">
-        <div class="navbar-content glass">
-            <div class="navbar-bar">
-                <div class="navbar-logo">
-                    <img src="images/logo.png" alt="Vernia Logo" class="navbar-logo-img">
-                </div>
-                <div class="navbar-links">
-                    <a href="#product" class="navbar-link">Product</a>
-                    <a href="#how-it-works" class="navbar-link">How It Works</a>
-                    <a href="#mission" class="navbar-link">Our Mission</a>
-                </div>
-                <button class="navbar-button">Get Started</button>
+    <!-- Top Navigation -->
+    <nav class="top-nav">
+        <div class="nav-container">
+            <img src="images/logo.png" alt="Vernia" class="nav-logo">
+            
+            <div class="nav-links">
+                <a href="#how-helps" class="nav-link">How Vernia Helps</a>
+                <a href="#how-works" class="nav-link">How It Works</a>
+                <a href="#mission" class="nav-link">Our Mission</a>
             </div>
+
+            <button class="mobile-menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <button class="nav-button" onclick="document.getElementById('waitlist').scrollIntoView({ behavior: 'smooth' })">Join the Waitlist</button>
         </div>
-    </div>
+
+        <div class="mobile-nav-menu" id="mobileMenu">
+            <a href="#how-helps">How Vernia Helps</a>
+            <a href="#how-works">How It Works</a>
+            <a href="#mission">Our Mission</a>
+            <button class="nav-button" onclick="document.getElementById('waitlist').scrollIntoView({ behavior: 'smooth' })">Join the Waitlist</button>
+        </div>
+    </nav>
 
     <!-- Hero Section -->
-    <section style="background: white; padding: 100px 0 80px; position: relative; overflow: hidden;">
-        <div style="max-width: 1400px; margin: 0 auto; padding: 0 32px;">
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;">
-                <!-- Hero Content -->
-                <div class="hero-content">
-                    <div class="badge hero-badge">
-                        ✨ Your Health Companion
-                    </div>
-
-                    <h1 style="font-size: 3.5rem; font-weight: 800; color: #2E2E2E; margin-bottom: 24px; line-height: 1.2;">
-                        Grow stronger through every season of your health
-                    </h1>
-
-                    <p style="font-size: 1.1rem; color: #666; line-height: 1.8; margin-bottom: 32px;">
-                        Vernia is an AI health companion that brings together your health data, symptoms, daily habits and medical recommendations into one intelligent place—helping you understand your body, uncover meaningful patterns and build healthier habits with confidence.
-                    </p>
-
-                    <div style="display: flex; gap: 16px; flex-wrap: wrap;">
-                        <button class="btn-primary">Start Free Trial</button>
-                        <button class="btn-secondary">Learn More</button>
-                    </div>
+    <section class="hero-section" id="how-helps">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-tagline">
+                    🌱 AI health companion for life's biggest health transitions
                 </div>
 
-                <!-- Hero Image -->
-                <div class="hero-image" style="position: relative;">
-                    <div class="hero-image-container">
-                        <div class="hero-image-placeholder"></div>
+                <h1>Understand<br>your body.<br><span class="highlight">Take control of<br>your health.</span></h1>
+
+                <p>Vernia is an AI health companion that brings together your health data, symptoms, daily habits and medical recommendations into one intelligent place—helping you understand your body and feel confident about your health journey.</p>
+
+                <div class="hero-buttons">
+                    <button class="btn-primary">Join the Waitlist →</button>
+                    <button class="btn-secondary">Explore Vernia</button>
+                </div>
+
+                <div class="hero-features">
+                    <div class="feature-item">Cancer Recovery</div>
+                    <div class="feature-item">Menopause</div>
+                    <div class="feature-item">Postpartum</div>
+                    <div class="feature-item">Digestive Health</div>
+                    <div class="feature-item">Fertility Journey</div>
+                    <div class="feature-item">Hormonal Health</div>
+                </div>
+            </div>
+
+            <div class="hero-image">
+                <div class="hero-image-placeholder"></div>
+                
+                <!-- Today Card -->
+                <div class="today-card">
+                    <div class="today-label">TODAY</div>
+                    
+                    <div class="score-section">
+                        <div class="score-label">Recovery Score</div>
+                        <div class="score-value">91%</div>
                     </div>
 
-                    <!-- AI Insight Card (Reduced Size) -->
-                    <div class="ai-insight-card ai-card">
-                        <div class="card-header">Today's insights</div>
-                        
-                        <div class="recovery-score-section">
-                            <div class="recovery-label">Recovery Score</div>
-                            <div class="recovery-value">87%</div>
+                    <div class="metrics-grid">
+                        <div class="metric">
+                            <div class="metric-label">Protein</div>
+                            <div class="metric-value">96 g</div>
                         </div>
+                        <div class="metric">
+                            <div class="metric-label">Sleep</div>
+                            <div class="metric-value">7h 48m</div>
+                        </div>
+                    </div>
 
-                        <div class="metrics-row">
-                            <div class="metric">
-                                <div class="metric-label">Sleep</div>
-                                <div class="metric-value">7.2h</div>
-                            </div>
-                            <div class="metric">
-                                <div class="metric-label">Steps</div>
-                                <div class="metric-value">8.4k</div>
-                            </div>
-                        </div>
-
-                        <div class="insight-section">
-                            <div class="insight-title">AI Insight</div>
-                            <div class="insight-text">Your recovery is excellent. Keep up the consistent sleep pattern.</div>
-                            <div class="insight-tagline">Learn more about your health</div>
-                        </div>
+                    <div class="insight">
+                        <div class="insight-title">Example Personalized Insights</div>
+                        <div class="insight-text">Based on your health journey and goals.</div>
+                        <div class="insight-note">Learn more about your health</div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Product Section - See Vernia in Action -->
-    <section id="product" class="product-section">
+    <!-- See Vernia in Action -->
+    <section class="product-section">
         <div style="max-width: 1400px; margin: 0 auto; padding: 0 32px;">
             <div class="section-header">
                 <h2>See Vernia in Action</h2>
-                <p>Experience the power of intelligent health insights</p>
+                <p>One intelligent companion that helps you understand your body,<br>discover meaningful patterns and build healthier habits—every day.</p>
             </div>
 
             <div class="product-grid">
-                <!-- Screen 1: Understand Your Body -->
+                <!-- Understand your body -->
                 <div class="product-card">
                     <div class="product-card-header">
-                        <h3 class="product-card-title">Understand Your Body</h3>
+                        <h3 class="product-card-title">Understand your body</h3>
                     </div>
                     <div class="product-card-content">
-                        <div class="mockup-screen">
+                        <div class="mockup-phone">
                             <div class="mockup-header">
-                                <span class="mockup-label">Dashboard</span>
+                                <span class="mockup-label">TODAY</span>
                             </div>
-                            <div class="mockup-metrics">
-                                <div class="mockup-metric">
-                                    <div class="mockup-metric-label">Health Score</div>
-                                    <div class="mockup-metric-value">8.2</div>
+                            <div class="mockup-content">
+                                <div class="metric-item">
+                                    <div class="metric-item-label">Recovery Score</div>
+                                    <div class="metric-item-value">91%</div>
                                 </div>
-                                <div class="mockup-metric">
-                                    <div class="mockup-metric-label">Status</div>
-                                    <div class="mockup-metric-value">Optimal</div>
+                                <div class="metric-item">
+                                    <div class="metric-item-label">Protein</div>
+                                    <div class="metric-item-value">96 g</div>
                                 </div>
+                                <div class="metric-item">
+                                    <div class="metric-item-label">Sleep</div>
+                                    <div class="metric-item-value">7h 48m</div>
+                                </div>
+                                <div style="font-size: 0.75rem; color: #666; margin-top: 8px;">Strength Training</div>
+                                <div style="font-size: 0.75rem; color: #666;">AI Insights</div>
                             </div>
-                            <div class="mockup-insight">
-                                <div class="mockup-insight-title">Key Metrics</div>
-                                <div class="mockup-insight-text">Your vitals show optimal balance across all health dimensions</div>
+                            <div class="mockup-nav">
+                                <span>🏠</span>
+                                <span>📊</span>
+                                <span>📋</span>
+                                <span>📅</span>
+                                <span>👤</span>
                             </div>
                         </div>
                     </div>
-                    <div class="product-card-footer">
-                        <button class="product-card-button">Explore</button>
-                    </div>
                 </div>
 
-                <!-- Screen 2: Discover Meaningful Patterns -->
+                <!-- Discover meaningful patterns -->
                 <div class="product-card">
                     <div class="product-card-header">
-                        <h3 class="product-card-title">Discover Patterns</h3>
+                        <h3 class="product-card-title">Discover meaningful patterns</h3>
                     </div>
                     <div class="product-card-content">
-                        <div class="mockup-screen">
+                        <div class="mockup-phone">
                             <div class="mockup-header">
-                                <span class="mockup-label">Analytics</span>
+                                <span class="mockup-label">TRENDS</span>
                             </div>
-                            <div class="mockup-trends">
-                                <div class="trend-item">
-                                    <span class="trend-label">Energy Levels</span>
-                                    <span class="trend-indicator">↑ +8%</span>
+                            <div class="mockup-content">
+                                <div style="font-size: 0.75rem; margin-bottom: 6px;">
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                                        <span>💤 Sleep</span>
+                                        <span style="color: #4D6653; font-weight: 700;">↑ 12%</span>
+                                    </div>
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                                        <span>⚡ Energy</span>
+                                        <span style="color: #4D6653; font-weight: 700;">↑ 8%</span>
+                                    </div>
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                                        <span>🎯 Symptoms</span>
+                                        <span style="color: #4D6653; font-weight: 700;">↓ 15%</span>
+                                    </div>
+                                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                                        <span>🏃 Exercise</span>
+                                        <span style="color: #4D6653; font-weight: 700;">↑ 24%</span>
+                                    </div>
                                 </div>
-                                <div class="trend-item">
-                                    <span class="trend-label">Sleep Quality</span>
-                                    <span class="trend-indicator">↑ +12%</span>
-                                </div>
-                                <div class="trend-item">
-                                    <span class="trend-label">Stress Index</span>
-                                    <span class="trend-indicator">↓ -5%</span>
+                                <div style="font-size: 0.7rem; color: #999; margin-top: 10px; padding-top: 8px; border-top: 1px solid rgba(0,0,0,0.05);">
+                                    <strong style="color: #9CAF88;">AI DETECTED</strong><br>
+                                    Your symptoms improve on days you sleep well, suggesting proper rest helps.
                                 </div>
                             </div>
-                            <div class="mockup-insight">
-                                <div class="mockup-insight-title">Pattern Found</div>
-                                <div class="mockup-insight-text">Exercise correlates with better sleep quality</div>
+                            <div class="mockup-nav">
+                                <span>🏠</span>
+                                <span>📊</span>
+                                <span>📋</span>
+                                <span>📅</span>
+                                <span>👤</span>
                             </div>
                         </div>
                     </div>
-                    <div class="product-card-footer">
-                        <button class="product-card-button">Explore</button>
+                </div>
+
+                <!-- Plan your week -->
+                <div class="product-card">
+                    <div class="product-card-header">
+                        <h3 class="product-card-title">Plan your week</h3>
+                    </div>
+                    <div class="product-card-content">
+                        <div class="mockup-phone">
+                            <div class="mockup-header">
+                                <span class="mockup-label">May 12 - May 18</span>
+                            </div>
+                            <div class="mockup-content">
+                                <div style="font-size: 0.75rem; color: #2E2E2E; line-height: 1.6;">
+                                    <div style="margin-bottom: 8px; padding-bottom: 8px; border-bottom: 1px solid rgba(0,0,0,0.05);">
+                                        <strong>Tue</strong> 12<br>
+                                        🔵 Rest day<br>
+                                        🥗 Protein goal
+                                    </div>
+                                    <div style="margin-bottom: 8px; padding-bottom: 8px; border-bottom: 1px solid rgba(0,0,0,0.05);">
+                                        <strong>Wed</strong> 13<br>
+                                        🩺 Blood Test 10:00 AM
+                                    </div>
+                                    <div style="margin-bottom: 8px;">
+                                        <strong>Fri</strong> 15<br>
+                                        📋 Recovery Day<br>
+                                        💊 Medication
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mockup-nav">
+                                <span>🏠</span>
+                                <span>📊</span>
+                                <span>📋</span>
+                                <span>📅</span>
+                                <span>👤</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Screen 3: Plan Your Week -->
+                <!-- Join the community -->
                 <div class="product-card">
                     <div class="product-card-header">
-                        <h3 class="product-card-title">Plan Your Week</h3>
+                        <h3 class="product-card-title">Join the community</h3>
                     </div>
                     <div class="product-card-content">
-                        <div class="mockup-screen">
+                        <div class="mockup-phone">
                             <div class="mockup-header">
-                                <span class="mockup-label">Weekly Plan</span>
+                                <span class="mockup-label">COMMUNITIES</span>
                             </div>
-                            <div class="timeline">
-                                <div class="timeline-item current">
+                            <div class="mockup-content">
+                                <div style="display: flex; gap: 8px; justify-content: center; margin-bottom: 12px; font-size: 1.4rem;">
+                                    <span>🌸</span>
+                                    <span>💪</span>
+                                    <span>🧘</span>
+                                    <span>👥</span>
+                                    <span>⭐</span>
+                                </div>
+                                <div style="font-size: 0.7rem; color: #2E2E2E; line-height: 1.5;">
+                                    <div style="margin-bottom: 8px; padding-bottom: 8px; border-bottom: 1px solid rgba(0,0,0,0.05);">
+                                        <span style="background: #4D6653; color: white; padding: 2px 8px; border-radius: 10px; font-size: 0.6rem; font-weight: 700;">EXPERT</span> Sarah<br>
+                                        <span style="color: #666;">My energy feels like it's coming back</span>
+                                    </div>
                                     <div>
-                                        <div class="timeline-label">Monday</div>
-                                        <div style="font-size: 0.8rem; color: #666; margin-top: 4px;">Rest & Recovery</div>
-                                    </div>
-                                </div>
-                                <div class="timeline-item">
-                                    <div>
-                                        <div class="timeline-label">Tuesday</div>
-                                        <div style="font-size: 0.8rem; color: #666; margin-top: 4px;">Light Activity</div>
+                                        <span style="background: #4D6653; color: white; padding: 2px 8px; border-radius: 10px; font-size: 0.6rem; font-weight: 700;">MEMBER</span> Emma<br>
+                                        <span style="color: #666;">I've made my first health goal!</span>
                                     </div>
                                 </div>
                             </div>
-                            <div class="timeline-goals">
-                                <div class="timeline-goals-label">Recommended Goals</div>
-                                <div class="timeline-goal">Walk 8,000 steps daily</div>
-                                <div class="timeline-goal">Sleep 7-8 hours</div>
+                            <div class="mockup-nav">
+                                <span>🏠</span>
+                                <span>📊</span>
+                                <span>📋</span>
+                                <span>📅</span>
+                                <span>👤</span>
                             </div>
                         </div>
                     </div>
-                    <div class="product-card-footer">
-                        <button class="product-card-button">Explore</button>
-                    </div>
                 </div>
+            </div>
 
-                <!-- Screen 4: Join the Community -->
-                <div class="product-card">
-                    <div class="product-card-header">
-                        <h3 class="product-card-title">Join Community</h3>
-                    </div>
-                    <div class="product-card-content">
-                        <div class="mockup-screen">
-                            <div class="mockup-header">
-                                <span class="mockup-label">Community</span>
-                            </div>
-                            <div class="community-feed">
-                                <div class="community-post">
-                                    <div class="post-header">
-                                        <span class="post-badge">Expert</span>
-                                        <span class="post-author">Dr. Sarah</span>
-                                    </div>
-                                    <div class="post-content">Consistency beats intensity for long-term health.</div>
-                                    <div class="post-likes">342</div>
-                                </div>
-                                <div class="community-post">
-                                    <div class="post-header">
-                                        <span class="post-badge">Member</span>
-                                        <span class="post-author">Alex</span>
-                                    </div>
-                                    <div class="post-content">Just hit my health milestone!</div>
-                                    <div class="post-likes">156</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product-card-footer">
-                        <button class="product-card-button">Explore</button>
-                    </div>
-                </div>
+            <div style="text-align: center; margin-top: 40px;">
+                <button class="btn-primary">Join the Community</button>
             </div>
         </div>
     </section>
 
-    <!-- How It Works Section -->
-    <section id="how-it-works" class="how-it-works-section">
+    <!-- How Vernia Works -->
+    <section class="how-it-works-section" id="how-works">
         <div style="max-width: 1400px; margin: 0 auto; padding: 0 32px;">
-            <div class="section-header">
+            <div class="section-header" style="margin-bottom: 60px;">
                 <h2>How Vernia Works</h2>
-                <p>Four simple steps to better health</p>
             </div>
 
-            <div class="how-it-works-grid">
-                <div class="how-it-works-card">
-                    <div class="how-it-works-step">1</div>
-                    <h3 class="how-it-works-title">Connect Your Data</h3>
-                    <p style="font-size: 0.9rem; color: #666; margin-top: 12px; line-height: 1.6;">Securely link your health apps and devices</p>
+            <div class="how-grid">
+                <div class="how-card">
+                    <div class="how-step-circle">1</div>
+                    <div class="how-icon">👤</div>
+                    <h3 class="how-title">Choose your health journey</h3>
+                    <p class="how-text">Tell us about your journey, goals and priorities.</p>
                 </div>
 
-                <div class="how-it-works-card">
-                    <div class="how-it-works-step">2</div>
-                    <h3 class="how-it-works-title">Get AI Insights</h3>
-                    <p style="font-size: 0.9rem; color: #666; margin-top: 12px; line-height: 1.6;">Receive personalized analysis and recommendations</p>
+                <div class="how-card">
+                    <div class="how-step-circle">2</div>
+                    <div class="how-icon">📋</div>
+                    <h3 class="how-title">Track symptoms, habits and health data</h3>
+                    <p class="how-text">Consolidate your symptoms, nutrition, exercise, sleep and medical recommendations.</p>
                 </div>
 
-                <div class="how-it-works-card">
-                    <div class="how-it-works-step">3</div>
-                    <h3 class="how-it-works-title">Track Progress</h3>
-                    <p style="font-size: 0.9rem; color: #666; margin-top: 12px; line-height: 1.6;">Monitor your health journey with beautiful visualizations</p>
+                <div class="how-card">
+                    <div class="how-step-circle">3</div>
+                    <div class="how-icon">✨</div>
+                    <h3 class="how-title">AI uncovers meaningful patterns</h3>
+                    <p class="how-text">We analyze your data to identify insights unique to you.</p>
                 </div>
 
-                <div class="how-it-works-card">
-                    <div class="how-it-works-step">4</div>
-                    <h3 class="how-it-works-title">Achieve Goals</h3>
-                    <p style="font-size: 0.9rem; color: #666; margin-top: 12px; line-height: 1.6;">Build sustainable habits and reach your health goals</p>
+                <div class="how-card">
+                    <div class="how-step-circle">4</div>
+                    <div class="how-icon">📈</div>
+                    <h3 class="how-title">Build healthier habits with confidence</h3>
+                    <p class="how-text">Receive personalized recommendations and track your progress.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Mission Section -->
-    <section id="mission" class="mission-section">
-        <div class="mission-content">
-            <div class="mission-image">
-                <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #DCE8DE 0%, #E6DDD2 100%); display: flex; align-items: center; justify-content: center;">
-                    <span style="color: #4D6653; font-size: 0.95rem;">Lifestyle Image</span>
-                </div>
-            </div>
-            <div class="mission-text-content">
-                <h2 class="mission-title">Our Mission</h2>
-                <p class="mission-text">
-                    At Vernia, we believe everyone deserves access to personalized, intelligent health insights. We're building the future of preventive healthcare by combining cutting-edge AI with human-centered design.
-                </p>
-                <p class="mission-text">
-                    Our mission is simple: empower you to understand your body, make informed decisions, and live healthier seasons of your life—every single day.
-                </p>
+    <!-- Our Mission -->
+    <section class="mission-section" id="mission">
+        <div class="mission-container">
+            <div class="mission-image"></div>
+
+            <div class="mission-content">
+                <h2>Our Mission</h2>
+                <p>Every woman deserves to understand her body with confidence.</p>
+                <p>Vernia was created to bring together fragmented health information, daily habits and artificial intelligence into one intelligent companion that helps women uncover meaningful patterns, make informed decisions and feel supported through every stage of their health journey.</p>
             </div>
         </div>
     </section>
 
     <!-- Waitlist Section -->
-    <section id="waitlist" class="waitlist-section">
+    <section class="waitlist-section" id="waitlist">
         <div class="waitlist-container">
             <div class="waitlist-header">
-                <h2>Join Our Waitlist</h2>
-                <p>Be among the first to experience the future of personal health intelligence</p>
+                <h2>Join the Vernia Waitlist</h2>
+                <p>Be among the first women shaping the future of personalized health.</p>
             </div>
 
-            <form class="waitlist-form" onsubmit="handleWaitlistSubmit(event)">
+            <form class="waitlist-form" onsubmit="handleSubmit(event)">
                 <div class="form-group">
-                    <label for="name">First Name</label>
-                    <input type="text" id="name" name="name" placeholder="John" required>
+                    <label for="firstName">First Name *</label>
+                    <input type="text" id="firstName" name="firstName" placeholder="First name" required>
                 </div>
 
                 <div class="form-group">
-                    <label for="email">Email Address</label>
-                    <input type="email" id="email" name="email" placeholder="john@example.com" required>
+                    <label for="lastName">Last Name *</label>
+                    <input type="text" id="lastName" name="lastName" placeholder="Last name" required>
                 </div>
 
                 <div class="form-group">
-                    <label for="phone">Phone Number (optional)</label>
-                    <input type="tel" id="phone" name="phone" placeholder="+1 (555) 123-4567">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" placeholder="you@example.com" required>
                 </div>
 
-                <button type="submit" class="waitlist-button">Join the Waitlist</button>
+                <div class="form-group">
+                    <label for="country">Country *</label>
+                    <select id="country" name="country" required>
+                        <option value="">Select your country</option>
+                        <option value="us">United States</option>
+                        <option value="ca">Canada</option>
+                        <option value="uk">United Kingdom</option>
+                        <option value="au">Australia</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="ageRange">Age Range *</label>
+                    <select id="ageRange" name="ageRange" required>
+                        <option value="">Select your age range</option>
+                        <option value="18-25">18-25</option>
+                        <option value="26-35">26-35</option>
+                        <option value="36-45">36-45</option>
+                        <option value="46-55">46-55</option>
+                        <option value="56+">56+</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="healthJourney">Health Journey *</label>
+                    <select id="healthJourney" name="healthJourney" required>
+                        <option value="">Select your health journey</option>
+                        <option value="cancer">Cancer Recovery</option>
+                        <option value="menopause">Menopause</option>
+                        <option value="postpartum">Postpartum</option>
+                        <option value="fertility">Fertility Journey</option>
+                        <option value="digestive">Digestive Health</option>
+                        <option value="hormonal">Hormonal Health</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+                <div class="checkbox-group">
+                    <label>What are you hoping to achieve? (Select all that apply)</label>
+                    <div class="checkboxes">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="goal1" name="goals" value="build-habits">
+                            <label for="goal1">Build healthy habits</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="goal2" name="goals" value="improve-nutrition">
+                            <label for="goal2">Improve nutrition</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="goal3" name="goals" value="exercise">
+                            <label for="goal3">Exercise consistently</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="goal4" name="goals" value="improve-sleep">
+                            <label for="goal4">Improve sleep</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="goal5" name="goals" value="manage-symptoms">
+                            <label for="goal5">Manage symptoms</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="goal6" name="goals" value="reduce-stress">
+                            <label for="goal6">Reduce stress</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="goal7" name="goals" value="understand-body">
+                            <label for="goal7">Better understand my body</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="goal8" name="goals" value="community">
+                            <label for="goal8">Connect with women with similar experiences</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="checkbox-group">
+                    <label>What would you most like Vernia to help you with?</label>
+                    <div class="checkboxes">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="help1" name="help" value="understand">
+                            <label for="help1">Understand my health data</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="help2" name="help" value="patterns">
+                            <label for="help2">Find patterns in my health</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="help3" name="help" value="decisions">
+                            <label for="help3">Make better health decisions</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="help4" name="help" value="communication">
+                            <label for="help4">Communicate better with my doctor</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="help5" name="help" value="community-support">
+                            <label for="help5">Get support from community</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="textarea-group">
+                    <label for="message">Anything else you'd like us to know?</label>
+                    <textarea id="message" name="message" placeholder="Tell us more about your health journey..."></textarea>
+                </div>
+
+                <button type="submit" class="submit-button">Join the Waitlist</button>
+
+                <div class="privacy-text">
+                    We respect your privacy. Your information will never be shared or sold.
+                </div>
             </form>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer style="background: #2E2E2E; color: white; padding: 60px 32px; text-align: center;">
-        <p style="font-size: 0.9rem; opacity: 0.8;">© 2024 Vernia. All rights reserved.</p>
+    <footer class="footer">
+        <p>© 2024 Vernia. All rights reserved. | We respect your privacy. Your information will never be shared or sold.</p>
     </footer>
 
     <script>
-        // Navbar visibility on scroll
-        const navbar = document.getElementById('navbar');
-        const topLogo = document.querySelector('.top-logo');
+        // Mobile menu toggle
         const menuToggle = document.getElementById('menuToggle');
         const mobileMenu = document.getElementById('mobileMenu');
 
-        window.addEventListener('scroll', () => {
-            const scrollPosition = window.scrollY;
-            const heroSection = document.querySelector('section');
-            const heroHeight = heroSection.offsetHeight;
-
-            if (scrollPosition > heroHeight * 0.5) {
-                navbar.classList.add('visible');
-                topLogo.classList.add('hide');
-            } else {
-                navbar.classList.remove('visible');
-                topLogo.classList.remove('hide');
-            }
-        });
-
-        // Mobile menu toggle
         menuToggle.addEventListener('click', () => {
             menuToggle.classList.toggle('active');
             mobileMenu.classList.toggle('active');
@@ -1617,16 +1334,13 @@
         });
 
         // Form submission
-        function handleWaitlistSubmit(event) {
+        function handleSubmit(event) {
             event.preventDefault();
-            const form = event.target;
-            const formData = new FormData(form);
-            console.log('Form submitted:', Object.fromEntries(formData));
-            alert('Thank you for joining the waitlist! We\'ll be in touch soon.');
-            form.reset();
+            alert('Thank you for joining the Vernia waitlist! We\'ll be in touch soon.');
+            event.target.reset();
         }
 
-        // Smooth scroll for navbar links
+        // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 const href = this.getAttribute('href');
