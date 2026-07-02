@@ -220,6 +220,79 @@
             box-shadow: 0 4px 12px rgba(77, 102, 83, 0.25);
         }
 
+        /* Mobile hamburger menu */
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+            z-index: 50;
+        }
+
+        .mobile-menu-toggle span {
+            display: block;
+            width: 24px;
+            height: 3px;
+            background: #2E2E2E;
+            margin: 5px 0;
+            transition: all 0.3s ease;
+            border-radius: 2px;
+        }
+
+        .mobile-menu-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(9px, 9px);
+        }
+
+        .mobile-menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .mobile-menu-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(8px, -8px);
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            .navbar-links {
+                display: none;
+            }
+
+            .mobile-nav-menu {
+                display: none;
+                position: fixed;
+                top: 80px;
+                left: 0;
+                right: 0;
+                background: white;
+                flex-direction: column;
+                gap: 0;
+                padding: 20px 32px;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+                z-index: 44;
+            }
+
+            .mobile-nav-menu.active {
+                display: flex;
+            }
+
+            .mobile-nav-menu a {
+                padding: 12px 0;
+                border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+                color: #2E2E2E;
+                text-decoration: none;
+                font-weight: 500;
+            }
+
+            .mobile-nav-menu button {
+                margin-top: 12px;
+                width: 100%;
+            }
+        }
+
         /* Hero animations */
         @keyframes fadeInUp {
             from {
@@ -399,49 +472,49 @@
             padding: 24px;
         }
 
-        /* Premium glassmorphism AI insight card */
+        /* Reduced glassmorphism AI insight card */
         .ai-insight-card {
             position: absolute;
-            bottom: -30px;
-            left: 24px;
-            width: 340px;
-            background: rgba(255, 255, 255, 0.72);
+            bottom: -20px;
+            left: 20px;
+            width: 260px;
+            background: rgba(255, 255, 255, 0.78);
             -webkit-backdrop-filter: blur(25px);
             backdrop-filter: blur(25px);
-            border: 1px solid rgba(255, 255, 255, 0.7);
-            border-radius: 30px;
-            padding: 28px;
+            border: 1px solid rgba(255, 255, 255, 0.65);
+            border-radius: 24px;
+            padding: 20px;
             box-shadow: 0 25px 50px rgba(0, 0, 0, 0.06);
         }
 
         .card-header {
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             font-weight: 800;
             letter-spacing: 0.08em;
             color: #9CAF88;
             text-transform: uppercase;
-            margin-bottom: 20px;
+            margin-bottom: 12px;
         }
 
         .recovery-score-section {
-            background: linear-gradient(135deg, rgba(156, 175, 136, 0.3) 0%, rgba(138, 157, 120, 0.25) 100%);
-            border-radius: 20px;
-            padding: 20px;
-            margin-bottom: 24px;
+            background: linear-gradient(135deg, rgba(156, 175, 136, 0.25) 0%, rgba(138, 157, 120, 0.2) 100%);
+            border-radius: 16px;
+            padding: 14px;
+            margin-bottom: 14px;
             color: #4D6653;
             border: 1px solid rgba(156, 175, 136, 0.2);
         }
 
         .recovery-label {
-            font-size: 0.8rem;
+            font-size: 0.7rem;
             font-weight: 600;
             opacity: 0.85;
-            margin-bottom: 8px;
+            margin-bottom: 4px;
             color: #4D6653;
         }
 
         .recovery-value {
-            font-size: 2.5rem;
+            font-size: 1.8rem;
             font-weight: 800;
             line-height: 1;
             color: #4D6653;
@@ -450,56 +523,56 @@
         .metrics-row {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 16px;
-            margin-bottom: 24px;
+            gap: 10px;
+            margin-bottom: 14px;
         }
 
         .metric {
             background: rgba(248, 248, 248, 0.9);
-            border-radius: 14px;
-            padding: 14px;
+            border-radius: 12px;
+            padding: 10px;
             border: 1px solid rgba(0, 0, 0, 0.04);
             backdrop-filter: blur(10px);
         }
 
         .metric-label {
-            font-size: 0.8rem;
+            font-size: 0.65rem;
             font-weight: 600;
             color: #999;
             text-transform: uppercase;
             letter-spacing: 0.03em;
-            margin-bottom: 6px;
+            margin-bottom: 3px;
         }
 
         .metric-value {
-            font-size: 1.1rem;
+            font-size: 0.9rem;
             font-weight: 700;
             color: #4D6653;
         }
 
         .insight-section {
-            padding-top: 20px;
+            padding-top: 12px;
             border-top: 1px solid rgba(0, 0, 0, 0.05);
         }
 
         .insight-title {
-            font-size: 0.75rem;
+            font-size: 0.65rem;
             font-weight: 800;
             letter-spacing: 0.08em;
             color: #9CAF88;
             text-transform: uppercase;
-            margin-bottom: 12px;
+            margin-bottom: 6px;
         }
 
         .insight-text {
-            font-size: 0.9rem;
-            line-height: 1.6;
+            font-size: 0.75rem;
+            line-height: 1.4;
             color: #333;
-            margin-bottom: 12px;
+            margin-bottom: 6px;
         }
 
         .insight-tagline {
-            font-size: 0.8rem;
+            font-size: 0.65rem;
             font-weight: 600;
             color: #4D6653;
             opacity: 0.85;
@@ -509,48 +582,70 @@
         /* Product Section */
         .product-section {
             background: white;
-            padding: 120px 0;
+            padding: 80px 0;
             position: relative;
             overflow: hidden;
         }
 
         .section-header {
-            text-center mb-20;
+            text-align: center;
             max-width: 700px;
-            margin: 0 auto 80px;
+            margin: 0 auto 60px;
         }
 
         .section-header h2 {
-            font-size: 3rem;
+            font-size: 2.5rem;
             font-weight: 800;
             color: #2E2E2E;
             margin-bottom: 16px;
             line-height: 1.2;
         }
 
+        @media (max-width: 768px) {
+            .section-header h2 {
+                font-size: 1.8rem;
+            }
+        }
+
         .section-header p {
-            font-size: 1.1rem;
+            font-size: 1rem;
             color: #666;
             line-height: 1.7;
         }
 
         .product-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 40px;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
             max-width: 1400px;
             margin: 0 auto;
             padding: 0 32px;
         }
 
+        @media (max-width: 1200px) {
+            .product-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 24px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .product-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+        }
+
         .product-card {
             background: white;
-            border-radius: 30px;
+            border-radius: 24px;
             overflow: hidden;
             box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
             border: 1px solid rgba(77, 102, 83, 0.08);
             transition: all 0.4s cubic-bezier(0.23, 1, 0.320, 1);
             animation: fadeInScaleUp 0.8s ease-out both;
+            display: flex;
+            flex-direction: column;
         }
 
         .product-card:hover {
@@ -559,44 +654,49 @@
         }
 
         .product-card-header {
-            padding: 48px 40px 32px;
+            padding: 24px 20px 16px;
             border-bottom: 1px solid rgba(0, 0, 0, 0.04);
         }
 
         .product-card-title {
-            font-size: 1.5rem;
+            font-size: 1rem;
             font-weight: 800;
             color: #2E2E2E;
             margin: 0;
+            line-height: 1.4;
         }
 
         .product-card-content {
-            padding: 40px;
+            padding: 20px;
             background: #FAFAF8;
+            flex: 1;
         }
 
-        /* Product mockup styles */
+        /* Product mockup styles - Mobile app screen */
         .mockup-screen {
             background: white;
-            border-radius: 24px;
-            padding: 32px;
+            border-radius: 20px;
+            padding: 20px;
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
             border: 1px solid rgba(0, 0, 0, 0.05);
-            font-size: 0.9rem;
+            font-size: 0.8rem;
             color: #2E2E2E;
+            min-height: 300px;
+            display: flex;
+            flex-direction: column;
         }
 
         .mockup-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 28px;
-            padding-bottom: 20px;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
             border-bottom: 1px solid rgba(0, 0, 0, 0.06);
         }
 
         .mockup-label {
-            font-size: 0.75rem;
+            font-size: 0.65rem;
             font-weight: 800;
             letter-spacing: 0.08em;
             color: #9CAF88;
@@ -606,60 +706,60 @@
         .mockup-metrics {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 16px;
-            margin-bottom: 20px;
+            gap: 12px;
+            margin-bottom: 14px;
         }
 
         .mockup-metric {
             background: rgba(76, 102, 83, 0.06);
-            padding: 16px;
-            border-radius: 14px;
+            padding: 12px;
+            border-radius: 12px;
             border: 1px solid rgba(76, 102, 83, 0.1);
         }
 
         .mockup-metric-label {
-            font-size: 0.8rem;
+            font-size: 0.65rem;
             font-weight: 600;
             color: #999;
             text-transform: uppercase;
             letter-spacing: 0.03em;
-            margin-bottom: 6px;
+            margin-bottom: 4px;
         }
 
         .mockup-metric-value {
-            font-size: 1.3rem;
+            font-size: 1rem;
             font-weight: 700;
             color: #4D6653;
         }
 
         .mockup-insight {
             background: linear-gradient(135deg, rgba(156, 175, 136, 0.15) 0%, rgba(138, 157, 120, 0.1) 100%);
-            padding: 20px;
-            border-radius: 16px;
+            padding: 14px;
+            border-radius: 14px;
             border: 1px solid rgba(156, 175, 136, 0.2);
-            margin-top: 20px;
+            margin-top: 12px;
         }
 
         .mockup-insight-title {
-            font-size: 0.75rem;
+            font-size: 0.65rem;
             font-weight: 800;
             letter-spacing: 0.08em;
             color: #9CAF88;
             text-transform: uppercase;
-            margin-bottom: 10px;
+            margin-bottom: 6px;
         }
 
         .mockup-insight-text {
-            font-size: 0.9rem;
-            line-height: 1.6;
+            font-size: 0.75rem;
+            line-height: 1.5;
             color: #333;
         }
 
         .mockup-footer {
-            margin-top: 20px;
-            padding-top: 20px;
+            margin-top: 12px;
+            padding-top: 12px;
             border-top: 1px solid rgba(0, 0, 0, 0.06);
-            font-size: 0.85rem;
+            font-size: 0.7rem;
             color: #999;
             font-style: italic;
         }
@@ -667,14 +767,14 @@
         .mockup-trends {
             display: flex;
             flex-direction: column;
-            gap: 16px;
+            gap: 12px;
         }
 
         .trend-item {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 14px 0;
+            padding: 10px 0;
             border-bottom: 1px solid rgba(0, 0, 0, 0.04);
         }
 
@@ -683,15 +783,275 @@
         }
 
         .trend-label {
-            font-size: 0.9rem;
+            font-size: 0.8rem;
             font-weight: 600;
             color: #2E2E2E;
         }
 
         .trend-indicator {
-            font-size: 0.85rem;
+            font-size: 0.75rem;
             color: #4D6653;
             font-weight: 600;
+        }
+
+        /* How it works section */
+        .how-it-works-section {
+            background: #FAFAF8;
+            padding: 80px 0;
+        }
+
+        .how-it-works-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 32px;
+            position: relative;
+        }
+
+        @media (max-width: 1024px) {
+            .how-it-works-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 32px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .how-it-works-grid {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+        }
+
+        .how-it-works-grid::before {
+            content: '';
+            position: absolute;
+            top: 60px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(to right, transparent, rgba(77, 102, 83, 0.3), transparent);
+            display: none;
+        }
+
+        @media (min-width: 1024px) {
+            .how-it-works-grid::before {
+                display: block;
+            }
+        }
+
+        .how-it-works-card {
+            background: white;
+            padding: 32px;
+            border-radius: 20px;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+            border: 1px solid rgba(77, 102, 83, 0.08);
+            transition: all 0.3s ease;
+            animation: fadeInScaleUp 0.8s ease-out both;
+        }
+
+        .how-it-works-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .how-it-works-step {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #4D6653;
+            margin-bottom: 16px;
+            opacity: 0.3;
+        }
+
+        .how-it-works-title {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #2E2E2E;
+            line-height: 1.5;
+        }
+
+        .how-it-works-card::after {
+            content: '→';
+            position: absolute;
+            right: -28px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.5rem;
+            color: rgba(77, 102, 83, 0.3);
+            font-weight: 800;
+            display: none;
+        }
+
+        @media (min-width: 1024px) {
+            .how-it-works-card::after {
+                display: block;
+            }
+        }
+
+        .how-it-works-card:last-child::after {
+            display: none;
+        }
+
+        /* Mission section */
+        .mission-section {
+            background: white;
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .mission-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 32px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        @media (max-width: 768px) {
+            .mission-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+        }
+
+        .mission-image {
+            width: 100%;
+            aspect-ratio: 1;
+            border-radius: 40px;
+            overflow: hidden;
+            background: linear-gradient(135deg, #DCE8DE 0%, #E6DDD2 100%);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+        }
+
+        .mission-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .mission-text-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .mission-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #2E2E2E;
+            margin-bottom: 24px;
+            line-height: 1.2;
+        }
+
+        @media (max-width: 768px) {
+            .mission-title {
+                font-size: 2rem;
+            }
+        }
+
+        .mission-text {
+            font-size: 1.05rem;
+            color: #333;
+            line-height: 1.8;
+            margin-bottom: 16px;
+        }
+
+        /* Waitlist Section */
+        .waitlist-section {
+            background: linear-gradient(to bottom, white 0%, rgba(220, 232, 222, 0.1) 100%);
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .waitlist-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 32px;
+        }
+
+        .waitlist-header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .waitlist-header h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #2E2E2E;
+            margin-bottom: 16px;
+            line-height: 1.2;
+        }
+
+        @media (max-width: 768px) {
+            .waitlist-header h2 {
+                font-size: 1.8rem;
+            }
+        }
+
+        .waitlist-header p {
+            font-size: 1rem;
+            color: #666;
+            line-height: 1.7;
+        }
+
+        .waitlist-form {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #2E2E2E;
+            margin-bottom: 8px;
+        }
+
+        .form-group input {
+            padding: 14px 16px;
+            border: 1px solid rgba(77, 102, 83, 0.2);
+            border-radius: 12px;
+            font-size: 0.95rem;
+            font-family: 'Manrope', sans-serif;
+            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.95);
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #4D6653;
+            box-shadow: 0 0 0 3px rgba(77, 102, 83, 0.1);
+        }
+
+        .waitlist-button {
+            background: #4D6653;
+            color: white;
+            padding: 16px 32px;
+            border: none;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 8px;
+        }
+
+        .waitlist-button:hover {
+            background: #3d5242;
+            transform: scale(1.02);
+            box-shadow: 0 8px 24px rgba(77, 102, 83, 0.3);
         }
 
         .timeline {
@@ -827,7 +1187,7 @@
         }
 
         .product-card-footer {
-            padding: 32px 40px;
+            padding: 20px;
             border-top: 1px solid rgba(0, 0, 0, 0.04);
             text-align: center;
         }
@@ -835,10 +1195,10 @@
         .product-card-button {
             background: #4D6653;
             color: white;
-            padding: 12px 28px;
+            padding: 12px 24px;
             border-radius: 10px;
             font-weight: 700;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             border: none;
             cursor: pointer;
             transition: all 0.3s ease;
@@ -852,556 +1212,25 @@
             box-shadow: 0 8px 24px rgba(77, 102, 83, 0.3);
         }
 
-        /* How it works section */
-        .how-it-works-section {
-            background: #FAFAF8;
-            padding: 120px 0;
-        }
-
-        .how-it-works-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 32px;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 32px;
-            position: relative;
-        }
-
-        .how-it-works-grid::before {
-            content: '';
-            position: absolute;
-            top: 60px;
-            left: 0;
-            right: 0;
-            height: 2px;
-            background: linear-gradient(to right, transparent, rgba(77, 102, 83, 0.3), transparent);
-            display: none;
-        }
-
-        @media (min-width: 1024px) {
-            .how-it-works-grid::before {
-                display: block;
-            }
-        }
-
-        .how-it-works-card {
-            background: white;
-            padding: 40px;
-            border-radius: 20px;
-            text-align: center;
-            position: relative;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
-            border: 1px solid rgba(77, 102, 83, 0.08);
-            transition: all 0.3s ease;
-            animation: fadeInScaleUp 0.8s ease-out both;
-        }
-
-        .how-it-works-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
-        }
-
-        .how-it-works-step {
-            font-size: 2rem;
-            font-weight: 800;
-            color: #4D6653;
-            margin-bottom: 20px;
-            opacity: 0.3;
-        }
-
-        .how-it-works-title {
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: #2E2E2E;
-            line-height: 1.5;
-        }
-
-        .how-it-works-card::after {
-            content: '→';
-            position: absolute;
-            right: -28px;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 1.5rem;
-            color: rgba(77, 102, 83, 0.3);
-            font-weight: 800;
-            display: none;
-        }
-
-        @media (min-width: 1024px) {
-            .how-it-works-card::after {
-                display: block;
-            }
-        }
-
-        .how-it-works-card:last-child::after {
-            display: none;
-        }
-
-        /* Mission section */
-        .mission-section {
-            background: white;
-            padding: 120px 0;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .mission-content {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 0 32px;
-            text-align: center;
-        }
-
-        .mission-title {
-            font-size: 3rem;
-            font-weight: 800;
-            color: #2E2E2E;
-            margin-bottom: 32px;
-            line-height: 1.2;
-        }
-
-        .mission-text {
-            font-size: 1.2rem;
-            color: #333;
-            line-height: 1.8;
-            margin-bottom: 16px;
-        }
-
-        .mission-decorative {
-            margin-top: 80px;
-            height: 300px;
-            background: linear-gradient(135deg, rgba(220, 232, 222, 0.5) 0%, rgba(230, 221, 210, 0.3) 100%);
-            border-radius: 40px;
-            opacity: 0.4;
-        }
-
-        /* Waitlist Section */
-        .waitlist-section {
-            background: linear-gradient(to bottom, white 0%, rgba(220, 232, 222, 0.1) 100%);
-            padding: 120px 0;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .waitlist-container {
-            max-width: 2xl mx-auto px-8 w-full;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .waitlist-header {
-            text-center mb-16;
-        }
-
-        .waitlist-header h2 {
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: #2E2E2E;
-            margin-bottom: 16px;
-            line-height: 1.2;
-        }
-
-        .waitlist-header p {
-            font-size: 1rem;
-            color: #666;
-            max-width: 500px;
-            margin: 0 auto;
-        }
-
-        /* Form styling */
-        .waitlist-form {
-            background: white;
-            border-radius: 24px;
-            padding: 48px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
-            border: 1px solid rgba(77, 102, 83, 0.08);
-        }
-
-        .form-group {
-            margin-bottom: 28px;
-        }
-
-        .form-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-        }
-
-        .form-row.full {
-            grid-template-columns: 1fr;
-        }
-
-        .form-label {
-            display: block;
-            font-size: 0.95rem;
-            font-weight: 600;
-            color: #2E2E2E;
-            margin-bottom: 8px;
-        }
-
-        .form-label .required {
-            color: #4D6653;
-        }
-
-        .form-input,
-        .form-select,
-        .form-textarea {
-            width: 100%;
-            padding: 14px 16px;
-            border: 1.5px solid #E0E0E0;
-            border-radius: 10px;
-            font-family: 'Manrope', sans-serif;
-            font-size: 0.95rem;
-            color: #2E2E2E;
-            transition: all 0.3s ease;
-            background: #FAFAF8;
-        }
-
-        .form-input:focus,
-        .form-select:focus,
-        .form-textarea:focus {
-            outline: none;
-            border-color: #4D6653;
-            box-shadow: 0 0 0 3px rgba(77, 102, 83, 0.1);
-            background: white;
-        }
-
-        .form-textarea {
-            resize: vertical;
-            min-height: 120px;
-            font-size: 0.9rem;
-        }
-
-        .form-select {
-            appearance: none;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%234D6653' d='M1 1l5 5 5-5'/%3E%3C/svg%3E");
-            background-repeat: no-repeat;
-            background-position: right 16px center;
-            padding-right: 40px;
-        }
-
-        .checkbox-group {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 16px;
-            margin-top: 12px;
-        }
-
-        .checkbox-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 12px;
-        }
-
-        .checkbox-input {
-            width: 20px;
-            height: 20px;
-            margin-top: 3px;
-            cursor: pointer;
-            accent-color: #4D6653;
-        }
-
-        .checkbox-label {
-            font-size: 0.95rem;
-            color: #2E2E2E;
-            cursor: pointer;
-            flex: 1;
-        }
-
-        .consent-group {
-            display: flex;
-            align-items: flex-start;
-            gap: 12px;
-            margin-top: 12px;
-            padding: 16px;
-            background: rgba(76, 102, 83, 0.05);
-            border-radius: 10px;
-        }
-
-        .consent-input {
-            width: 20px;
-            height: 20px;
-            margin-top: 3px;
-            cursor: pointer;
-            accent-color: #4D6653;
-        }
-
-        .consent-label {
-            font-size: 0.9rem;
-            color: #2E2E2E;
-            cursor: pointer;
-        }
-
-        .form-button {
-            width: 100%;
-            background: #4D6653;
-            color: white;
-            padding: 16px 32px;
-            border-radius: 12px;
-            font-weight: 700;
-            font-size: 1rem;
-            border: none;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            margin-top: 8px;
-        }
-
-        .form-button:hover {
-            background: #3d5242;
-            transform: scale(1.02);
-            box-shadow: 0 8px 24px rgba(77, 102, 83, 0.3);
-        }
-
-        .form-button:disabled {
-            background: #ccc;
-            cursor: not-allowed;
-            transform: none;
-        }
-
-        .form-message {
-            padding: 20px;
-            border-radius: 12px;
-            text-align: center;
-            font-weight: 600;
-            margin-top: 16px;
-            display: none;
-        }
-
-        .form-message.info {
-            display: block;
-            background: rgba(76, 102, 83, 0.1);
-            color: #4D6653;
-            border: 1px solid rgba(76, 102, 83, 0.2);
-        }
-
-        /* Success message */
-        .success-message {
-            display: none;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: white;
-            padding: 48px;
-            border-radius: 24px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
-            text-align: center;
-            z-index: 1000;
-            max-width: 500px;
-            animation: slideUp 0.5s ease-out;
-        }
-
-        .success-message.show {
-            display: block;
-        }
-
-        @keyframes slideUp {
-            from {
-                opacity: 0;
-                transform: translate(-50%, -40%);
-            }
-            to {
-                opacity: 1;
-                transform: translate(-50%, -50%);
-            }
-        }
-
-        .success-icon {
-            font-size: 3rem;
-            margin-bottom: 16px;
-        }
-
-        .success-title {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: #2E2E2E;
-            margin-bottom: 12px;
-        }
-
-        .success-text {
-            font-size: 0.95rem;
-            color: #666;
-            line-height: 1.6;
-        }
-
-        .success-overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.3);
-            z-index: 999;
-            animation: fadeIn 0.3s ease-out;
-        }
-
-        .success-overlay.show {
-            display: block;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-
-        /* Responsive */
-        @media (max-width: 1024px) {
-            .ai-insight-card {
-                width: 300px;
-                padding: 24px;
-                bottom: -25px;
-                left: 20px;
-            }
-
-            .recovery-value {
-                font-size: 2rem;
-            }
-
-            .navbar-links {
-                gap: 24px;
-            }
-
-            .navbar-bar {
-                gap: 32px;
-            }
-
-            .form-row {
-                grid-template-columns: 1fr;
-            }
-
-            .waitlist-form {
-                padding: 36px;
-            }
-
-            .product-grid {
-                grid-template-columns: 1fr;
-                gap: 32px;
-            }
-
-            .how-it-works-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 24px;
-            }
-
-            .how-it-works-card::after {
-                display: none !important;
-            }
-
-            .section-header h2 {
-                font-size: 2rem;
-            }
-
-            .mission-title {
-                font-size: 2rem;
-            }
-        }
-
         @media (max-width: 768px) {
-            .top-logo {
-                top: 20px;
-                left: 24px;
+            .product-card-header {
+                padding: 20px 16px 14px;
             }
 
-            .hero-image-container {
-                margin-top: 40px;
+            .product-card-content {
+                padding: 16px;
             }
 
-            .ai-insight-card {
-                bottom: -35px;
-                left: 16px;
-                width: 280px;
-                padding: 20px;
-            }
-
-            .recovery-value {
-                font-size: 1.8rem;
-            }
-
-            .metrics-row {
-                gap: 12px;
-                margin-bottom: 20px;
-            }
-
-            .metric {
-                padding: 12px;
-            }
-
-            .metric-value {
-                font-size: 0.95rem;
-            }
-
-            .navbar-links {
-                display: none;
-            }
-
-            .navbar-bar {
-                gap: 16px;
-            }
-
-            .waitlist-header h2 {
-                font-size: 1.8rem;
-            }
-
-            .waitlist-form {
+            .how-it-works-card {
                 padding: 24px;
             }
 
-            .checkbox-group {
-                grid-template-columns: 1fr;
-            }
-
-            .success-message {
-                margin: 20px;
-                padding: 32px;
-                max-width: calc(100% - 40px);
-            }
-
-            .product-section {
-                padding: 80px 0;
-            }
-
-            .how-it-works-section {
-                padding: 80px 0;
-            }
-
-            .mission-section {
-                padding: 80px 0;
+            .how-it-works-step {
+                margin-bottom: 12px;
             }
 
             .section-header {
                 margin-bottom: 40px;
-            }
-
-            .section-header h2 {
-                font-size: 1.8rem;
-            }
-
-            .how-it-works-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .product-grid {
-                gap: 24px;
-            }
-
-            .product-card-content {
-                padding: 24px;
-            }
-
-            .mockup-screen {
-                padding: 20px;
-            }
-
-            .mission-decorative {
-                height: 200px;
-                margin-top: 60px;
             }
         }
     </style>
@@ -1410,759 +1239,405 @@
 
 <body>
 
-    <!-- ===================== -->
-    <!-- Top Logo             -->
-    <!-- ===================== -->
-
-    <div class="top-logo" id="topLogo">
+    <!-- Top Logo -->
+    <div class="top-logo">
         <div class="logo-lockup">
             <img src="images/logo.png" alt="Vernia Logo" class="hero-logo-img">
         </div>
     </div>
 
+    <!-- Mobile Menu Toggle -->
+    <div style="position: fixed; top: 24px; right: 32px; z-index: 50;">
+        <button class="mobile-menu-toggle" id="menuToggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </div>
 
+    <!-- Mobile Navigation Menu -->
+    <div class="mobile-nav-menu" id="mobileMenu">
+        <a href="#product">Product</a>
+        <a href="#how-it-works">How It Works</a>
+        <a href="#mission">Our Mission</a>
+        <a href="#waitlist">Join Waitlist</a>
+        <button class="navbar-button" onclick="document.getElementById('waitlist').scrollIntoView()">Get Started</button>
+    </div>
 
-    <!-- ===================== -->
-    <!-- Floating Navigation   -->
-    <!-- ===================== -->
-
-    <nav class="navbar-wrapper" id="navbar">
-        <div class="navbar-content">
-            <div class="glass rounded-full px-8 py-4">
-                <div class="navbar-bar">
-                    <div class="navbar-logo">
-                        <img src="images/logo.png" alt="Vernia Logo" class="navbar-logo-img">
-                    </div>
-                    <div class="navbar-links">
-                        <a href="#product" class="navbar-link">Product</a>
-                        <a href="#how-it-works" class="navbar-link">How it Works</a>
-                        <a href="#mission" class="navbar-link">Our Mission</a>
-                        <a href="#contact" class="navbar-button">Join Waitlist</a>
-                    </div>
+    <!-- Floating Navbar -->
+    <div class="navbar-wrapper" id="navbar">
+        <div class="navbar-content glass">
+            <div class="navbar-bar">
+                <div class="navbar-logo">
+                    <img src="images/logo.png" alt="Vernia Logo" class="navbar-logo-img">
                 </div>
+                <div class="navbar-links">
+                    <a href="#product" class="navbar-link">Product</a>
+                    <a href="#how-it-works" class="navbar-link">How It Works</a>
+                    <a href="#mission" class="navbar-link">Our Mission</a>
+                </div>
+                <button class="navbar-button">Get Started</button>
             </div>
         </div>
-    </nav>
+    </div>
 
-
-
-    <!-- ===================== -->
-    <!-- HERO                  -->
-    <!-- ===================== -->
-
-    <section class="min-h-screen bg-gradient-to-b from-white to-sage/20 flex items-center pt-20 pb-20">
-
-        <div class="max-w-7xl mx-auto px-8 w-full">
-
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-32 items-center">
-
-                <!-- Left Column -->
+    <!-- Hero Section -->
+    <section style="background: white; padding: 100px 0 80px; position: relative; overflow: hidden;">
+        <div style="max-width: 1400px; margin: 0 auto; padding: 0 32px;">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;">
+                <!-- Hero Content -->
                 <div class="hero-content">
-
-                    <!-- Badge -->
-                    <div class="hero-badge badge">
-                        🌿 AI health companion for life's biggest health transitions
+                    <div class="badge hero-badge">
+                        ✨ Your Health Companion
                     </div>
 
-                    <!-- Headline -->
-                    <h2 class="text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight text-dark mb-8">
-                        Understand your body.
-                        <br>
-                        <span class="text-primary">Take control of your health.</span>
-                    </h2>
+                    <h1 style="font-size: 3.5rem; font-weight: 800; color: #2E2E2E; margin-bottom: 24px; line-height: 1.2;">
+                        Grow stronger through every season of your health
+                    </h1>
 
-                    <!-- Paragraph -->
-                    <p class="text-lg text-gray-600 leading-relaxed mb-4 max-w-lg">
-                        Vernia is an AI health companion that brings together your health data, symptoms, daily habits and medical recommendations into one intelligent place—helping you understand your body and feel confident about your health journey.
+                    <p style="font-size: 1.1rem; color: #666; line-height: 1.8; margin-bottom: 32px;">
+                        Vernia is an AI health companion that brings together your health data, symptoms, daily habits and medical recommendations into one intelligent place—helping you understand your body, uncover meaningful patterns and build healthier habits with confidence.
                     </p>
 
-                    <!-- Tagline -->
-                    <p class="hero-tagline">
-                        Understand more. Worry less.
-                    </p>
-
-                    <!-- Buttons -->
-                    <div class="flex flex-col sm:flex-row gap-4 mb-12">
-                        <a href="#contact" class="btn-primary">
-                            Join the Waitlist →
-                        </a>
-                        <a href="#product" class="btn-secondary">
-                            Explore Vernia
-                        </a>
+                    <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+                        <button class="btn-primary">Start Free Trial</button>
+                        <button class="btn-secondary">Learn More</button>
                     </div>
-
-                    <!-- Feature List -->
-                    <div class="feature-list">
-                        <div class="feature-item">Cancer Recovery</div>
-                        <div class="feature-item">Menopause</div>
-                        <div class="feature-item">Postpartum</div>
-                        <div class="feature-item">Gut Health</div>
-                    </div>
-
                 </div>
 
-                <!-- Right Column -->
-                <div class="hero-image relative">
-
-                    <!-- Image Container -->
+                <!-- Hero Image -->
+                <div class="hero-image" style="position: relative;">
                     <div class="hero-image-container">
-                        <img src="images/hero.png" alt="Vernia Health Companion Interface" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                        <div class="hero-image-placeholder" style="display: none;">
-                            <div>
-                                <div style="font-size: 3rem; margin-bottom: 16px;">📱</div>
-                                <p>images/hero.png</p>
-                            </div>
-                        </div>
+                        <div class="hero-image-placeholder"></div>
                     </div>
 
-                    <!-- Premium Mobile App Dashboard Card -->
-                    <div class="ai-card ai-insight-card">
-                        <div class="card-header">Today</div>
-
-                        <!-- Recovery Score Section -->
+                    <!-- AI Insight Card (Reduced Size) -->
+                    <div class="ai-insight-card ai-card">
+                        <div class="card-header">Today's insights</div>
+                        
                         <div class="recovery-score-section">
                             <div class="recovery-label">Recovery Score</div>
-                            <div class="recovery-value">91%</div>
+                            <div class="recovery-value">87%</div>
                         </div>
 
-                        <!-- Metrics Row -->
                         <div class="metrics-row">
                             <div class="metric">
-                                <div class="metric-label">Protein</div>
-                                <div class="metric-value">96 g</div>
+                                <div class="metric-label">Sleep</div>
+                                <div class="metric-value">7.2h</div>
                             </div>
                             <div class="metric">
-                                <div class="metric-label">Sleep</div>
-                                <div class="metric-value">7h 48m</div>
+                                <div class="metric-label">Steps</div>
+                                <div class="metric-value">8.4k</div>
                             </div>
                         </div>
 
-                        <!-- Insight Section -->
                         <div class="insight-section">
-                            <div class="insight-title">Today's Insight</div>
-                            <p class="insight-text">
-                                Your energy has been consistently higher after strength training combined with protein-rich breakfasts.
-                            </p>
-                            <p class="insight-tagline">
-                                Example personalised insights based on your health journey and goals.
-                            </p>
+                            <div class="insight-title">AI Insight</div>
+                            <div class="insight-text">Your recovery is excellent. Keep up the consistent sleep pattern.</div>
+                            <div class="insight-tagline">Learn more about your health</div>
                         </div>
                     </div>
-
                 </div>
-
             </div>
-
         </div>
-
     </section>
 
-    <!-- ===================== -->
-    <!-- PRODUCT SECTION      -->
-    <!-- ===================== -->
-
+    <!-- Product Section - See Vernia in Action -->
     <section id="product" class="product-section">
-        <div class="max-w-7xl mx-auto px-8 w-full">
+        <div style="max-width: 1400px; margin: 0 auto; padding: 0 32px;">
             <div class="section-header">
                 <h2>See Vernia in Action</h2>
-                <p>One intelligent companion that helps you understand your body, uncover meaningful patterns and build healthier habits—whatever your health journey.</p>
+                <p>Experience the power of intelligent health insights</p>
             </div>
 
             <div class="product-grid">
-                <!-- Card 1: Understand Your Body -->
+                <!-- Screen 1: Understand Your Body -->
                 <div class="product-card">
                     <div class="product-card-header">
-                        <h3 class="product-card-title">Understand your body</h3>
+                        <h3 class="product-card-title">Understand Your Body</h3>
                     </div>
                     <div class="product-card-content">
                         <div class="mockup-screen">
                             <div class="mockup-header">
-                                <span class="mockup-label">Today</span>
+                                <span class="mockup-label">Dashboard</span>
                             </div>
-                            
-                            <div style="margin-bottom: 24px;">
-                                <div class="mockup-label" style="margin-bottom: 12px;">Recovery</div>
-                                <div style="font-size: 2.2rem; font-weight: 800; color: #4D6653; line-height: 1;">91%</div>
-                            </div>
-
                             <div class="mockup-metrics">
                                 <div class="mockup-metric">
-                                    <div class="mockup-metric-label">Protein</div>
-                                    <div class="mockup-metric-value">108 g</div>
+                                    <div class="mockup-metric-label">Health Score</div>
+                                    <div class="mockup-metric-value">8.2</div>
                                 </div>
                                 <div class="mockup-metric">
-                                    <div class="mockup-metric-label">Sleep</div>
-                                    <div class="mockup-metric-value">7h 45m</div>
+                                    <div class="mockup-metric-label">Status</div>
+                                    <div class="mockup-metric-value">Optimal</div>
                                 </div>
                             </div>
-
-                            <div style="padding: 16px; background: rgba(76, 102, 83, 0.06); border-radius: 12px; margin-bottom: 12px; border: 1px solid rgba(76, 102, 83, 0.1);">
-                                <div class="mockup-label" style="margin-bottom: 8px;">Exercise</div>
-                                <div style="font-size: 0.95rem; color: #333;">Strength Training</div>
-                            </div>
-
                             <div class="mockup-insight">
-                                <div class="mockup-insight-title">AI Insight</div>
-                                <div class="mockup-insight-text">
-                                    Over the past three weeks your recovery has consistently improved after strength training sessions combined with protein-rich breakfasts. Your hot flashes were also less frequent on these days.
-                                </div>
-                            </div>
-
-                            <div class="mockup-footer">
-                                Personalised using your health journey.
+                                <div class="mockup-insight-title">Key Metrics</div>
+                                <div class="mockup-insight-text">Your vitals show optimal balance across all health dimensions</div>
                             </div>
                         </div>
                     </div>
                     <div class="product-card-footer">
-                        <span style="font-size: 0.85rem; color: #999; font-weight: 600;">Cancer Recovery</span>
+                        <button class="product-card-button">Explore</button>
                     </div>
                 </div>
 
-                <!-- Card 2: Discover Patterns -->
+                <!-- Screen 2: Discover Meaningful Patterns -->
                 <div class="product-card">
                     <div class="product-card-header">
-                        <h3 class="product-card-title">Discover meaningful patterns</h3>
+                        <h3 class="product-card-title">Discover Patterns</h3>
                     </div>
                     <div class="product-card-content">
                         <div class="mockup-screen">
                             <div class="mockup-header">
-                                <span class="mockup-label">Trends</span>
+                                <span class="mockup-label">Analytics</span>
                             </div>
-
                             <div class="mockup-trends">
                                 <div class="trend-item">
-                                    <span class="trend-label">Sleep</span>
-                                    <span class="trend-indicator">↑ 12%</span>
+                                    <span class="trend-label">Energy Levels</span>
+                                    <span class="trend-indicator">↑ +8%</span>
                                 </div>
                                 <div class="trend-item">
-                                    <span class="trend-label">Energy</span>
-                                    <span class="trend-indicator">↑ 8%</span>
+                                    <span class="trend-label">Sleep Quality</span>
+                                    <span class="trend-indicator">↑ +12%</span>
                                 </div>
                                 <div class="trend-item">
-                                    <span class="trend-label">Symptoms</span>
-                                    <span class="trend-indicator">↓ 15%</span>
-                                </div>
-                                <div class="trend-item">
-                                    <span class="trend-label">Exercise</span>
-                                    <span class="trend-indicator">↑ 24%</span>
-                                </div>
-                                <div class="trend-item">
-                                    <span class="trend-label">Mood</span>
-                                    <span class="trend-indicator">↑ 18%</span>
-                                </div>
-                                <div class="trend-item">
-                                    <span class="trend-label">Nutrition</span>
-                                    <span class="trend-indicator">↑ 11%</span>
+                                    <span class="trend-label">Stress Index</span>
+                                    <span class="trend-indicator">↓ -5%</span>
                                 </div>
                             </div>
-
                             <div class="mockup-insight">
-                                <div class="mockup-insight-title">AI detected</div>
-                                <div class="mockup-insight-text">
-                                    Your sleep quality increases after walking more than 8,000 steps. Energy levels improve after 7+ hours of sleep.
-                                </div>
+                                <div class="mockup-insight-title">Pattern Found</div>
+                                <div class="mockup-insight-text">Exercise correlates with better sleep quality</div>
                             </div>
                         </div>
                     </div>
                     <div class="product-card-footer">
-                        <span style="font-size: 0.85rem; color: #999; font-weight: 600;">Menopause</span>
+                        <button class="product-card-button">Explore</button>
                     </div>
                 </div>
 
-                <!-- Card 3: Your Journey -->
+                <!-- Screen 3: Plan Your Week -->
                 <div class="product-card">
                     <div class="product-card-header">
-                        <h3 class="product-card-title">Follow your journey</h3>
+                        <h3 class="product-card-title">Plan Your Week</h3>
                     </div>
                     <div class="product-card-content">
                         <div class="mockup-screen">
                             <div class="mockup-header">
-                                <span class="mockup-label">Timeline</span>
+                                <span class="mockup-label">Weekly Plan</span>
                             </div>
-
                             <div class="timeline">
-                                <div class="timeline-item">
-                                    <div class="timeline-label">Diagnosis</div>
-                                </div>
-                                <div class="timeline-item">
-                                    <div class="timeline-label">Treatment</div>
-                                </div>
-                                <div class="timeline-item">
-                                    <div class="timeline-label">Recovery</div>
-                                </div>
                                 <div class="timeline-item current">
-                                    <div class="timeline-label">Today</div>
+                                    <div>
+                                        <div class="timeline-label">Monday</div>
+                                        <div style="font-size: 0.8rem; color: #666; margin-top: 4px;">Rest & Recovery</div>
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div>
+                                        <div class="timeline-label">Tuesday</div>
+                                        <div style="font-size: 0.8rem; color: #666; margin-top: 4px;">Light Activity</div>
+                                    </div>
                                 </div>
                             </div>
-
                             <div class="timeline-goals">
-                                <div class="timeline-goals-label">Current Goals</div>
-                                <div class="timeline-goal">Gain muscle</div>
-                                <div class="timeline-goal">Improve sleep</div>
-                                <div class="timeline-goal">Increase protein</div>
-                            </div>
-
-                            <div class="mockup-insight" style="margin-top: 16px;">
-                                <div class="mockup-insight-title">AI Summary</div>
-                                <div class="mockup-insight-text">
-                                    Recovery progressing well. Exercise consistency has increased by 42%.
-                                </div>
+                                <div class="timeline-goals-label">Recommended Goals</div>
+                                <div class="timeline-goal">Walk 8,000 steps daily</div>
+                                <div class="timeline-goal">Sleep 7-8 hours</div>
                             </div>
                         </div>
                     </div>
                     <div class="product-card-footer">
-                        <span style="font-size: 0.85rem; color: #999; font-weight: 600;">Cancer Recovery</span>
+                        <button class="product-card-button">Explore</button>
                     </div>
                 </div>
 
-                <!-- Card 4: Community -->
+                <!-- Screen 4: Join the Community -->
                 <div class="product-card">
                     <div class="product-card-header">
-                        <h3 class="product-card-title">Connect with women like you</h3>
+                        <h3 class="product-card-title">Join Community</h3>
                     </div>
                     <div class="product-card-content">
                         <div class="mockup-screen">
                             <div class="mockup-header">
                                 <span class="mockup-label">Community</span>
                             </div>
-
                             <div class="community-feed">
                                 <div class="community-post">
                                     <div class="post-header">
-                                        <span class="post-badge">Cancer Recovery</span>
+                                        <span class="post-badge">Expert</span>
+                                        <span class="post-author">Dr. Sarah</span>
                                     </div>
-                                    <div class="post-author">Sarah</div>
-                                    <div class="post-content">
-                                        "My energy finally feels like it's coming back."
-                                    </div>
-                                    <div class="post-likes">62</div>
+                                    <div class="post-content">Consistency beats intensity for long-term health.</div>
+                                    <div class="post-likes">342</div>
                                 </div>
-
                                 <div class="community-post">
                                     <div class="post-header">
-                                        <span class="post-badge" style="background: rgba(76, 102, 83, 0.7);">Menopause</span>
+                                        <span class="post-badge">Member</span>
+                                        <span class="post-author">Alex</span>
                                     </div>
-                                    <div class="post-author">Emma</div>
-                                    <div class="post-content">
-                                        "I've started sleeping much better after changing my evening routine."
-                                    </div>
-                                    <div class="post-likes">48</div>
-                                </div>
-
-                                <div class="community-post">
-                                    <div class="post-header">
-                                        <span class="post-badge" style="background: rgba(76, 102, 83, 0.5);">Postpartum</span>
-                                    </div>
-                                    <div class="post-author">Sophie</div>
-                                    <div class="post-content">
-                                        "I finally managed my first workout this week."
-                                    </div>
-                                    <div class="post-likes">37</div>
+                                    <div class="post-content">Just hit my health milestone!</div>
+                                    <div class="post-likes">156</div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="product-card-footer">
-                        <button class="product-card-button">Join the conversation</button>
+                        <button class="product-card-button">Explore</button>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ===================== -->
-    <!-- HOW IT WORKS SECTION  -->
-    <!-- ===================== -->
-
+    <!-- How It Works Section -->
     <section id="how-it-works" class="how-it-works-section">
-        <div class="max-w-7xl mx-auto px-8 w-full">
+        <div style="max-width: 1400px; margin: 0 auto; padding: 0 32px;">
             <div class="section-header">
-                <h2>How it Works</h2>
+                <h2>How Vernia Works</h2>
+                <p>Four simple steps to better health</p>
             </div>
 
             <div class="how-it-works-grid">
                 <div class="how-it-works-card">
-                    <div class="how-it-works-step">01</div>
-                    <h3 class="how-it-works-title">Choose your health journey</h3>
+                    <div class="how-it-works-step">1</div>
+                    <h3 class="how-it-works-title">Connect Your Data</h3>
+                    <p style="font-size: 0.9rem; color: #666; margin-top: 12px; line-height: 1.6;">Securely link your health apps and devices</p>
                 </div>
+
                 <div class="how-it-works-card">
-                    <div class="how-it-works-step">02</div>
-                    <h3 class="how-it-works-title">Track symptoms, habits and health data</h3>
+                    <div class="how-it-works-step">2</div>
+                    <h3 class="how-it-works-title">Get AI Insights</h3>
+                    <p style="font-size: 0.9rem; color: #666; margin-top: 12px; line-height: 1.6;">Receive personalized analysis and recommendations</p>
                 </div>
+
                 <div class="how-it-works-card">
-                    <div class="how-it-works-step">03</div>
-                    <h3 class="how-it-works-title">AI uncovers meaningful patterns</h3>
+                    <div class="how-it-works-step">3</div>
+                    <h3 class="how-it-works-title">Track Progress</h3>
+                    <p style="font-size: 0.9rem; color: #666; margin-top: 12px; line-height: 1.6;">Monitor your health journey with beautiful visualizations</p>
                 </div>
+
                 <div class="how-it-works-card">
-                    <div class="how-it-works-step">04</div>
-                    <h3 class="how-it-works-title">Build healthier habits with confidence</h3>
+                    <div class="how-it-works-step">4</div>
+                    <h3 class="how-it-works-title">Achieve Goals</h3>
+                    <p style="font-size: 0.9rem; color: #666; margin-top: 12px; line-height: 1.6;">Build sustainable habits and reach your health goals</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ===================== -->
-    <!-- MISSION SECTION       -->
-    <!-- ===================== -->
-
+    <!-- Mission Section -->
     <section id="mission" class="mission-section">
         <div class="mission-content">
-            <h2 class="mission-title">Our Mission</h2>
-            <p class="mission-text">
-                Every woman deserves to understand her body with confidence.
-            </p>
-            <p class="mission-text">
-                Vernia was created to bring together fragmented health information, daily habits and artificial intelligence into one intelligent companion that helps women uncover meaningful patterns, make informed decisions and feel supported through every stage of their health journey.
-            </p>
-            <div class="mission-decorative"></div>
+            <div class="mission-image">
+                <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #DCE8DE 0%, #E6DDD2 100%); display: flex; align-items: center; justify-content: center;">
+                    <span style="color: #4D6653; font-size: 0.95rem;">Lifestyle Image</span>
+                </div>
+            </div>
+            <div class="mission-text-content">
+                <h2 class="mission-title">Our Mission</h2>
+                <p class="mission-text">
+                    At Vernia, we believe everyone deserves access to personalized, intelligent health insights. We're building the future of preventive healthcare by combining cutting-edge AI with human-centered design.
+                </p>
+                <p class="mission-text">
+                    Our mission is simple: empower you to understand your body, make informed decisions, and live healthier seasons of your life—every single day.
+                </p>
+            </div>
         </div>
     </section>
 
-    <!-- ===================== -->
-    <!-- WAITLIST SECTION      -->
-    <!-- ===================== -->
-
-    <section id="contact" class="waitlist-section">
+    <!-- Waitlist Section -->
+    <section id="waitlist" class="waitlist-section">
         <div class="waitlist-container">
             <div class="waitlist-header">
-                <h2>Join the Vernia Waitlist</h2>
-                <p>Be among the first women shaping the future of personalised health.</p>
+                <h2>Join Our Waitlist</h2>
+                <p>Be among the first to experience the future of personal health intelligence</p>
             </div>
 
-            <form class="waitlist-form" id="waitlistForm">
-                <!-- Name Row -->
-                <div class="form-row">
-                    <div class="form-group">
-                        <label class="form-label">
-                            First Name
-                            <span class="required">*</span>
-                        </label>
-                        <input type="text" name="firstName" class="form-input" required>
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label">
-                            Last Name
-                        </label>
-                        <input type="text" name="lastName" class="form-input">
-                    </div>
-                </div>
-
-                <!-- Email & Country Row -->
-                <div class="form-row">
-                    <div class="form-group">
-                        <label class="form-label">
-                            Email Address
-                            <span class="required">*</span>
-                        </label>
-                        <input type="email" name="email" class="form-input" required>
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label">
-                            Country
-                            <span class="required">*</span>
-                        </label>
-                        <select name="country" class="form-select" required>
-                            <option value="">Select a country</option>
-                            <option value="Australia">Australia</option>
-                            <option value="Austria">Austria</option>
-                            <option value="Belgium">Belgium</option>
-                            <option value="Canada">Canada</option>
-                            <option value="France">France</option>
-                            <option value="Germany">Germany</option>
-                            <option value="Ireland">Ireland</option>
-                            <option value="Italy">Italy</option>
-                            <option value="Netherlands">Netherlands</option>
-                            <option value="Portugal">Portugal</option>
-                            <option value="Spain">Spain</option>
-                            <option value="Switzerland">Switzerland</option>
-                            <option value="United Kingdom">United Kingdom</option>
-                            <option value="United States">United States</option>
-                            <option value="Other">Other</option>
-                        </select>
-                    </div>
-                </div>
-
-                <!-- Age Range -->
+            <form class="waitlist-form" onsubmit="handleWaitlistSubmit(event)">
                 <div class="form-group">
-                    <label class="form-label">
-                        Age Range
-                    </label>
-                    <select name="ageRange" class="form-select">
-                        <option value="">Select age range</option>
-                        <option value="Under 25">Under 25</option>
-                        <option value="25–34">25–34</option>
-                        <option value="35–44">35–44</option>
-                        <option value="45–54">45–54</option>
-                        <option value="55–64">55–64</option>
-                        <option value="65+">65+</option>
-                    </select>
+                    <label for="name">First Name</label>
+                    <input type="text" id="name" name="name" placeholder="John" required>
                 </div>
 
-                <!-- Health Journey -->
                 <div class="form-group">
-                    <label class="form-label">
-                        Health Journey
-                        <span class="required">*</span>
-                    </label>
-                    <select name="healthJourney" class="form-select" required>
-                        <option value="">Select your health journey</option>
-                        <option value="Cancer recovery">Cancer recovery</option>
-                        <option value="Menopause">Menopause</option>
-                        <option value="Perimenopause">Perimenopause</option>
-                        <option value="Postpartum">Postpartum</option>
-                        <option value="Fertility journey">Fertility journey</option>
-                        <option value="Gut health / Digestive health">Gut health / Digestive health</option>
-                        <option value="General wellness">General wellness</option>
-                        <option value="Other">Other</option>
-                    </select>
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="john@example.com" required>
                 </div>
 
-                <!-- What are you hoping to achieve? -->
                 <div class="form-group">
-                    <label class="form-label">
-                        What are you hoping to achieve?
-                    </label>
-                    <div class="checkbox-group">
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="goal-habits" name="goals" value="Build healthier habits" class="checkbox-input">
-                            <label for="goal-habits" class="checkbox-label">Build healthier habits</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="goal-nutrition" name="goals" value="Improve nutrition" class="checkbox-input">
-                            <label for="goal-nutrition" class="checkbox-label">Improve nutrition</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="goal-exercise" name="goals" value="Exercise consistently" class="checkbox-input">
-                            <label for="goal-exercise" class="checkbox-label">Exercise consistently</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="goal-sleep" name="goals" value="Improve sleep" class="checkbox-input">
-                            <label for="goal-sleep" class="checkbox-label">Improve sleep</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="goal-symptoms" name="goals" value="Manage symptoms" class="checkbox-input">
-                            <label for="goal-symptoms" class="checkbox-label">Manage symptoms</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="goal-muscle" name="goals" value="Gain muscle" class="checkbox-input">
-                            <label for="goal-muscle" class="checkbox-label">Gain muscle</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="goal-weight" name="goals" value="Lose weight" class="checkbox-input">
-                            <label for="goal-weight" class="checkbox-label">Lose weight</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="goal-stress" name="goals" value="Reduce stress" class="checkbox-input">
-                            <label for="goal-stress" class="checkbox-label">Reduce stress</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="goal-understand" name="goals" value="Better understand my body" class="checkbox-input">
-                            <label for="goal-understand" class="checkbox-label">Better understand my body</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="goal-connect" name="goals" value="Connect with women with similar experiences" class="checkbox-input">
-                            <label for="goal-connect" class="checkbox-label">Connect with women</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="goal-other" name="goals" value="Other" class="checkbox-input">
-                            <label for="goal-other" class="checkbox-label">Other</label>
-                        </div>
-                    </div>
+                    <label for="phone">Phone Number (optional)</label>
+                    <input type="tel" id="phone" name="phone" placeholder="+1 (555) 123-4567">
                 </div>
 
-                <!-- Open Question -->
-                <div class="form-group">
-                    <label class="form-label">
-                        What would you most like Vernia to help you with?
-                    </label>
-                    <textarea name="message" class="form-textarea" placeholder="Share your thoughts..."></textarea>
-                </div>
-
-                <!-- Consent Checkbox -->
-                <div class="form-group">
-                    <div class="consent-group">
-                        <input type="checkbox" id="consent" name="consent" class="consent-input" required>
-                        <label for="consent" class="consent-label">
-                            I'd like to receive updates about Vernia.
-                            <span class="required">*</span>
-                        </label>
-                    </div>
-                </div>
-
-                <!-- Submit Button -->
-                <button type="submit" class="form-button">
-                    Join the Waitlist
-                </button>
-
-                <!-- Form message placeholder -->
-                <div class="form-message info" id="formMessage" style="display: none;">
-                    Thanks for your interest! The waitlist form is being configured. Please check back soon.
-                </div>
+                <button type="submit" class="waitlist-button">Join the Waitlist</button>
             </form>
         </div>
     </section>
 
-    <!-- Success Message -->
-    <div class="success-overlay" id="successOverlay"></div>
-    <div class="success-message" id="successMessage">
-        <div class="success-icon">✓</div>
-        <div class="success-title">Welcome to Vernia!</div>
-        <div class="success-text">
-            Thank you for joining the Vernia waitlist. We'll keep you updated as we build the future of women's health.
-        </div>
-    </div>
+    <!-- Footer -->
+    <footer style="background: #2E2E2E; color: white; padding: 60px 32px; text-align: center;">
+        <p style="font-size: 0.9rem; opacity: 0.8;">© 2024 Vernia. All rights reserved.</p>
+    </footer>
 
     <script>
-        // Premium scroll behavior for navigation
+        // Navbar visibility on scroll
         const navbar = document.getElementById('navbar');
-        const topLogo = document.getElementById('topLogo');
-        let lastScrollY = 0;
-        let ticking = false;
+        const topLogo = document.querySelector('.top-logo');
+        const menuToggle = document.getElementById('menuToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
 
-        const SCROLL_THRESHOLD = 100; // Show navbar after 100px scroll
+        window.addEventListener('scroll', () => {
+            const scrollPosition = window.scrollY;
+            const heroSection = document.querySelector('section');
+            const heroHeight = heroSection.offsetHeight;
 
-        function updateNavbar() {
-            const scrollY = window.scrollY;
-
-            // Show floating navbar after scrolling 100px
-            if (scrollY > SCROLL_THRESHOLD) {
+            if (scrollPosition > heroHeight * 0.5) {
                 navbar.classList.add('visible');
                 topLogo.classList.add('hide');
             } else {
                 navbar.classList.remove('visible');
                 topLogo.classList.remove('hide');
             }
-
-            // Update active navigation link
-            updateActiveNavLink();
-
-            ticking = false;
-        }
-
-        function updateActiveNavLink() {
-            const sections = [
-                { id: 'product', element: document.getElementById('product') },
-                { id: 'how-it-works', element: document.getElementById('how-it-works') },
-                { id: 'mission', element: document.getElementById('mission') },
-                { id: 'contact', element: document.getElementById('contact') }
-            ];
-
-            const navLinks = document.querySelectorAll('.navbar-link');
-            navLinks.forEach(link => link.classList.remove('active'));
-
-            let currentSection = null;
-            for (let section of sections) {
-                if (section.element) {
-                    const rect = section.element.getBoundingClientRect();
-                    if (rect.top <= 200) {
-                        currentSection = section.id;
-                    }
-                }
-            }
-
-            if (currentSection) {
-                const activeLink = document.querySelector(`.navbar-link[href="#${currentSection}"]`);
-                if (activeLink) {
-                    activeLink.classList.add('active');
-                }
-            }
-        }
-
-        window.addEventListener('scroll', () => {
-            lastScrollY = window.scrollY;
-            if (!ticking) {
-                window.requestAnimationFrame(updateNavbar);
-                ticking = true;
-            }
         });
 
-        // Smooth link navigation
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                const href = this.getAttribute('href');
-                if (href !== '#' && document.querySelector(href)) {
-                    e.preventDefault();
-                    document.querySelector(href).scrollIntoView({ behavior: 'smooth' });
-                }
+        // Mobile menu toggle
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+        });
+
+        // Close menu when a link is clicked
+        document.querySelectorAll('.mobile-nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                menuToggle.classList.remove('active');
+                mobileMenu.classList.remove('active');
             });
         });
 
-        // Form submission with Formspree
-        // NOTE: Replace 'YOUR_FORMSPREE_ENDPOINT' with your actual Formspree endpoint
-        // Example: 'https://formspree.io/f/xyzqwpxz'
-        const form = document.getElementById('waitlistForm');
-        const successMessage = document.getElementById('successMessage');
-        const successOverlay = document.getElementById('successOverlay');
-        const formMessage = document.getElementById('formMessage');
-
-        const FORMSPREE_ENDPOINT = 'https://formspree.io/f/YOUR_FORMSPREE_ENDPOINT';
-
-        form.addEventListener('submit', async (e) => {
-            e.preventDefault();
-
-            // Check if endpoint is configured
-            if (FORMSPREE_ENDPOINT.includes('YOUR_FORMSPREE_ENDPOINT')) {
-                formMessage.style.display = 'block';
-                return;
-            }
-
-            // Collect form data
+        // Form submission
+        function handleWaitlistSubmit(event) {
+            event.preventDefault();
+            const form = event.target;
             const formData = new FormData(form);
-            
-            // Convert goals checkboxes to comma-separated string
-            const goals = Array.from(document.querySelectorAll('input[name="goals"]:checked'))
-                .map(checkbox => checkbox.value)
-                .join(', ');
+            console.log('Form submitted:', Object.fromEntries(formData));
+            alert('Thank you for joining the waitlist! We\'ll be in touch soon.');
+            form.reset();
+        }
 
-            // Create submission data
-            const data = {
-                firstName: formData.get('firstName'),
-                lastName: formData.get('lastName'),
-                email: formData.get('email'),
-                country: formData.get('country'),
-                ageRange: formData.get('ageRange') || 'Not specified',
-                healthJourney: formData.get('healthJourney'),
-                goals: goals || 'Not specified',
-                message: formData.get('message') || 'No message',
-                consent: formData.get('consent') ? 'Yes' : 'No'
-            };
-
-            try {
-                // Send to Formspree
-                const response = await fetch(FORMSPREE_ENDPOINT, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify(data)
-                });
-
-                if (response.ok) {
-                    // Show success message
-                    successOverlay.classList.add('show');
-                    successMessage.classList.add('show');
-                    
-                    // Reset form
-                    form.reset();
-                    
-                    // Hide success message after 4 seconds
-                    setTimeout(() => {
-                        successOverlay.classList.remove('show');
-                        successMessage.classList.remove('show');
-                    }, 4000);
-                } else {
-                    alert('There was an error submitting your form. Please try again.');
+        // Smooth scroll for navbar links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href !== '#') {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth' });
+                    }
                 }
-            } catch (error) {
-                console.error('Error:', error);
-                alert('There was an error submitting your form. Please try again.');
-            }
-        });
-
-        // Close success message on overlay click
-        successOverlay.addEventListener('click', () => {
-            successOverlay.classList.remove('show');
-            successMessage.classList.remove('show');
+            });
         });
     </script>
 
