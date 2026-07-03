@@ -38,6 +38,13 @@
             scroll-behavior: smooth;
         }
 
+        #how-vernia-helps,
+        #how-works,
+        #mission,
+        #waitlist {
+            scroll-margin-top: 120px;
+        }
+
         body {
             font-family: 'Manrope', sans-serif;
             background: #FAFAF8;
@@ -72,7 +79,7 @@
         }
 
         .nav-logo {
-            height: 32px;
+            height: 40px;
             width: auto;
             flex-shrink: 0;
         }
@@ -114,6 +121,46 @@
             transform: translateY(-2px);
         }
 
+        .language-switcher {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-left: auto;
+            margin-right: 8px;
+            font-size: 0.82rem;
+            font-weight: 700;
+            color: #8A948A;
+        }
+
+        .language-option {
+            border: none;
+            background: transparent;
+            color: inherit;
+            cursor: pointer;
+            font: inherit;
+            padding: 4px 2px;
+            position: relative;
+        }
+
+        .language-option.active {
+            color: #4D6653;
+        }
+
+        .language-option.active::after {
+            content: "";
+            position: absolute;
+            left: 2px;
+            right: 2px;
+            bottom: 0;
+            height: 2px;
+            border-radius: 999px;
+            background: #4D6653;
+        }
+
+        .language-separator {
+            color: rgba(77, 102, 83, 0.35);
+        }
+
         /* Mobile menu toggle */
         .mobile-menu-toggle {
             display: none;
@@ -145,12 +192,20 @@
             transform: rotate(-45deg) translate(8px, -8px);
         }
 
+        .mobile-nav-menu {
+            display: none;
+        }
+
         @media (max-width: 768px) {
             .mobile-menu-toggle {
                 display: block;
             }
 
             .nav-links {
+                display: none;
+            }
+
+            .desktop-language-switcher {
                 display: none;
             }
 
@@ -184,13 +239,17 @@
                 margin-top: 12px;
                 width: 100%;
             }
+
+            .mobile-language-switcher {
+                margin: 14px 0 4px;
+            }
         }
 
         /* Hero Section */
         .hero-section {
             background: white;
-            padding-top: 100px;
-            padding-bottom: 60px;
+            padding-top: 88px;
+            padding-bottom: 52px;
             margin-top: 70px;
         }
 
@@ -297,27 +356,30 @@
             position: relative;
             border-radius: 32px;
             overflow: hidden;
-            aspect-ratio: 3/4;
+            aspect-ratio: 4/3;
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
         }
 
-        .hero-image-placeholder {
+        .hero-image img {
             width: 100%;
             height: 100%;
-            background: linear-gradient(135deg, #DCE8DE 0%, #E6DDD2 100%);
+            object-fit: cover;
+            object-position: center;
+            display: block;
         }
 
         /* Floating card on hero image */
         .today-card {
             position: absolute;
-            bottom: 30px;
-            right: 20px;
-            width: 220px;
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(20px);
+            bottom: 24px;
+            right: 24px;
+            width: 168px;
+            background: rgba(255, 255, 255, 0.76);
+            -webkit-backdrop-filter: blur(22px);
+            backdrop-filter: blur(22px);
             border: 1px solid rgba(255, 255, 255, 0.6);
             border-radius: 20px;
-            padding: 18px;
+            padding: 12px;
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
             animation: floatCard 6s ease-in-out infinite;
         }
@@ -333,14 +395,14 @@
             color: #9CAF88;
             text-transform: uppercase;
             letter-spacing: 0.08em;
-            margin-bottom: 12px;
+            margin-bottom: 9px;
         }
 
         .score-section {
             background: linear-gradient(135deg, rgba(156, 175, 136, 0.2) 0%, rgba(138, 157, 120, 0.15) 100%);
             border-radius: 14px;
-            padding: 12px;
-            margin-bottom: 12px;
+            padding: 8px;
+            margin-bottom: 8px;
             border: 1px solid rgba(156, 175, 136, 0.15);
         }
 
@@ -352,7 +414,7 @@
         }
 
         .score-value {
-            font-size: 1.8rem;
+            font-size: 1.35rem;
             color: #4D6653;
             font-weight: 800;
         }
@@ -361,13 +423,13 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 8px;
-            margin-bottom: 12px;
+            margin-bottom: 9px;
         }
 
         .metric {
             background: rgba(248, 248, 248, 0.95);
             border-radius: 10px;
-            padding: 8px;
+            padding: 6px;
             border: 1px solid rgba(0, 0, 0, 0.04);
         }
 
@@ -386,7 +448,7 @@
         }
 
         .insight {
-            padding-top: 10px;
+            padding-top: 8px;
             border-top: 1px solid rgba(0, 0, 0, 0.04);
         }
 
@@ -396,32 +458,32 @@
             color: #9CAF88;
             text-transform: uppercase;
             letter-spacing: 0.08em;
-            margin-bottom: 6px;
+            margin-bottom: 4px;
         }
 
         .insight-text {
-            font-size: 0.7rem;
+            font-size: 0.66rem;
             color: #333;
             line-height: 1.4;
             margin-bottom: 6px;
         }
 
         .insight-note {
-            font-size: 0.65rem;
+            font-size: 0.62rem;
             color: #4D6653;
             font-style: italic;
             font-weight: 600;
         }
 
-        /* Product Section */
+        /* How Vernia Helps Section */
         .product-section {
             background: white;
-            padding: 80px 0;
+            padding: 60px 0;
         }
 
         .section-header {
             text-align: center;
-            margin-bottom: 60px;
+            margin-bottom: 34px;
         }
 
         .section-header h2 {
@@ -439,11 +501,12 @@
 
         .product-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(4, minmax(0, 1fr));
             gap: 20px;
             max-width: 1400px;
             margin: 0 auto;
             padding: 0 32px;
+            align-items: stretch;
         }
 
         @media (max-width: 1200px) {
@@ -459,61 +522,103 @@
         }
 
         .product-card {
-            background: white;
+            background: linear-gradient(180deg, #fffdf9 0%, #fafaf7 100%);
             border-radius: 20px;
             overflow: hidden;
-            border: 1px solid rgba(0, 0, 0, 0.06);
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+            border: 1px solid rgba(77, 102, 83, 0.08);
+            box-shadow: 0 18px 48px rgba(46, 46, 46, 0.06);
             display: flex;
             flex-direction: column;
+            position: relative;
+            transition: transform 240ms ease, box-shadow 240ms ease, border-color 240ms ease;
+            height: 100%;
+        }
+
+        .product-card::before {
+            content: "";
+            height: 4px;
+            background: linear-gradient(90deg, rgba(220, 232, 222, 0.95), rgba(230, 221, 210, 0.78));
+            display: block;
+            width: 100%;
+        }
+
+        .product-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 24px 58px rgba(46, 46, 46, 0.09);
+            border-color: rgba(77, 102, 83, 0.14);
+        }
+
+        .product-card.featured {
+            border-color: rgba(77, 102, 83, 0.32);
+            box-shadow: 0 20px 50px rgba(77, 102, 83, 0.18);
+        }
+
+        .product-card.featured::before {
+            background: linear-gradient(90deg, #4D6653, #DCE8DE);
+        }
+
+        .product-card.featured:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 28px 64px rgba(77, 102, 83, 0.22);
         }
 
         .product-card-header {
-            padding: 20px 16px;
+            padding: 20px 18px 16px;
             border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-            background: #FAFAF8;
+            background: rgba(255, 255, 255, 0.46);
         }
 
         .product-card-title {
-            font-size: 0.95rem;
+            font-size: 0.98rem;
             font-weight: 700;
             color: #2E2E2E;
-            margin: 0;
+            margin: 0 0 8px;
+            text-align: center;
+        }
+
+        .product-card-description {
+            color: #667066;
+            font-size: 0.74rem;
+            line-height: 1.5;
+            margin: 0 auto;
+            max-width: 240px;
             text-align: center;
         }
 
         .product-card-content {
-            padding: 16px;
+            padding: 18px 16px 20px;
             flex: 1;
             display: flex;
             align-items: center;
             justify-content: center;
-            min-height: 280px;
+            min-height: 238px;
         }
 
         .mockup-phone {
             width: 100%;
-            background: white;
-            border-radius: 16px;
-            padding: 12px;
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
-            border: 1px solid rgba(0, 0, 0, 0.04);
+            background: linear-gradient(180deg, #FFFFFF 0%, #FBFBF8 100%);
+            border-radius: 18px;
+            padding: 14px;
+            box-shadow: 0 18px 42px rgba(46, 46, 46, 0.08);
+            border: 1px solid rgba(77, 102, 83, 0.08);
             display: flex;
             flex-direction: column;
-            font-size: 0.75rem;
+            font-size: 0.8rem;
+            min-height: 224px;
+            height: 100%;
         }
 
         .mockup-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding-bottom: 10px;
-            margin-bottom: 10px;
+            padding-bottom: 8px;
+            margin-bottom: 8px;
             border-bottom: 1px solid rgba(0, 0, 0, 0.05);
         }
 
         .mockup-label {
-            font-size: 0.6rem;
+            font-size: 0.64rem;
             font-weight: 800;
             color: #9CAF88;
             text-transform: uppercase;
@@ -531,33 +636,130 @@
             align-items: center;
             padding-top: 8px;
             border-top: 1px solid rgba(0, 0, 0, 0.05);
-            color: #999;
-            font-size: 1.2rem;
+            color: #9AA39A;
+            font-size: 0.66rem;
+            font-weight: 700;
         }
 
         .metric-item {
             background: rgba(76, 102, 83, 0.06);
-            padding: 10px;
-            border-radius: 10px;
-            margin-bottom: 8px;
+            padding: 9px;
+            border-radius: 12px;
+            margin-bottom: 6px;
             text-align: center;
             border: 1px solid rgba(76, 102, 83, 0.1);
         }
 
         .metric-item-label {
-            font-size: 0.6rem;
+            font-size: 0.62rem;
             color: #999;
             text-transform: uppercase;
             margin-bottom: 2px;
         }
 
         .metric-item-value {
-            font-size: 0.9rem;
+            font-size: 0.96rem;
             color: #4D6653;
             font-weight: 700;
         }
 
-        /* How It Works Section */
+        .insight-box,
+        .ai-box {
+            background: rgba(76, 102, 83, 0.06);
+            border: 1px solid rgba(76, 102, 83, 0.1);
+            border-radius: 12px;
+            color: #4B554B;
+            font-size: 0.72rem;
+            line-height: 1.45;
+            padding: 10px;
+        }
+
+        .trend-row,
+        .planner-row,
+        .community-row {
+            align-items: center;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            display: flex;
+            gap: 8px;
+            justify-content: space-between;
+            padding: 5px 0;
+        }
+
+        .trend-row:last-child,
+        .planner-row:last-child,
+        .community-row:last-child {
+            border-bottom: 0;
+        }
+
+        .trend-name,
+        .planner-detail,
+        .community-copy {
+            color: #4B4B4B;
+            font-size: 0.72rem;
+            line-height: 1.35;
+        }
+
+        .trend-line {
+            background: linear-gradient(90deg, rgba(77, 102, 83, 0.08), rgba(77, 102, 83, 0.38));
+            border-radius: 999px;
+            flex: 1;
+            height: 4px;
+            max-width: 72px;
+        }
+
+        .trend-value {
+            color: #4D6653;
+            font-size: 0.68rem;
+            font-weight: 800;
+            white-space: nowrap;
+        }
+
+        .planner-phone {
+            background: linear-gradient(180deg, #FFFFFF 0%, #FAFAF8 100%);
+            border-color: rgba(77, 102, 83, 0.22);
+            box-shadow: 0 22px 52px rgba(77, 102, 83, 0.14);
+        }
+
+        .planner-row {
+            align-items: flex-start;
+            justify-content: flex-start;
+        }
+
+        .planner-day {
+            color: #4D6653;
+            font-size: 0.66rem;
+            font-weight: 800;
+            line-height: 1.2;
+            min-width: 30px;
+            text-transform: uppercase;
+        }
+
+        .planner-pill {
+            background: rgba(77, 102, 83, 0.1);
+            border-radius: 999px;
+            color: #4D6653;
+            display: inline-block;
+            font-size: 0.62rem;
+            font-weight: 800;
+            margin: 1px 0;
+            padding: 2px 7px;
+        }
+
+        .community-avatar {
+            align-items: center;
+            background: #DCE8DE;
+            border-radius: 999px;
+            color: #4D6653;
+            display: flex;
+            flex-shrink: 0;
+            font-size: 0.62rem;
+            font-weight: 800;
+            height: 24px;
+            justify-content: center;
+            width: 24px;
+        }
+
+        /* How it Works Section */
         .how-it-works-section {
             background: white;
             padding: 80px 0;
@@ -570,12 +772,27 @@
             max-width: 1400px;
             margin: 0 auto;
             padding: 0 32px;
+            position: relative;
+        }
+
+        .how-grid::before {
+            content: "";
+            position: absolute;
+            top: 30px;
+            left: calc(12.5% + 32px);
+            right: calc(12.5% + 32px);
+            border-top: 1px dashed rgba(77, 102, 83, 0.24);
+            z-index: 0;
         }
 
         @media (max-width: 1024px) {
             .how-grid {
                 grid-template-columns: repeat(2, 1fr);
                 gap: 60px;
+            }
+
+            .how-grid::before {
+                display: none;
             }
         }
 
@@ -591,6 +808,8 @@
             flex-direction: column;
             align-items: center;
             text-align: center;
+            position: relative;
+            z-index: 1;
         }
 
         .how-step-circle {
@@ -605,11 +824,31 @@
             font-size: 1.8rem;
             font-weight: 800;
             margin-bottom: 24px;
+            position: relative;
+            z-index: 2;
         }
 
         .how-icon {
-            font-size: 2.5rem;
+            width: 58px;
+            height: 58px;
+            border-radius: 50%;
+            background: rgba(220, 232, 222, 0.5);
+            border: 1px solid rgba(77, 102, 83, 0.14);
+            color: #4D6653;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             margin-bottom: 16px;
+        }
+
+        .how-icon svg {
+            width: 28px;
+            height: 28px;
+            stroke: currentColor;
+            stroke-width: 1.8;
+            fill: none;
+            stroke-linecap: round;
+            stroke-linejoin: round;
         }
 
         .how-title {
@@ -628,8 +867,51 @@
 
         /* Mission Section */
         .mission-section {
-            background: white;
-            padding: 80px 0;
+            background:
+                radial-gradient(circle at 15% 18%, rgba(230, 221, 210, 0.42), transparent 34%),
+                radial-gradient(circle at 85% 55%, rgba(220, 232, 222, 0.42), transparent 30%),
+                linear-gradient(180deg, #FFFFFF 0%, #FEFCF8 58%, #FFFFFF 100%);
+            padding: 110px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .mission-section::before,
+        .mission-section::after {
+            content: "";
+            position: absolute;
+            left: -10%;
+            right: -10%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .mission-section::before {
+            top: 14%;
+            height: 260px;
+            background: rgba(220, 232, 222, 0.28);
+            border-radius: 50% 50% 45% 55% / 55% 45% 55% 45%;
+            transform: rotate(-4deg);
+        }
+
+        .mission-section::after {
+            bottom: 8%;
+            height: 220px;
+            background: rgba(230, 221, 210, 0.28);
+            border-radius: 48% 52% 58% 42% / 52% 48% 42% 58%;
+            transform: rotate(3deg);
+        }
+
+        .mission-leaf {
+            position: absolute;
+            right: 2%;
+            top: 50%;
+            width: 210px;
+            height: 330px;
+            color: rgba(77, 102, 83, 0.1);
+            transform: translateY(-48%);
+            z-index: 1;
+            pointer-events: none;
         }
 
         .mission-container {
@@ -640,6 +922,8 @@
             grid-template-columns: 1fr 1fr;
             gap: 80px;
             align-items: center;
+            position: relative;
+            z-index: 2;
         }
 
         @media (max-width: 768px) {
@@ -654,8 +938,16 @@
             aspect-ratio: 1;
             border-radius: 40px;
             overflow: hidden;
-            background: linear-gradient(135deg, #DCE8DE 0%, #E6DDD2 100%);
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+            box-shadow: 0 28px 76px rgba(77, 102, 83, 0.16);
+            position: relative;
+        }
+
+        .mission-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            display: block;
         }
 
         .mission-content h2 {
@@ -705,7 +997,7 @@
         .waitlist-form {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 24px;
+            gap: 22px 24px;
         }
 
         @media (max-width: 768px) {
@@ -747,12 +1039,18 @@
         }
 
         .checkbox-group {
-            grid-column: 1 / -1;
+            grid-column: 1 / 2;
         }
 
         .checkbox-group label {
             font-weight: 600;
             margin-bottom: 12px;
+        }
+
+        .label-secondary {
+            color: #7B857B;
+            font-size: 0.85em;
+            font-weight: 500;
         }
 
         .checkboxes {
@@ -782,16 +1080,81 @@
         }
 
         .textarea-group {
-            grid-column: 1 / -1;
+            grid-column: 2 / 3;
+            grid-row: 4 / 6;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .textarea-group label {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #2E2E2E;
+            margin-bottom: 8px;
         }
 
         .textarea-group textarea {
             resize: vertical;
-            min-height: 80px;
+            min-height: 130px;
+            height: 130px;
+        }
+
+        .join-benefits {
+            grid-column: 1 / -1;
+            align-self: stretch;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 22px;
+            background: linear-gradient(135deg, rgba(232, 238, 229, 0.72), rgba(255, 253, 249, 0.94));
+            border: 1px solid rgba(77, 102, 83, 0.12);
+            border-radius: 16px;
+            padding: 16px 20px;
+            box-shadow: 0 14px 34px rgba(46, 46, 46, 0.05);
+            margin-top: 2px;
+        }
+
+        .join-benefits h3 {
+            color: #2E2E2E;
+            font-size: 0.98rem;
+            font-weight: 700;
+            margin: 0;
+            white-space: nowrap;
+        }
+
+        .join-benefits ul {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 12px;
+            flex: 1;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .join-benefits li {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            color: #5F695F;
+            font-size: 0.88rem;
+            line-height: 1.35;
+        }
+
+        .join-benefits li::before {
+            content: "";
+            width: 6px;
+            height: 6px;
+            flex: 0 0 6px;
+            border-radius: 999px;
+            background: #4D6653;
+            opacity: 0.65;
         }
 
         .submit-button {
             grid-column: 1 / -1;
+            justify-self: center;
+            min-width: min(420px, 100%);
             background: #4D6653;
             color: white;
             padding: 14px 32px;
@@ -810,10 +1173,34 @@
         }
 
         .privacy-text {
+            grid-column: 1 / -1;
             text-align: center;
             font-size: 0.8rem;
             color: #999;
-            margin-top: 20px;
+            margin-top: 4px;
+        }
+
+        .form-status {
+            grid-column: 1 / -1;
+            display: none;
+            padding: 14px 16px;
+            border-radius: 14px;
+            font-size: 0.9rem;
+            line-height: 1.55;
+            border: 1px solid rgba(77, 102, 83, 0.14);
+        }
+
+        .form-status.success {
+            display: block;
+            color: #3D5242;
+            background: linear-gradient(135deg, rgba(220, 232, 222, 0.68), rgba(255, 255, 255, 0.92));
+        }
+
+        .form-status.error {
+            display: block;
+            color: #7A3E32;
+            background: linear-gradient(135deg, rgba(230, 221, 210, 0.72), rgba(255, 255, 255, 0.94));
+            border-color: rgba(122, 62, 50, 0.16);
         }
 
         /* Footer */
@@ -846,6 +1233,46 @@
             .how-grid {
                 gap: 30px;
             }
+
+            .checkbox-group,
+            .textarea-group,
+            .join-benefits,
+            .submit-button,
+            .privacy-text,
+            .form-status {
+                grid-column: 1 / -1;
+                grid-row: auto;
+            }
+
+            .textarea-group textarea {
+                min-height: 120px;
+                height: 120px;
+            }
+
+            .join-benefits {
+                align-items: flex-start;
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .join-benefits h3 {
+                white-space: normal;
+            }
+
+            .join-benefits ul {
+                grid-template-columns: 1fr;
+                gap: 8px;
+                width: 100%;
+            }
+
+            .submit-button {
+                width: 100%;
+            }
+
+            .label-secondary {
+                display: block;
+                margin-top: 2px;
+            }
         }
     </style>
 
@@ -859,8 +1286,8 @@
             <img src="images/logo.png" alt="Vernia" class="nav-logo">
             
             <div class="nav-links">
-                <a href="#how-helps" class="nav-link">How Vernia Helps</a>
-                <a href="#how-works" class="nav-link">How It Works</a>
+                <a href="#how-vernia-helps" class="nav-link">How Vernia Helps</a>
+                <a href="#how-works" class="nav-link">How it Works</a>
                 <a href="#mission" class="nav-link">Our Mission</a>
             </div>
 
@@ -870,19 +1297,30 @@
                 <span></span>
             </button>
 
-            <button class="nav-button" onclick="scrollToWaitlist()">Join the Waitlist</button>
+            <div class="language-switcher desktop-language-switcher" aria-label="Language selector">
+                <button type="button" class="language-option active" data-lang="en" aria-label="Switch to English">EN</button>
+                <span class="language-separator">|</span>
+                <button type="button" class="language-option" data-lang="es" aria-label="Cambiar a español">ES</button>
+            </div>
+
+            <button class="nav-button" onclick="document.getElementById('waitlist').scrollIntoView({ behavior: 'smooth' })">Join Waitlist</button>
         </div>
 
         <div class="mobile-nav-menu" id="mobileMenu">
-            <a href="#how-helps">How Vernia Helps</a>
-            <a href="#how-works">How It Works</a>
+            <a href="#how-vernia-helps">How Vernia Helps</a>
+            <a href="#how-works">How it Works</a>
             <a href="#mission">Our Mission</a>
-            <button class="nav-button" onclick="scrollToWaitlist()">Join the Waitlist</button>
+            <div class="language-switcher mobile-language-switcher" aria-label="Language selector">
+                <button type="button" class="language-option active" data-lang="en" aria-label="Switch to English">EN</button>
+                <span class="language-separator">|</span>
+                <button type="button" class="language-option" data-lang="es" aria-label="Cambiar a español">ES</button>
+            </div>
+            <button class="nav-button" onclick="document.getElementById('waitlist').scrollIntoView({ behavior: 'smooth' })">Join Waitlist</button>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero-section" id="how-helps">
+    <section class="hero-section">
         <div class="hero-container">
             <div class="hero-content">
                 <div class="hero-tagline">
@@ -894,8 +1332,8 @@
                 <p>Vernia is an AI health companion that brings together your health data, symptoms, daily habits and medical recommendations into one intelligent place—helping you understand your body and feel confident about your health journey.</p>
 
                 <div class="hero-buttons">
-                    <button class="btn-primary" onclick="scrollToWaitlist()">Join the Waitlist →</button>
-                    <button class="btn-secondary">Explore Vernia</button>
+                    <button class="btn-primary">Join the Waitlist →</button>
+                    <button class="btn-secondary" onclick="document.getElementById('how-vernia-helps').scrollIntoView({ behavior: 'smooth' })">Explore Vernia</button>
                 </div>
 
                 <div class="hero-features">
@@ -909,7 +1347,7 @@
             </div>
 
             <div class="hero-image">
-                <div class="hero-image-placeholder"></div>
+                <img src="images/hero.png" alt="Woman walking through a spring park">
                 
                 <!-- Today Card -->
                 <div class="today-card">
@@ -941,12 +1379,12 @@
         </div>
     </section>
 
-    <!-- See Vernia in Action -->
-    <section class="product-section">
+    <!-- How Vernia Helps -->
+    <section class="product-section" id="how-vernia-helps">
         <div style="max-width: 1400px; margin: 0 auto; padding: 0 32px;">
             <div class="section-header">
-                <h2>See Vernia in Action</h2>
-                <p>One intelligent companion that helps you understand your body,<br>discover meaningful patterns and build healthier habits—every day.</p>
+                <h2>How Vernia Helps</h2>
+                <p>One intelligent companion that helps you understand your body,<br>uncover meaningful patterns, plan your health and feel supported.</p>
             </div>
 
             <div class="product-grid">
@@ -954,6 +1392,7 @@
                 <div class="product-card">
                     <div class="product-card-header">
                         <h3 class="product-card-title">Understand your body</h3>
+                        <p class="product-card-description">AI-generated personalised insights translate your health data into plain-language understanding.</p>
                     </div>
                     <div class="product-card-content">
                         <div class="mockup-phone">
@@ -973,15 +1412,16 @@
                                     <div class="metric-item-label">Sleep</div>
                                     <div class="metric-item-value">7h 48m</div>
                                 </div>
-                                <div style="font-size: 0.75rem; color: #666; margin-top: 8px;">Strength Training</div>
-                                <div style="font-size: 0.75rem; color: #666;">AI Insights</div>
+                                <div class="insight-box">
+                                    <strong style="color: #4D6653;">AI INSIGHT</strong><br>
+                                    Your recovery improves after protein-rich breakfasts and strength training.
+                                </div>
                             </div>
                             <div class="mockup-nav">
-                                <span>🏠</span>
-                                <span>📊</span>
-                                <span>📋</span>
-                                <span>📅</span>
-                                <span>👤</span>
+                                <span>Home</span>
+                                <span>Insight</span>
+                                <span>Track</span>
+                                <span>Plan</span>
                             </div>
                         </div>
                     </div>
@@ -991,6 +1431,7 @@
                 <div class="product-card">
                     <div class="product-card-header">
                         <h3 class="product-card-title">Discover meaningful patterns</h3>
+                        <p class="product-card-description">Connect symptoms, sleep, nutrition, exercise and treatments to uncover trends you might miss.</p>
                     </div>
                     <div class="product-card-content">
                         <div class="mockup-phone">
@@ -998,83 +1439,94 @@
                                 <span class="mockup-label">TRENDS</span>
                             </div>
                             <div class="mockup-content">
-                                <div style="font-size: 0.75rem; margin-bottom: 6px;">
-                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-                                        <span>💤 Sleep</span>
-                                        <span style="color: #4D6653; font-weight: 700;">↑ 12%</span>
-                                    </div>
-                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-                                        <span>⚡ Energy</span>
-                                        <span style="color: #4D6653; font-weight: 700;">↑ 8%</span>
-                                    </div>
-                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-                                        <span>🎯 Symptoms</span>
-                                        <span style="color: #4D6653; font-weight: 700;">↓ 15%</span>
-                                    </div>
-                                    <div style="display: flex; justify-content: space-between; align-items: center;">
-                                        <span>🏃 Exercise</span>
-                                        <span style="color: #4D6653; font-weight: 700;">↑ 24%</span>
-                                    </div>
+                                <div class="trend-row">
+                                    <span class="trend-name">Sleep</span>
+                                    <span class="trend-line"></span>
+                                    <span class="trend-value">+12%</span>
                                 </div>
-                                <div style="font-size: 0.7rem; color: #999; margin-top: 10px; padding-top: 8px; border-top: 1px solid rgba(0,0,0,0.05);">
-                                    <strong style="color: #9CAF88;">AI DETECTED</strong><br>
-                                    Your symptoms improve on days you sleep well, suggesting proper rest helps.
+                                <div class="trend-row">
+                                    <span class="trend-name">Energy</span>
+                                    <span class="trend-line"></span>
+                                    <span class="trend-value">+8%</span>
+                                </div>
+                                <div class="trend-row">
+                                    <span class="trend-name">Symptoms</span>
+                                    <span class="trend-line"></span>
+                                    <span class="trend-value">-15%</span>
+                                </div>
+                                <div class="trend-row">
+                                    <span class="trend-name">Exercise</span>
+                                    <span class="trend-line"></span>
+                                    <span class="trend-value">+24%</span>
+                                </div>
+                                <div class="ai-box" style="margin-top: 10px;">
+                                    <strong style="color: #4D6653;">AI DETECTED</strong><br>
+                                    Symptoms ease on days with 7+ hours of sleep and morning walks.
                                 </div>
                             </div>
                             <div class="mockup-nav">
-                                <span>🏠</span>
-                                <span>📊</span>
-                                <span>📋</span>
-                                <span>📅</span>
-                                <span>👤</span>
+                                <span>Home</span>
+                                <span>Insight</span>
+                                <span>Track</span>
+                                <span>Plan</span>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Plan your week -->
-                <div class="product-card">
+                <!-- Plan your health -->
+                <div class="product-card featured">
                     <div class="product-card-header">
-                        <h3 class="product-card-title">Plan your week</h3>
+                        <h3 class="product-card-title">Plan your health</h3>
+                        <p class="product-card-description">A weekly planner for appointments, medication, movement, nutrition, reminders and AI recommendations.</p>
                     </div>
                     <div class="product-card-content">
-                        <div class="mockup-phone">
+                        <div class="mockup-phone planner-phone">
                             <div class="mockup-header">
                                 <span class="mockup-label">May 12 - May 18</span>
+                                <span class="mockup-label">PLAN</span>
                             </div>
                             <div class="mockup-content">
-                                <div style="font-size: 0.75rem; color: #2E2E2E; line-height: 1.6;">
-                                    <div style="margin-bottom: 8px; padding-bottom: 8px; border-bottom: 1px solid rgba(0,0,0,0.05);">
-                                        <strong>Tue</strong> 12<br>
-                                        🔵 Rest day<br>
-                                        🥗 Protein goal
+                                <div class="planner-row">
+                                    <div class="planner-day">Mon<br>12</div>
+                                    <div class="planner-detail">
+                                        <span class="planner-pill">Strength</span>
+                                        <span class="planner-pill">Protein goal</span>
+                                        <span class="planner-pill">Sleep 7h 45m</span>
                                     </div>
-                                    <div style="margin-bottom: 8px; padding-bottom: 8px; border-bottom: 1px solid rgba(0,0,0,0.05);">
-                                        <strong>Wed</strong> 13<br>
-                                        🩺 Blood Test 10:00 AM
+                                </div>
+                                <div class="planner-row">
+                                    <div class="planner-day">Tue<br>13</div>
+                                    <div class="planner-detail">
+                                        <span class="planner-pill">Walk 30 min</span>
+                                        <span class="planner-pill">Medication</span>
+                                        <span class="planner-pill">Meal plan</span>
                                     </div>
-                                    <div style="margin-bottom: 8px;">
-                                        <strong>Fri</strong> 15<br>
-                                        📋 Recovery Day<br>
-                                        💊 Medication
-                                    </div>
+                                </div>
+                                <div class="planner-row">
+                                    <div class="planner-day">Wed<br>14</div>
+                                    <div class="planner-detail">Blood test 10:00 AM</div>
+                                </div>
+                                <div class="ai-box" style="margin-top: 10px;">
+                                    <strong style="color: #4D6653;">AI SUGGESTION</strong><br>
+                                    Thursday looks best for recovery. Move strength training to Friday.
                                 </div>
                             </div>
                             <div class="mockup-nav">
-                                <span>🏠</span>
-                                <span>📊</span>
-                                <span>📋</span>
-                                <span>📅</span>
-                                <span>👤</span>
+                                <span>Home</span>
+                                <span>Insight</span>
+                                <span>Track</span>
+                                <span>Plan</span>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Join the community -->
+                <!-- Connect with women like you -->
                 <div class="product-card">
                     <div class="product-card-header">
-                        <h3 class="product-card-title">Join the community</h3>
+                        <h3 class="product-card-title">Connect with women like you</h3>
+                        <p class="product-card-description">Communities organised by health journey, with meaningful discussions and support.</p>
                     </div>
                     <div class="product-card-content">
                         <div class="mockup-phone">
@@ -1082,30 +1534,31 @@
                                 <span class="mockup-label">COMMUNITIES</span>
                             </div>
                             <div class="mockup-content">
-                                <div style="display: flex; gap: 8px; justify-content: center; margin-bottom: 12px; font-size: 1.4rem;">
-                                    <span>🌸</span>
-                                    <span>💪</span>
-                                    <span>🧘</span>
-                                    <span>👥</span>
-                                    <span>⭐</span>
+                                <div style="display: flex; gap: 5px; justify-content: center; margin-bottom: 10px;">
+                                    <span class="planner-pill">Cancer</span>
+                                    <span class="planner-pill">Menopause</span>
+                                    <span class="planner-pill">Fertility</span>
                                 </div>
-                                <div style="font-size: 0.7rem; color: #2E2E2E; line-height: 1.5;">
-                                    <div style="margin-bottom: 8px; padding-bottom: 8px; border-bottom: 1px solid rgba(0,0,0,0.05);">
-                                        <span style="background: #4D6653; color: white; padding: 2px 8px; border-radius: 10px; font-size: 0.6rem; font-weight: 700;">EXPERT</span> Sarah<br>
-                                        <span style="color: #666;">My energy feels like it's coming back</span>
+                                <div class="community-row">
+                                    <div class="community-avatar">S</div>
+                                    <div class="community-copy">
+                                        <strong>Sarah</strong><br>
+                                        My energy finally feels like it is coming back.
                                     </div>
-                                    <div>
-                                        <span style="background: #4D6653; color: white; padding: 2px 8px; border-radius: 10px; font-size: 0.6rem; font-weight: 700;">MEMBER</span> Emma<br>
-                                        <span style="color: #666;">I've made my first health goal!</span>
+                                </div>
+                                <div class="community-row">
+                                    <div class="community-avatar">E</div>
+                                    <div class="community-copy">
+                                        <strong>Emma</strong><br>
+                                        I slept better after changing my evening routine.
                                     </div>
                                 </div>
                             </div>
                             <div class="mockup-nav">
-                                <span>🏠</span>
-                                <span>📊</span>
-                                <span>📋</span>
-                                <span>📅</span>
-                                <span>👤</span>
+                                <span>Home</span>
+                                <span>Insight</span>
+                                <span>Track</span>
+                                <span>Plan</span>
                             </div>
                         </div>
                     </div>
@@ -1113,7 +1566,7 @@
             </div>
 
             <div style="text-align: center; margin-top: 40px;">
-                <button class="btn-primary" onclick="scrollToWaitlist()">Join the Community</button>
+                <button class="btn-primary" onclick="document.getElementById('waitlist').scrollIntoView({ behavior: 'smooth' })">Join Waitlist</button>
             </div>
         </div>
     </section>
@@ -1128,28 +1581,51 @@
             <div class="how-grid">
                 <div class="how-card">
                     <div class="how-step-circle">1</div>
-                    <div class="how-icon">👤</div>
+                    <div class="how-icon">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M20 21a8 8 0 0 0-16 0"></path>
+                            <circle cx="12" cy="8" r="4"></circle>
+                        </svg>
+                    </div>
                     <h3 class="how-title">Choose your health journey</h3>
                     <p class="how-text">Tell us about your journey, goals and priorities.</p>
                 </div>
 
                 <div class="how-card">
                     <div class="how-step-circle">2</div>
-                    <div class="how-icon">📋</div>
+                    <div class="how-icon">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M9 5h6"></path>
+                            <path d="M9 12h6"></path>
+                            <path d="M9 16h4"></path>
+                            <rect x="5" y="3" width="14" height="18" rx="2"></rect>
+                        </svg>
+                    </div>
                     <h3 class="how-title">Track symptoms, habits and health data</h3>
                     <p class="how-text">Consolidate your symptoms, nutrition, exercise, sleep and medical recommendations.</p>
                 </div>
 
                 <div class="how-card">
                     <div class="how-step-circle">3</div>
-                    <div class="how-icon">✨</div>
+                    <div class="how-icon">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8L12 3z"></path>
+                            <path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8L19 15z"></path>
+                        </svg>
+                    </div>
                     <h3 class="how-title">AI uncovers meaningful patterns</h3>
                     <p class="how-text">We analyze your data to identify insights unique to you.</p>
                 </div>
 
                 <div class="how-card">
                     <div class="how-step-circle">4</div>
-                    <div class="how-icon">📈</div>
+                    <div class="how-icon">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M4 19h16"></path>
+                            <path d="M5 16l4-4 3 3 6-7"></path>
+                            <path d="M15 8h3v3"></path>
+                        </svg>
+                    </div>
                     <h3 class="how-title">Build healthier habits with confidence</h3>
                     <p class="how-text">Receive personalized recommendations and track your progress.</p>
                 </div>
@@ -1159,8 +1635,18 @@
 
     <!-- Our Mission -->
     <section class="mission-section" id="mission">
+        <svg class="mission-leaf" viewBox="0 0 180 300" aria-hidden="true">
+            <path d="M72 285C70 214 76 146 116 44" stroke="currentColor" stroke-width="4" fill="none" stroke-linecap="round"></path>
+            <path d="M98 92C133 72 154 45 162 16C130 22 104 46 98 92Z" fill="currentColor"></path>
+            <path d="M88 132C52 112 31 82 24 50C58 58 82 86 88 132Z" fill="currentColor"></path>
+            <path d="M91 177C129 157 153 127 162 92C126 101 100 131 91 177Z" fill="currentColor"></path>
+            <path d="M78 216C43 199 21 171 12 137C47 143 72 174 78 216Z" fill="currentColor"></path>
+            <path d="M78 254C113 237 136 209 146 176C111 183 86 214 78 254Z" fill="currentColor"></path>
+        </svg>
         <div class="mission-container">
-            <div class="mission-image"></div>
+            <div class="mission-image">
+                <img src="images/lifestyle.png" alt="Woman overlooking a calm natural landscape">
+            </div>
 
             <div class="mission-content">
                 <h2>Our Mission</h2>
@@ -1178,7 +1664,8 @@
                 <p>Be among the first women shaping the future of personalized health.</p>
             </div>
 
-            <form class="waitlist-form" onsubmit="handleSubmit(event)">
+            <form class="waitlist-form" action="https://formspree.io/f/xeebpbdl" method="POST" onsubmit="handleSubmit(event)">
+                <input type="hidden" name="language" id="languageField" value="English">
                 <div class="form-group">
                     <label for="firstName">First Name *</label>
                     <input type="text" id="firstName" name="firstName" placeholder="First name" required>
@@ -1198,11 +1685,21 @@
                     <label for="country">Country *</label>
                     <select id="country" name="country" required>
                         <option value="">Select your country</option>
-                        <option value="us">United States</option>
-                        <option value="ca">Canada</option>
-                        <option value="uk">United Kingdom</option>
-                        <option value="au">Australia</option>
-                        <option value="other">Other</option>
+                        <option value="Australia">Australia</option>
+                        <option value="Austria">Austria</option>
+                        <option value="Belgium">Belgium</option>
+                        <option value="Canada">Canada</option>
+                        <option value="France">France</option>
+                        <option value="Germany">Germany</option>
+                        <option value="Ireland">Ireland</option>
+                        <option value="Italy">Italy</option>
+                        <option value="Netherlands">Netherlands</option>
+                        <option value="Portugal">Portugal</option>
+                        <option value="Spain">Spain</option>
+                        <option value="Switzerland">Switzerland</option>
+                        <option value="United Kingdom">United Kingdom</option>
+                        <option value="United States">United States</option>
+                        <option value="Other">Other</option>
                     </select>
                 </div>
 
@@ -1301,21 +1798,500 @@
                     <textarea id="message" name="message" placeholder="Tell us more about your health journey..."></textarea>
                 </div>
 
+                <div class="join-benefits">
+                    <h3>What you’ll receive when you join</h3>
+                    <ul>
+                        <li>Early access to Vernia</li>
+                        <li>Launch updates</li>
+                        <li>Invitation to test new features</li>
+                    </ul>
+                </div>
+
                 <button type="submit" class="submit-button">Join the Waitlist</button>
 
                 <div class="privacy-text">
                     We respect your privacy. Your information will never be shared or sold.
                 </div>
+
+                <div class="form-status" id="formStatus" role="status" aria-live="polite"></div>
             </form>
         </div>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
-        <p>© 2026 Vernia. All rights reserved. | We respect your privacy. Your information will never be shared or sold.</p>
+        <p>© 2024 Vernia. All rights reserved. | We respect your privacy. Your information will never be shared or sold.</p>
     </footer>
 
     <script>
+        const languageStorageKey = 'vernia-language';
+        let currentLanguage = localStorage.getItem(languageStorageKey) || 'en';
+
+        const translations = {
+            en: {
+                navHelps: 'How Vernia Helps',
+                navWorks: 'How it Works',
+                navMission: 'Our Mission',
+                navWaitlist: 'Join Waitlist',
+                heroTagline: "🌱 AI health companion for life's biggest health transitions",
+                heroTitle: 'Understand<br>your body.<br><span class="highlight">Take control of<br>your health.</span>',
+                heroBody: 'Vernia is an AI health companion that brings together your health data, symptoms, daily habits and medical recommendations into one intelligent place—helping you understand your body and feel confident about your health journey.',
+                heroPrimary: 'Join the Waitlist →',
+                heroSecondary: 'Explore Vernia',
+                cancerRecovery: 'Cancer Recovery',
+                menopause: 'Menopause',
+                postpartum: 'Postpartum',
+                digestiveHealth: 'Digestive Health',
+                fertilityJourney: 'Fertility Journey',
+                hormonalHealth: 'Hormonal Health',
+                today: 'TODAY',
+                recoveryScore: 'Recovery Score',
+                protein: 'Protein',
+                sleep: 'Sleep',
+                exampleInsights: 'Example Personalized Insights',
+                basedGoals: 'Based on your health journey and goals.',
+                learnHealth: 'Learn more about your health',
+                helpsTitle: 'How Vernia Helps',
+                helpsBody: 'One intelligent companion that helps you understand your body,<br>uncover meaningful patterns, plan your health and feel supported.',
+                understandTitle: 'Understand your body',
+                understandDesc: 'AI-generated personalised insights translate your health data into plain-language understanding.',
+                aiInsight: 'AI Insight',
+                recoveryInsight: 'Your recovery improves after protein-rich breakfasts and strength training.',
+                discoverTitle: 'Discover meaningful patterns',
+                discoverDesc: 'Connect symptoms, sleep, nutrition, exercise and treatments to uncover trends you might miss.',
+                trends: 'Trends',
+                energy: 'Energy',
+                symptoms: 'Symptoms',
+                exercise: 'Exercise',
+                aiDetected: 'AI Detected',
+                symptomsInsight: 'Symptoms ease on days with 7+ hours of sleep and morning walks.',
+                planHealth: 'Plan your health',
+                planHealthDesc: 'A weekly planner for appointments, medication, movement, nutrition, reminders and AI recommendations.',
+                plan: 'Plan',
+                mon: 'Mon<br>12',
+                tue: 'Tue<br>13',
+                wed: 'Wed<br>14',
+                strength: 'Strength',
+                proteinGoal: 'Protein goal',
+                sleepDuration: 'Sleep 7h 45m',
+                walk: 'Walk 30 min',
+                medication: 'Medication',
+                mealPlan: 'Meal plan',
+                bloodTest: 'Blood test 10:00 AM',
+                aiSuggestion: 'AI Suggestion',
+                suggestionText: 'Thursday looks best for recovery. Move strength training to Friday.',
+                connectTitle: 'Connect with women like you',
+                connectDesc: 'Communities organised by health journey, with meaningful discussions and support.',
+                communities: 'Communities',
+                fertility: 'Fertility',
+                sarahPost: 'My energy finally feels like it is coming back.',
+                emmaPost: 'I slept better after changing my evening routine.',
+                home: 'Home',
+                insight: 'Insight',
+                track: 'Track',
+                helpsCta: 'Join Waitlist',
+                worksTitle: 'How Vernia Works',
+                chooseTitle: 'Choose your health journey',
+                chooseText: 'Tell us about your journey, goals and priorities.',
+                trackTitle: 'Track symptoms, habits and health data',
+                trackText: 'Consolidate your symptoms, nutrition, exercise, sleep and medical recommendations.',
+                aiPatternsTitle: 'AI uncovers meaningful patterns',
+                aiPatternsText: 'We analyze your data to identify insights unique to you.',
+                habitsTitle: 'Build healthier habits with confidence',
+                habitsText: 'Receive personalized recommendations and track your progress.',
+                missionTitle: 'Our Mission',
+                missionLead: 'Every woman deserves to understand her body with confidence.',
+                missionBody: 'Vernia was created to bring together fragmented health information, daily habits and artificial intelligence into one intelligent companion that helps women uncover meaningful patterns, make informed decisions and feel supported through every stage of their health journey.',
+                waitlistTitle: 'Join the Vernia Waitlist',
+                waitlistBody: 'Be among the first women shaping the future of personalized health.',
+                firstName: 'First Name *',
+                lastName: 'Last Name *',
+                email: 'Email Address *',
+                country: 'Country *',
+                ageRange: 'Age Range *',
+                healthJourney: 'Health Journey *',
+                firstNamePlaceholder: 'First name',
+                lastNamePlaceholder: 'Last name',
+                emailPlaceholder: 'you@example.com',
+                selectCountry: 'Select your country',
+                selectAge: 'Select your age range',
+                selectJourney: 'Select your health journey',
+                goalsTitle: 'What are you hoping to achieve? <span class="label-secondary">(Select all that apply)</span>',
+                buildHabits: 'Build healthy habits',
+                improveNutrition: 'Improve nutrition',
+                exerciseConsistently: 'Exercise consistently',
+                improveSleep: 'Improve sleep',
+                manageSymptoms: 'Manage symptoms',
+                reduceStress: 'Reduce stress',
+                betterUnderstand: 'Better understand my body',
+                connectSimilar: 'Connect with women with similar experiences',
+                helpTitle: 'What would you most like Vernia to help you with?',
+                understandData: 'Understand my health data',
+                findPatterns: 'Find patterns in my health',
+                decisions: 'Make better health decisions',
+                communicateDoctor: 'Communicate better with my doctor',
+                communitySupport: 'Get support from community',
+                messageLabel: "Anything else you'd like us to know?",
+                messagePlaceholder: 'Tell us more about your health journey...',
+                benefitsTitle: 'What you’ll receive when you join',
+                benefitEarly: 'Early access to Vernia',
+                benefitLaunch: 'Launch updates',
+                benefitFeatures: 'Invitation to test new features',
+                submit: 'Join the Waitlist',
+                submitting: 'Joining...',
+                privacy: 'We respect your privacy. Your information will never be shared or sold.',
+                success: 'Thank you for joining the Vernia waitlist. We’ll keep you updated as we build the future of women’s health.',
+                error: 'Something went wrong while joining the waitlist. Please try again in a moment.',
+                footer: '© 2024 Vernia. All rights reserved. | We respect your privacy. Your information will never be shared or sold.',
+                languageValue: 'English'
+            },
+            es: {
+                navHelps: 'Cómo te ayuda Vernia',
+                navWorks: 'Cómo funciona',
+                navMission: 'Nuestra misión',
+                navWaitlist: 'Únete a la lista de espera',
+                heroTagline: '🌱 Acompañamiento con IA para las etapas más importantes de la salud femenina.',
+                heroTitle: 'Entiende tu cuerpo.<br><span class="highlight">Toma el control de<br>tu salud.</span>',
+                heroBody: 'Vernia es una compañera de salud con IA que reúne tus datos de salud, síntomas, hábitos diarios y recomendaciones médicas en un solo lugar inteligente, para ayudarte a entender tu cuerpo y sentirte más segura en tu camino de salud.',
+                heroPrimary: 'Únete a la lista de espera →',
+                heroSecondary: 'Descubre Vernia',
+                cancerRecovery: 'Recuperación del cáncer',
+                menopause: 'Menopausia',
+                postpartum: 'Posparto',
+                digestiveHealth: 'Salud digestiva',
+                fertilityJourney: 'Camino hacia la fertilidad',
+                hormonalHealth: 'Salud hormonal',
+                today: 'HOY',
+                recoveryScore: 'Puntuación de recuperación',
+                protein: 'Proteína',
+                sleep: 'Sueño',
+                exampleInsights: 'Insights personalizados de ejemplo',
+                basedGoals: 'Según tu etapa de salud y tus objetivos.',
+                learnHealth: 'Aprende más sobre tu salud',
+                helpsTitle: 'Cómo te ayuda Vernia',
+                helpsBody: 'Una compañera inteligente que te ayuda a entender tu cuerpo,<br>descubrir patrones relevantes, planificar tu salud y sentirte acompañada.',
+                understandTitle: 'Entiende tu cuerpo',
+                understandDesc: 'La IA transforma tus datos de salud en explicaciones claras y personalizadas.',
+                aiInsight: 'Insight de IA',
+                recoveryInsight: 'Tu recuperación mejora después de desayunos ricos en proteína y entrenamiento de fuerza.',
+                discoverTitle: 'Descubre patrones relevantes',
+                discoverDesc: 'Conecta síntomas, sueño, nutrición, ejercicio y tratamientos para descubrir tendencias que podrías pasar por alto.',
+                trends: 'Tendencias',
+                energy: 'Energía',
+                symptoms: 'Síntomas',
+                exercise: 'Ejercicio',
+                aiDetected: 'La IA ha detectado',
+                symptomsInsight: 'Los síntomas mejoran en los días con más de 7 horas de sueño y paseos por la mañana.',
+                planHealth: 'Planifica tu salud',
+                planHealthDesc: 'Un planificador semanal para citas, medicación, movimiento, nutrición, recordatorios y recomendaciones de IA.',
+                plan: 'Plan',
+                mon: 'Lun<br>12',
+                tue: 'Mar<br>13',
+                wed: 'Mié<br>14',
+                strength: 'Fuerza',
+                proteinGoal: 'Objetivo de proteína',
+                sleepDuration: 'Sueño 7h 45m',
+                walk: 'Paseo 30 min',
+                medication: 'Medicación',
+                mealPlan: 'Plan de comidas',
+                bloodTest: 'Análisis 10:00',
+                aiSuggestion: 'Sugerencia de IA',
+                suggestionText: 'El jueves parece el mejor día para recuperarte. Mueve el entrenamiento de fuerza al viernes.',
+                connectTitle: 'Conecta con mujeres como tú',
+                connectDesc: 'Comunidades organizadas por etapa de salud, con conversaciones relevantes y apoyo.',
+                communities: 'Comunidades',
+                fertility: 'Fertilidad',
+                sarahPost: 'Por fin siento que mi energía está volviendo.',
+                emmaPost: 'Dormí mejor después de cambiar mi rutina de noche.',
+                home: 'Inicio',
+                insight: 'Insights',
+                track: 'Seguimiento',
+                helpsCta: 'Únete a la lista de espera',
+                worksTitle: 'Cómo funciona Vernia',
+                chooseTitle: 'Elige tu etapa de salud',
+                chooseText: 'Cuéntanos tu situación, tus objetivos y tus prioridades.',
+                trackTitle: 'Registra síntomas, hábitos y datos de salud',
+                trackText: 'Centraliza tus síntomas, nutrición, ejercicio, sueño y recomendaciones médicas.',
+                aiPatternsTitle: 'La IA descubre patrones relevantes',
+                aiPatternsText: 'Analizamos tus datos para identificar insights únicos para ti.',
+                habitsTitle: 'Crea hábitos más saludables con confianza',
+                habitsText: 'Recibe recomendaciones personalizadas y sigue tu progreso.',
+                missionTitle: 'Nuestra misión',
+                missionLead: 'Toda mujer merece entender su cuerpo con confianza.',
+                missionBody: 'Vernia fue creada para reunir información de salud fragmentada, hábitos diarios e inteligencia artificial en una única compañera inteligente que ayuda a las mujeres a descubrir patrones relevantes, tomar decisiones informadas y sentirse acompañadas en cada etapa de su salud.',
+                waitlistTitle: 'Únete a la lista de espera de Vernia',
+                waitlistBody: 'Forma parte de las primeras mujeres que darán forma al futuro de la salud personalizada.',
+                firstName: 'Nombre *',
+                lastName: 'Apellidos *',
+                email: 'Correo electrónico *',
+                country: 'País *',
+                ageRange: 'Franja de edad *',
+                healthJourney: 'Etapa de salud *',
+                firstNamePlaceholder: 'Nombre',
+                lastNamePlaceholder: 'Apellidos',
+                emailPlaceholder: 'tu@email.com',
+                selectCountry: 'Selecciona tu país',
+                selectAge: 'Selecciona tu franja de edad',
+                selectJourney: 'Selecciona tu etapa de salud',
+                goalsTitle: '¿Qué te gustaría conseguir? <span class="label-secondary">(Selecciona todas las opciones que correspondan)</span>',
+                buildHabits: 'Crear hábitos más saludables',
+                improveNutrition: 'Mejorar la alimentación',
+                exerciseConsistently: 'Hacer ejercicio de forma constante',
+                improveSleep: 'Mejorar el sueño',
+                manageSymptoms: 'Gestionar síntomas',
+                reduceStress: 'Reducir el estrés',
+                betterUnderstand: 'Entender mejor mi cuerpo',
+                connectSimilar: 'Conectar con mujeres con experiencias similares',
+                helpTitle: '¿En qué te gustaría que Vernia te ayudara más?',
+                understandData: 'Entender mis datos de salud',
+                findPatterns: 'Encontrar patrones en mi salud',
+                decisions: 'Tomar mejores decisiones de salud',
+                communicateDoctor: 'Comunicarme mejor con mi médico',
+                communitySupport: 'Recibir apoyo de la comunidad',
+                messageLabel: '¿Hay algo más que te gustaría contarnos?',
+                messagePlaceholder: 'Cuéntanos un poco más sobre tu camino de salud...',
+                benefitsTitle: 'Qué recibirás al unirte',
+                benefitEarly: 'Acceso anticipado a Vernia',
+                benefitLaunch: 'Novedades sobre el lanzamiento',
+                benefitFeatures: 'Invitación a probar nuevas funcionalidades',
+                submit: 'Únete a la lista de espera',
+                submitting: 'Enviando...',
+                privacy: 'Respetamos tu privacidad. Tu información nunca será compartida ni vendida.',
+                success: 'Gracias por unirte a la lista de espera de Vernia. Te mantendremos informada mientras construimos el futuro de la salud femenina.',
+                error: 'Ha ocurrido un problema al unirte a la lista de espera. Inténtalo de nuevo en un momento.',
+                footer: '© 2024 Vernia. Todos los derechos reservados. | Respetamos tu privacidad. Tu información nunca será compartida ni vendida.',
+                languageValue: 'Spanish'
+            }
+        };
+
+        const countryLabels = {
+            en: {
+                '': 'Select your country',
+                Australia: 'Australia',
+                Austria: 'Austria',
+                Belgium: 'Belgium',
+                Canada: 'Canada',
+                France: 'France',
+                Germany: 'Germany',
+                Ireland: 'Ireland',
+                Italy: 'Italy',
+                Netherlands: 'Netherlands',
+                Portugal: 'Portugal',
+                Spain: 'Spain',
+                Switzerland: 'Switzerland',
+                'United Kingdom': 'United Kingdom',
+                'United States': 'United States',
+                Other: 'Other'
+            },
+            es: {
+                '': 'Selecciona tu país',
+                Australia: 'Australia',
+                Austria: 'Austria',
+                Belgium: 'Bélgica',
+                Canada: 'Canadá',
+                France: 'Francia',
+                Germany: 'Alemania',
+                Ireland: 'Irlanda',
+                Italy: 'Italia',
+                Netherlands: 'Países Bajos',
+                Portugal: 'Portugal',
+                Spain: 'España',
+                Switzerland: 'Suiza',
+                'United Kingdom': 'Reino Unido',
+                'United States': 'Estados Unidos',
+                Other: 'Otro'
+            }
+        };
+
+        function t(key) {
+            return translations[currentLanguage][key] || translations.en[key] || '';
+        }
+
+        function setText(selector, key) {
+            document.querySelectorAll(selector).forEach(element => {
+                element.textContent = t(key);
+            });
+        }
+
+        function setHtml(selector, key) {
+            document.querySelectorAll(selector).forEach(element => {
+                element.innerHTML = t(key);
+            });
+        }
+
+        function setPlaceholder(selector, key) {
+            document.querySelectorAll(selector).forEach(element => {
+                element.placeholder = t(key);
+            });
+        }
+
+        function updateCountryLabels() {
+            document.querySelectorAll('#country option').forEach(option => {
+                option.textContent = countryLabels[currentLanguage][option.value] || option.textContent;
+            });
+        }
+
+        function updateLanguageField() {
+            const languageField = document.getElementById('languageField');
+            if (languageField) {
+                languageField.value = t('languageValue');
+            }
+        }
+
+        function applyLanguage(language) {
+            currentLanguage = language === 'es' ? 'es' : 'en';
+            localStorage.setItem(languageStorageKey, currentLanguage);
+            document.documentElement.lang = currentLanguage;
+
+            document.querySelectorAll('.language-option').forEach(button => {
+                const active = button.dataset.lang === currentLanguage;
+                button.classList.toggle('active', active);
+                button.setAttribute('aria-pressed', active ? 'true' : 'false');
+            });
+
+            setText('.nav-links a[href="#how-vernia-helps"], .mobile-nav-menu a[href="#how-vernia-helps"]', 'navHelps');
+            setText('.nav-links a[href="#how-works"], .mobile-nav-menu a[href="#how-works"]', 'navWorks');
+            setText('.nav-links a[href="#mission"], .mobile-nav-menu a[href="#mission"]', 'navMission');
+            setText('.top-nav .nav-button, .mobile-nav-menu .nav-button', 'navWaitlist');
+
+            setText('.hero-tagline', 'heroTagline');
+            setHtml('.hero-content h1', 'heroTitle');
+            setText('.hero-content > p', 'heroBody');
+            setText('.hero-buttons .btn-primary', 'heroPrimary');
+            setText('.hero-buttons .btn-secondary', 'heroSecondary');
+            const featureKeys = ['cancerRecovery', 'menopause', 'postpartum', 'digestiveHealth', 'fertilityJourney', 'hormonalHealth'];
+            document.querySelectorAll('.hero-features .feature-item').forEach((item, index) => item.textContent = t(featureKeys[index]));
+
+            setText('.today-label', 'today');
+            setText('.score-label, .metric-item-label', 'recoveryScore');
+            setText('.metrics-grid .metric:nth-child(1) .metric-label', 'protein');
+            setText('.metrics-grid .metric:nth-child(2) .metric-label', 'sleep');
+            setText('.insight-title', 'exampleInsights');
+            setText('.insight-text', 'basedGoals');
+            setText('.insight-note', 'learnHealth');
+
+            setText('#how-vernia-helps .section-header h2', 'helpsTitle');
+            setHtml('#how-vernia-helps .section-header p', 'helpsBody');
+            const cardKeys = [
+                ['understandTitle', 'understandDesc'],
+                ['discoverTitle', 'discoverDesc'],
+                ['planHealth', 'planHealthDesc'],
+                ['connectTitle', 'connectDesc']
+            ];
+            document.querySelectorAll('#how-vernia-helps .product-card').forEach((card, index) => {
+                card.querySelector('.product-card-title').textContent = t(cardKeys[index][0]);
+                card.querySelector('.product-card-description').textContent = t(cardKeys[index][1]);
+            });
+
+            document.querySelector('#how-vernia-helps .product-card:nth-child(1) .mockup-label').textContent = t('today');
+            setText('#how-vernia-helps .product-card:nth-child(1) .metric-item:nth-child(1) .metric-item-label', 'recoveryScore');
+            setText('#how-vernia-helps .product-card:nth-child(1) .metric-item:nth-child(2) .metric-item-label', 'protein');
+            setText('#how-vernia-helps .product-card:nth-child(1) .metric-item:nth-child(3) .metric-item-label', 'sleep');
+            document.querySelector('#how-vernia-helps .product-card:nth-child(1) .insight-box').innerHTML = `
+                                    <strong style="color: #4D6653;">${t('aiInsight')}</strong><br>
+                                    ${t('recoveryInsight')}
+                                `;
+
+            document.querySelector('#how-vernia-helps .product-card:nth-child(2) .mockup-label').textContent = t('trends');
+            const trendNames = ['sleep', 'energy', 'symptoms', 'exercise'];
+            document.querySelectorAll('#how-vernia-helps .product-card:nth-child(2) .trend-name').forEach((item, index) => item.textContent = t(trendNames[index]));
+            document.querySelector('#how-vernia-helps .product-card:nth-child(2) .ai-box').innerHTML = `
+                                    <strong style="color: #4D6653;">${t('aiDetected')}</strong><br>
+                                    ${t('symptomsInsight')}
+                                `;
+
+            document.querySelector('#how-vernia-helps .product-card:nth-child(3) .mockup-header .mockup-label:nth-child(2)').textContent = t('plan');
+            document.querySelector('#how-vernia-helps .product-card:nth-child(3) .planner-row:nth-child(1) .planner-day').innerHTML = t('mon');
+            document.querySelector('#how-vernia-helps .product-card:nth-child(3) .planner-row:nth-child(2) .planner-day').innerHTML = t('tue');
+            document.querySelector('#how-vernia-helps .product-card:nth-child(3) .planner-row:nth-child(3) .planner-day').innerHTML = t('wed');
+            const plannerPills = ['strength', 'proteinGoal', 'sleepDuration', 'walk', 'medication', 'mealPlan'];
+            document.querySelectorAll('#how-vernia-helps .product-card:nth-child(3) .planner-pill').forEach((item, index) => item.textContent = t(plannerPills[index]));
+            document.querySelector('#how-vernia-helps .product-card:nth-child(3) .planner-row:nth-child(3) .planner-detail').textContent = t('bloodTest');
+            document.querySelector('#how-vernia-helps .product-card:nth-child(3) .ai-box').innerHTML = `
+                                    <strong style="color: #4D6653;">${t('aiSuggestion')}</strong><br>
+                                    ${t('suggestionText')}
+                                `;
+
+            document.querySelector('#how-vernia-helps .product-card:nth-child(4) .mockup-label').textContent = t('communities');
+            const communityPills = ['cancerRecovery', 'menopause', 'fertility'];
+            document.querySelectorAll('#how-vernia-helps .product-card:nth-child(4) .planner-pill').forEach((item, index) => item.textContent = t(communityPills[index]));
+            const communityRows = document.querySelectorAll('#how-vernia-helps .product-card:nth-child(4) .community-row .community-copy');
+            communityRows[0].innerHTML = `<strong>Sarah</strong><br>${t('sarahPost')}`;
+            communityRows[1].innerHTML = `<strong>Emma</strong><br>${t('emmaPost')}`;
+            document.querySelectorAll('.mockup-nav span').forEach((item, index) => item.textContent = t(['home', 'insight', 'track', 'plan'][index % 4]));
+            setText('#how-vernia-helps > div > div[style*="text-align"] .btn-primary', 'helpsCta');
+
+            setText('#how-works .section-header h2', 'worksTitle');
+            const worksKeys = [
+                ['chooseTitle', 'chooseText'],
+                ['trackTitle', 'trackText'],
+                ['aiPatternsTitle', 'aiPatternsText'],
+                ['habitsTitle', 'habitsText']
+            ];
+            document.querySelectorAll('.how-card').forEach((card, index) => {
+                card.querySelector('.how-title').textContent = t(worksKeys[index][0]);
+                card.querySelector('.how-text').textContent = t(worksKeys[index][1]);
+            });
+
+            setText('.mission-content h2', 'missionTitle');
+            const missionParagraphs = document.querySelectorAll('.mission-content p');
+            missionParagraphs[0].textContent = t('missionLead');
+            missionParagraphs[1].textContent = t('missionBody');
+
+            setText('.waitlist-header h2', 'waitlistTitle');
+            setText('.waitlist-header p', 'waitlistBody');
+            setText('label[for="firstName"]', 'firstName');
+            setText('label[for="lastName"]', 'lastName');
+            setText('label[for="email"]', 'email');
+            setText('label[for="country"]', 'country');
+            setText('label[for="ageRange"]', 'ageRange');
+            setText('label[for="healthJourney"]', 'healthJourney');
+            setPlaceholder('#firstName', 'firstNamePlaceholder');
+            setPlaceholder('#lastName', 'lastNamePlaceholder');
+            setPlaceholder('#email', 'emailPlaceholder');
+            document.querySelector('#ageRange option[value=""]').textContent = t('selectAge');
+            document.querySelector('#healthJourney option[value=""]').textContent = t('selectJourney');
+            updateCountryLabels();
+            const healthOptions = {
+                cancer: 'cancerRecovery',
+                menopause: 'menopause',
+                postpartum: 'postpartum',
+                fertility: 'fertilityJourney',
+                digestive: 'digestiveHealth',
+                hormonal: 'hormonalHealth',
+                other: currentLanguage === 'es' ? null : null
+            };
+            document.querySelectorAll('#healthJourney option').forEach(option => {
+                if (healthOptions[option.value]) option.textContent = t(healthOptions[option.value]);
+                if (option.value === 'other') option.textContent = currentLanguage === 'es' ? 'Otro' : 'Other';
+            });
+
+            const checkboxGroups = document.querySelectorAll('.checkbox-group > label');
+            checkboxGroups[0].innerHTML = t('goalsTitle');
+            checkboxGroups[1].textContent = t('helpTitle');
+            const goalKeys = ['buildHabits', 'improveNutrition', 'exerciseConsistently', 'improveSleep', 'manageSymptoms', 'reduceStress', 'betterUnderstand', 'connectSimilar'];
+            document.querySelectorAll('.checkbox-group')[0].querySelectorAll('.checkbox-item label').forEach((label, index) => label.textContent = t(goalKeys[index]));
+            const helpKeys = ['understandData', 'findPatterns', 'decisions', 'communicateDoctor', 'communitySupport'];
+            document.querySelectorAll('.checkbox-group')[1].querySelectorAll('.checkbox-item label').forEach((label, index) => label.textContent = t(helpKeys[index]));
+            setText('label[for="message"]', 'messageLabel');
+            setPlaceholder('#message', 'messagePlaceholder');
+            setText('.join-benefits h3', 'benefitsTitle');
+            document.querySelectorAll('.join-benefits li').forEach((item, index) => {
+                item.textContent = t(['benefitEarly', 'benefitLaunch', 'benefitFeatures'][index]);
+            });
+            setText('.submit-button', 'submit');
+            setText('.privacy-text', 'privacy');
+            setText('.footer p', 'footer');
+            const status = document.getElementById('formStatus');
+            if (status.classList.contains('success')) status.textContent = t('success');
+            if (status.classList.contains('error')) status.textContent = t('error');
+            updateLanguageField();
+        }
+
+        document.querySelectorAll('.language-option').forEach(button => {
+            button.addEventListener('click', () => applyLanguage(button.dataset.lang));
+        });
+
         // Mobile menu toggle
         const menuToggle = document.getElementById('menuToggle');
         const mobileMenu = document.getElementById('mobileMenu');
@@ -1333,14 +2309,43 @@
             });
         });
 
-        function scrollToWaitlist() {
-            document.getElementById('waitlist').scrollIntoView({ behavior: 'smooth' });
-        }
-
-        // Preview form submission
-        function handleSubmit(event) {
+        // Form submission
+        async function handleSubmit(event) {
             event.preventDefault();
-            alert('Thanks for your interest in Vernia. This preview form is not connected yet, so your details have not been submitted. Please check back soon for the live waitlist.');
+            const form = event.target;
+            const status = document.getElementById('formStatus');
+            const submitButton = form.querySelector('.submit-button');
+            const formData = new FormData(form);
+
+            status.className = 'form-status';
+            status.textContent = '';
+            submitButton.disabled = true;
+            submitButton.textContent = t('submitting');
+
+            try {
+                const response = await fetch(form.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+
+                if (!response.ok) {
+                    throw new Error('Form submission failed');
+                }
+
+                form.reset();
+                updateLanguageField();
+                status.textContent = t('success');
+                status.className = 'form-status success';
+            } catch (error) {
+                status.textContent = t('error');
+                status.className = 'form-status error';
+            } finally {
+                submitButton.disabled = false;
+                submitButton.textContent = t('submit');
+            }
         }
 
         // Smooth scroll
@@ -1356,6 +2361,8 @@
                 }
             });
         });
+
+        applyLanguage(currentLanguage);
     </script>
 
 </body>
